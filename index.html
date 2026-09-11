@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>BookBack — Footer hoàn chỉnh</title>
+<style>
+:root{
+  --ink:#241a10;--gold:#a9762f;--gold-lt:#d9b579;
+  --cream:#f8f2e7;--warm:#efe3cf;--dust:#d8c4a0;
+  --white:#fff;--red:#c0392b;--green:#16a34a;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Jost',Arial,sans-serif;
+  --spring:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);background:#fff}
+a{text-decoration:none;color:inherit}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(248,242,231,.6);padding:70px 40px 28px}
+.ft{max-width:1380px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.ftBrand p{font-size:12.5px;line-height:1.85;max-width:260px;margin-bottom:18px;margin-top:10px}
+.ftSoc{display:flex;gap:8px}
+.fsb{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#f8f2e7;transition:all .3s var(--spring)}
+.fsb:hover{border-color:var(--gold);background:rgba(169,118,47,.15);transform:scale(1.12) translateY(-2px)}
+.ftCol h4{font-family:var(--serif);font-size:14.5px;color:var(--cream);margin-bottom:15px}
+.ftCol ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0}
+.ftCol a{font-size:12.5px;transition:color .25s,padding-left .25s}
+.ftCol a:hover{color:var(--gold-lt);padding-left:5px}
+.ftContact li{font-size:11px;line-height:1.7}
+.ftBot{max-width:1380px;margin:0 auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(248,242,231,.28);flex-wrap:wrap;gap:10px}
+@media(max-width:1100px){.ft{grid-template-columns:1fr 1fr 1fr}.ftBrand{grid-column:span 2}}
+@media(max-width:900px){.ft{grid-template-columns:1fr 1fr}.ftBrand{grid-column:span 2}}
+@media(max-width:600px){.ft{grid-template-columns:1fr}.ftBrand{grid-column:span 1}}
+
+.page{display:none;min-height:60vh;padding:60px 40px;max-width:900px;margin:auto}
+.page.active{display:block}
+.page h1{font-family:var(--serif);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="page active" id="pg-home"><h1>Trang chủ BookBack</h1><p>Nội dung trang chủ.</p></div>
+<div class="page" id="pg-products"><h1>Sản phẩm</h1><p>Danh sách sách đang bán.</p></div>
+<div class="page" id="pg-contact"><h1>Liên hệ</h1><p>Thông tin liên hệ BookBack.</p></div>
+<div class="page" id="pg-shipping"><h1>Chính sách giao hàng</h1><p>Nội dung chính sách.</p></div>
+<div class="page" id="pg-return"><h1>Chính sách thu mua sách cũ</h1><p>Nội dung chính sách.</p></div>
+<div class="page" id="pg-news"><h1>Tin tức</h1><p>Bài viết mới.</p></div>
+<div class="page" id="pg-privacy"><h1>Chính sách bảo mật</h1><p>Nội dung chính sách.</p></div>
+<div class="page" id="pg-terms"><h1>Điều khoản sử dụng</h1><p>Nội dung điều khoản.</p></div>
+
+<footer>
+  <div class="ft">
+    <div class="ftBrand">
+      <a href="#" class="logo-svg-wrap" onclick="goPage('home');return false" title="BookBack" style="display:inline-block;margin-bottom:12px">
+        <svg width="150" height="46" viewBox="0 0 150 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="9" width="18" height="28" rx="1.5" stroke="#a9762f" stroke-width="1.4"/>
+          <line x1="13" y1="9" x2="13" y2="37" stroke="#a9762f" stroke-width="1"/>
+          <path d="M22 12 L26 10 L26 34 L22 36" stroke="#a9762f" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+          <text x="34" y="28" font-family="'Playfair Display',Georgia,serif" font-size="21" font-weight="900" fill="#f8f2e7" letter-spacing="0.5">BookBack</text>
+          <line x1="34" y1="32" x2="145" y2="32" stroke="#a9762f" stroke-width="0.7" opacity="0.45"/>
+        </svg>
+      </a>
+      <p>Cửa hàng sách cũ uy tín, nơi mỗi cuốn sách đã qua tay vẫn tiếp tục kể câu chuyện của mình cho một người đọc mới.</p>
+    </div>
+
+    <div class="ftCol"><h4>Danh mục sách</h4><ul>
+      <li><a href="#" onclick="goPage('products');return false">Sách giáo khoa</a></li>
+      <li><a href="#" onclick="goPage('products');return false">Giáo trình</a></li>
+      <li><a href="#" onclick="goPage('products');return false">Sách bài tập</a></li>
+      <li><a href="#" onclick="goPage('products');return false">Tài liệu tham khảo</a></li>
+    </ul></div>
+
+    <div class="ftCol"><h4>Thông tin</h4><ul>
+      <li><a href="#" onclick="goPage('home');setTimeout(()=>goSec('#storySec'),200);return false">Câu chuyện của chúng tôi</a></li>
+      <li><a href="#" onclick="goPage('contact');return false">Liên hệ</a></li>
+      <li><a href="#" onclick="goPage('news');return false">Tin tức</a></li>
+      <li><a href="#" onclick="goPage('home');goSec('#tesSection');return false">Đánh giá khách hàng</a></li>
+    </ul></div>
+
+    <div class="ftCol"><h4>Chính sách</h4><ul>
+      <li><a href="#" onclick="goPage('shipping');return false">Chính sách giao hàng</a></li>
+      <li><a href="#" onclick="goPage('return');return false">Chính sách thu mua sách cũ</a></li>
+      <li><a href="#" onclick="goPage('privacy');return false">Chính sách bảo mật</a></li>
+      <li><a href="#" onclick="goPage('terms');return false">Điều khoản sử dụng</a></li>
+    </ul></div>
+
+    <div class="ftCol"><h4>Liên hệ</h4><ul class="ftContact">
+      <li>📍 12 Chùa Bộc, Kim Liên, TP. Hà Nội</li>
+      <li>📞 0912 345 678</li>
+      <li>✉️ lienhe@bookback.vn</li>
+      <li>🕒 8:00 – 20:00 hàng ngày</li>
+    </ul></div>
+  </div>
+  <div class="ftBot"><span>© 2026 BookBack · bookback.vn · All rights reserved.</span><span>Sách cũ, giá trị mới ♥</span></div>
+</footer>
+
+<script>
+let _navPush=true;
+const PAGE_TITLES={
+  home:'BookBack',
+  products:'Sản phẩm – BookBack',
+  detail:'Sản phẩm – BookBack',
+  news:'Tin tức – BookBack',
+  newsdetail:'Tin tức – BookBack',
+  contact:'Liên hệ – BookBack',
+  checkout:'Đặt hàng – BookBack',
+  shipping:'Chính sách giao hàng – BookBack',
+  return:'Chính sách thu mua sách cũ – BookBack',
+  privacy:'Chính sách bảo mật – BookBack',
+  terms:'Điều khoản sử dụng – BookBack',
+  auth:'Đăng nhập – BookBack',
+};
+function updatePageMeta(id,extra){
+  const t=extra||(PAGE_TITLES[id]||'BookBack');
+  document.title=t;
+  const ogT=document.querySelector('meta[property="og:title"]');
+  if(ogT)ogT.setAttribute('content',t);
+  const twT=document.querySelector('meta[name="twitter:title"]');
+  if(twT)twT.setAttribute('content',t);
+}
+
+function obsAll(){}
+function renderProducts(){}
+function renderCheckout(){}
+function initNews(){}
+function authSwitch(){}
+function applyLang(){}
+
+function goPage(id,opts){
+  opts=opts||{};
+  updatePageMeta(id);
+  document.body.classList.toggle('auth-mode', id==='auth');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pg=document.getElementById('pg-'+id);
+  if(!pg)return;
+  pg.style.opacity='0';pg.style.transform='translateY(16px)';
+  pg.classList.add('active');
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+      pg.style.transition='opacity .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1)';
+      pg.style.opacity='1';pg.style.transform='none';
+      setTimeout(()=>{pg.style.transition='';pg.style.opacity='';pg.style.transform=''},500);
+    });
+  });
+  if(!opts.skipScroll)window.scrollTo({top:0,behavior:'smooth'});
+  document.querySelectorAll('nav .nlink').forEach(n=>n.classList.remove('on'));
+  const navLinks=document.querySelectorAll('nav .nlink');
+  const map={'home':0,'products':1,'news':2,'contact':4};
+  if(map[id]!==undefined)navLinks[map[id]]?.classList.add('on');
+  setTimeout(()=>{obsAll();if(id==='products')renderProducts();if(id==='checkout')renderCheckout();if(id==='news')initNews();if(id==='auth'){authSwitch('login');}applyLang();},60);
+  if(_navPush){
+    const url='#'+id;
+    if(location.hash!==url)history.pushState({page:id},'',url);
+  }
+}
+window.addEventListener('popstate',function(e){
+  const pg=(e.state&&e.state.page)||'home';
+  _navPush=false;
+  goPage(pg,{skipScroll:true});
+  _navPush=true;
+});
+(function(){
+  const hash=location.hash.replace('#','');
+  const valid=['home','products','detail','contact','checkout','shipping','return','news','newsdetail','auth','privacy','terms'];
+  if(hash&&valid.includes(hash)){
+    _navPush=false;goPage(hash,{skipScroll:true});_navPush=true;
+  } else {
+    history.replaceState({page:'home'},'','#home');
+  }
+})();
+function goSec(sel){setTimeout(()=>{const el=document.querySelector(sel);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})},140)}
+</script>
+</body>
+</html>

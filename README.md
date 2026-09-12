@@ -9,7 +9,7 @@ BOOKBACK là website hỗ trợ sinh viên Học viện Ngân hàng mua, bán v�
 ## Thành viên nhóm
 - Quách Phương Thảo - Nhóm trưởng - 27A4043350
 - Đặng Duy Quang - Thành viên - 27A4043340
-- Nguyễn Tấn Sang - Thành viên - 27A404
+- Nguyễn Tấn Sang - Thành viên - 27A4043343
 - Đặng Xuân Quang - Thành viên - 27A4043341
 ## Các trang của website
 - Trang chủ

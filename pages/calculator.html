@@ -1,4 +1,4 @@
-<!-- calculator -->
+<!--calculator-->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -71,65 +71,5 @@
     </div>
 
     <p>Công thức tham khảo: Giá ước tính = Giá mới × Độ mới × 0.6 (hệ số thị trường sách cũ) + Phí ship</p>
-
-    <script>
-        const form = document.getElementById('calcForm');
-        const giaMoiInput = document.getElementById('giaMoi');
-        const doMoiInput = document.getElementById('doMoi');
-        const phiShipInput = document.getElementById('phiShip');
-
-        const giaUocTinhEl = document.getElementById('giaUocTinh');
-        const tietKiemEl = document.getElementById('tietKiem');
-        const breakdownEl = document.getElementById('breakdown');
-        const stampEl = document.getElementById('stampMark');
-        const pingDot = document.getElementById('pingDot');
-
-        const HE_SO_THI_TRUONG = 0.6;
-
-        function formatVND(n) {
-            return Math.round(n).toLocaleString('vi-VN') + ' đ';
-        }
-
-        document.querySelectorAll('[data-value]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                doMoiInput.value = btn.dataset.value;
-                doMoiInput.focus();
-            });
-        });
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const giaMoi = parseFloat(giaMoiInput.value);
-            const doMoi = parseFloat(doMoiInput.value);
-            const phiShip = parseFloat(phiShipInput.value) || 0;
-
-            if (isNaN(giaMoi) || giaMoi <= 0) {
-                giaUocTinhEl.innerHTML = '<span>Vui lòng nhập giá sách mới hợp lệ</span>';
-                tietKiemEl.textContent = '—';
-                breakdownEl.textContent = 'Giá sách mới cần lớn hơn 0.';
-                giaMoiInput.focus();
-                return;
-            }
-            if (isNaN(doMoi) || doMoi < 1 || doMoi > 100) {
-                giaUocTinhEl.innerHTML = '<span>Vui lòng nhập độ mới từ 1–100%</span>';
-                tietKiemEl.textContent = '—';
-                breakdownEl.textContent = 'Độ mới của sách cần nằm trong khoảng 1% đến 100%.';
-                doMoiInput.focus();
-                return;
-            }
-
-            const giaTheoDoMoi = giaMoi * (doMoi / 100) * HE_SO_THI_TRUONG;
-            const giaUocTinh = giaTheoDoMoi + phiShip;
-            const tietKiem = giaMoi - giaUocTinh;
-
-            giaUocTinhEl.textContent = formatVND(giaUocTinh);
-            tietKiemEl.textContent = tietKiem >= 0 ? formatVND(tietKiem) : formatVND(0);
-
-            breakdownEl.innerHTML =
-                `Giá mới <span>${formatVND(giaMoi)}</span> × độ mới <span>${doMoi}%</span> × hệ số 0.6 = <span>${formatVND(giaTheoDoMoi)}</span><br>`
-                + `Cộng phí ship <span>${formatVND(phiShip)}</span> → Giá ước tính <span>${formatVND(giaUocTinh)}</span>`;
-        });
-    </script>
 </body>
 </html>

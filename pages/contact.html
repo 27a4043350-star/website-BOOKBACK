@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Liên hệ & Thu mua - BOOKBACK</title>
+  </head>
+
+  <body>
+    <!-- PHẦN ĐẦU TRANG -->
+
+    <header>
+      <h1>BOOKBACK</h1>
+
+      <p>Mua sách cũ - Trao giá trị mới</p>
+    </header>
+
+    <!-- MENU -->
+
+    <nav>
+      <a href="index.html">Trang chủ</a> |
+
+      <a href="books.html">Danh mục sách</a> |
+
+      <a href="contact.html"> Liên hệ & Thu mua </a> |
+
+      <a href="about.html"> Về dự án </a>
+    </nav>
+
+    <hr />
+
+    <main>
+      <!-- GIỚI THIỆU -->
+
+      <section>
+        <h2>Liên hệ & Thu mua</h2>
+
+        <p>
+          Bạn có câu hỏi về BOOKBACK hoặc muốn bán lại những cuốn sách cũ không
+          còn nhu cầu sử dụng?
+        </p>
+
+        <p>
+          Hãy điền thông tin vào biểu mẫu bên dưới. BOOKBACK sẽ tiếp nhận thông
+          tin của bạn.
+        </p>
+      </section>
+
+      <hr />
+
+      <!-- FORM LIÊN HỆ -->
+
+      <section>
+        <h2>1. Form liên hệ</h2>
+
+        <form>
+          <!-- HỌ TÊN -->
+
+          <p>
+            <label for="contact-name"> Họ và tên: </label>
+
+            <br />
+
+            <input
+              type="text"
+              id="contact-name"
+              name="contact-name"
+              placeholder="Nhập họ và tên"
+            />
+          </p>
+
+          <!-- EMAIL -->
+
+          <p>
+            <label for="contact-email"> Email: </label>
+
+            <br />
+
+            <input
+              type="email"
+              id="contact-email"
+              name="contact-email"
+              placeholder="example@gmail.com"
+            />
+          </p>
+
+          <!-- SỐ ĐIỆN THOẠI -->
+
+          <p>
+            <label for="contact-phone"> Số điện thoại: </label>
+
+            <br />
+
+            <input
+              type="tel"
+              id="contact-phone"
+              name="contact-phone"
+              placeholder="Nhập số điện thoại"
+            />
+          </p>
+
+          <!-- NỘI DUNG -->
+
+          <p>
+            <label for="contact-message"> Nội dung: </label>
+
+            <br />
+
+            <textarea
+              id="contact-message"
+              name="contact-message"
+              rows="6"
+              cols="50"
+              placeholder="Nhập nội dung liên hệ"
+            ></textarea>
+          </p>
+
+          <!-- NÚT GỬI -->
+
+          <p>
+            <button type="submit">Gửi liên hệ</button>
+
+            <button type="reset">Xóa</button>
+          </p>
+        </form>
+      </section>
+
+      <hr />
+
+      <!-- FORM THU MUA -->
+
+      <section>
+        <h2>2. Form thu mua sách</h2>
+
+        <p>
+          Bạn có sách cũ không còn nhu cầu sử dụng? Hãy gửi thông tin về cuốn
+          sách cho BOOKBACK.
+        </p>
+
+        <form>
+          <!-- HỌ TÊN -->
+
+          <p>
+            <label for="buy-name"> Họ và tên: </label>
+
+            <br />
+
+            <input
+              type="text"
+              id="buy-name"
+              name="buy-name"
+              placeholder="Nhập họ và tên"
+            />
+          </p>
+
+          <!-- SỐ ĐIỆN THOẠI -->
+
+          <p>
+            <label for="buy-phone"> Số điện thoại: </label>
+
+            <br />
+
+            <input
+              type="tel"
+              id="buy-phone"
+              name="buy-phone"
+              placeholder="Nhập số điện thoại"
+            />
+          </p>
+
+          <!-- TÊN SÁCH -->
+
+          <p>
+            <label for="book-name"> Tên sách: </label>
+
+            <br />
+
+            <input
+              type="text"
+              id="book-name"
+              name="book-name"
+              placeholder="Nhập tên sách"
+            />
+          </p>
+
+          <!-- TÌNH TRẠNG SÁCH -->
+
+          <p>
+            <label for="book-condition"> Tình trạng sách: </label>
+
+            <br />
+
+            <select id="book-condition" name="book-condition">
+              <option value="">-- Chọn tình trạng sách --</option>
+
+              <option value="new">Gần như mới</option>
+
+              <option value="good">Còn tốt</option>
+
+              <option value="used">Đã qua sử dụng</option>
+
+              <option value="old">Cũ</option>
+            </select>
+          </p>
+
+          <!-- GHI CHÚ -->
+
+          <p>
+            <label for="buy-note"> Ghi chú: </label>
+
+            <br />
+
+            <textarea
+              id="buy-note"
+              name="buy-note"
+              rows="6"
+              cols="50"
+              placeholder="Mô tả thêm về tình trạng sách..."
+            ></textarea>
+          </p>
+
+          <!-- NÚT -->
+
+          <p>
+            <button type="submit">Gửi yêu cầu thu mua</button>
+
+            <button type="reset">Xóa</button>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <hr />
+
+    <!-- FOOTER -->
+
+    <footer>
+      <p>© 2026 BOOKBACK - Mua sách cũ, trao giá trị mới.</p>
+    </footer>
+  </body>
+</html>

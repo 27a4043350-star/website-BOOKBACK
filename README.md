@@ -166,7 +166,7 @@ Thông tin chi tiết về việc sử dụng công cụ AI của từng thành 
 ## 9. Thông tin học phần
 
 - **Môn học:** Thiết kế Web
-- **Lớp:** IS19A
+- **Lớp:** 261IS19A02
 - **Trường:** Học viện Ngân hàng
 - **Năm thực hiện:** 2026
 

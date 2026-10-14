@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DANH MỤC SÁCH</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
       <!-- MENU ĐIỀU HƯỚNG -->
@@ -32,13 +31,12 @@
 
     <h2>Bộ lọc sách</h2>
 
-    <form>
+    <form id="book-filters">
 
         <!-- Tìm kiếm -->
 
-        <label>Tìm kiếm:</label>
-
-        <input type="text" placeholder="Nhập tên sách">
+        <label for="book-search">Tìm kiếm:</label>
+        <input id="book-search" type="search" placeholder="Nhập tên sách, ví dụ: hạt">
 
         <br><br>
 
@@ -47,14 +45,15 @@
 
         <label>Thể loại:</label>
 
-        <select>
+        <select id="category-filter">
 
-            <option>Tất cả</option>
-            <option>Lập trình</option>
-            <option>Cơ sở dữ liệu</option>
-            <option>Kinh tế</option>
-            <option>Marketing</option>
-            <option>Ngoại ngữ</option>
+            <option value="">Tất cả</option>
+            <option value="Lập trình">Lập trình</option>
+            <option value="Cơ sở dữ liệu">Cơ sở dữ liệu</option>
+            <option value="Kinh tế">Kinh tế</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Ngoại ngữ">Ngoại ngữ</option>
+            <option value="Kỹ năng sống">Kỹ năng sống</option>
 
         </select>
 
@@ -65,13 +64,13 @@
 
         <label>Khoảng giá:</label>
 
-        <select>
+        <select id="price-filter">
 
-            <option>Tất cả</option>
-            <option>Dưới 50.000đ</option>
-            <option>50.000đ - 100.000đ</option>
-            <option>100.000đ - 200.000đ</option>
-            <option>Trên 200.000đ</option>
+            <option value="">Tất cả mức giá</option>
+            <option value="under-50000">Dưới 50.000đ</option>
+            <option value="50000-100000">50.000đ - 100.000đ</option>
+            <option value="100000-200000">100.000đ - 200.000đ</option>
+            <option value="over-200000">Trên 200.000đ</option>
 
         </select>
 
@@ -82,19 +81,25 @@
 
         <label>Độ mới:</label>
 
-        <select>
+        <select id="condition-filter">
 
-            <option>Tất cả</option>
-            <option>90% - 100%</option>
-            <option>70% - 89%</option>
-            <option>Dưới 70%</option>
+            <option value="">Tất cả</option>
+            <option value="90-100">90% - 100%</option>
+            <option value="70-89">70% - 89%</option>
+            <option value="under-70">Dưới 70%</option>
 
         </select>
 
         <br><br>
 
 
-        <input type="submit" value="Tìm kiếm">
+        <label for="sort-order">Sắp xếp:</label>
+        <select id="sort-order">
+            <option value="">Mặc định</option>
+            <option value="price-asc" selected>Giá tăng dần</option>
+            <option value="price-desc">Giá giảm dần</option>
+        </select>
+        <button type="submit">Áp dụng bộ lọc</button>
 
     </form>
 
@@ -105,9 +110,10 @@
     <!-- DANH SÁCH SÁCH -->
 
     <h2>Danh sách sách</h2>
+    <p id="load-status" role="status" aria-live="polite">Đang tải sách...</p>
 
 
-    <table border="1">
+    <table id="book-list">
 
         <tr>
 
@@ -298,5 +304,6 @@
         <p>2026 BOOKBACK NHÓM 7 TKWEB</p>
     </div>
 </footer>
+<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

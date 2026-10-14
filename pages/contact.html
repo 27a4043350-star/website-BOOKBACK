@@ -2,242 +2,214 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Liên hệ & Thu mua - BOOKBACK</title>
+    <title>Về dự án - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
 
   <body>
-    <!-- PHẦN ĐẦU TRANG -->
-
+    <!-- Header -->
     <header>
       <h1>BOOKBACK</h1>
-
       <p>Mua sách cũ - Trao giá trị mới</p>
     </header>
 
-    <!-- MENU -->
-
+    <!-- Menu -->
     <nav>
-      <a href="index.html">Trang chủ</a> |
-
+      <a href="../index.html">Trang chủ</a> |
       <a href="books.html">Danh mục sách</a> |
-
-      <a href="contact.html"> Liên hệ & Thu mua </a> |
-
-      <a href="about.html"> Về dự án </a>
+      <a href="contact.html">Liên hệ & Thu mua</a> |
+      <a href="about.html">Về dự án</a> |
+      <a href="calculator.html">Công cụ tính</a>
     </nav>
 
     <hr />
 
     <main>
-      <!-- GIỚI THIỆU -->
-
+      <!-- 1. Giới thiệu ý tưởng -->
       <section>
-        <h2>Liên hệ & Thu mua</h2>
-
+        <h2>1. Giới thiệu ý tưởng BOOKBACK</h2>
         <p>
-          Bạn có câu hỏi về BOOKBACK hoặc muốn bán lại những cuốn sách cũ không
-          còn nhu cầu sử dụng?
+          BOOKBACK là một website bán và thu mua sách cũ, được xây dựng với mục
+          tiêu giúp sinh viên dễ dàng tìm kiếm, mua và bán lại những cuốn sách
+          đã qua sử dụng.
         </p>
-
         <p>
-          Hãy điền thông tin vào biểu mẫu bên dưới. BOOKBACK sẽ tiếp nhận thông
-          tin của bạn.
+          Ý tưởng BOOKBACK bắt đầu từ chính nhu cầu thực tế của một sinh viên.
+          Mỗi học kỳ mới, sinh viên thường phải chuẩn bị giáo trình, sách tham
+          khảo và tài liệu phục vụ cho các môn học.
+        </p>
+        <p>
+          Tuy nhiên, sau khi kết thúc học kỳ, nhiều cuốn sách vẫn còn tốt nhưng
+          không còn được sử dụng thường xuyên. Trong khi đó, những sinh viên ở
+          khóa hoặc học kỳ sau lại đang cần chính những cuốn sách đó.
+        </p>
+        <p>
+          Vì vậy, BOOKBACK được xây dựng như một nơi kết nối người đang có sách
+          với người đang cần sách. Qua đó giúp sách tiếp tục được sử dụng thay
+          vì bị bỏ quên.
         </p>
       </section>
 
       <hr />
 
-      <!-- FORM LIÊN HỆ -->
-
+      <!-- 2. Vấn đề cần giải quyết -->
       <section>
-        <h2>1. Form liên hệ</h2>
-
-        <form>
-          <!-- HỌ TÊN -->
-
-          <p>
-            <label for="contact-name"> Họ và tên: </label>
-
-            <br />
-
-            <input
-              type="text"
-              id="contact-name"
-              name="contact-name"
-              placeholder="Nhập họ và tên"
-            />
-          </p>
-
-          <!-- EMAIL -->
-
-          <p>
-            <label for="contact-email"> Email: </label>
-
-            <br />
-
-            <input
-              type="email"
-              id="contact-email"
-              name="contact-email"
-              placeholder="example@gmail.com"
-            />
-          </p>
-
-          <!-- SỐ ĐIỆN THOẠI -->
-
-          <p>
-            <label for="contact-phone"> Số điện thoại: </label>
-
-            <br />
-
-            <input
-              type="tel"
-              id="contact-phone"
-              name="contact-phone"
-              placeholder="Nhập số điện thoại"
-            />
-          </p>
-
-          <!-- NỘI DUNG -->
-
-          <p>
-            <label for="contact-message"> Nội dung: </label>
-
-            <br />
-
-            <textarea
-              id="contact-message"
-              name="contact-message"
-              rows="6"
-              cols="50"
-              placeholder="Nhập nội dung liên hệ"
-            ></textarea>
-          </p>
-
-          <!-- NÚT GỬI -->
-
-          <p>
-            <button type="submit">Gửi liên hệ</button>
-
-            <button type="reset">Xóa</button>
-          </p>
-        </form>
+        <h2>2. Vấn đề cần giải quyết</h2>
+        <p>
+          BOOKBACK hướng tới việc giải quyết một số vấn đề thường gặp trong quá
+          trình học tập của sinh viên:
+        </p>
+        <ul>
+          <li>Chi phí mua giáo trình và sách tham khảo khá cao.</li>
+          <li>Sinh viên phải mua nhiều sách vào đầu mỗi học kỳ.</li>
+          <li>Một số sách chỉ được sử dụng trong một hoặc vài học kỳ.</li>
+          <li>
+            Sau khi học xong, sinh viên gặp khó khăn trong việc bán lại sách.
+          </li>
+          <li>
+            Sinh viên có nhu cầu mua sách cũ khó tìm được đúng đầu sách mình
+            cần.
+          </li>
+          <li>
+            Việc mua bán sách cũ hiện nay có thể phải thực hiện thông qua nhiều
+            nhóm hoặc nhiều nền tảng khác nhau.
+          </li>
+          <li>
+            Những cuốn sách còn sử dụng tốt có thể bị bỏ quên, gây lãng phí.
+          </li>
+        </ul>
       </section>
 
       <hr />
 
-      <!-- FORM THU MUA -->
-
+      <!-- 3. Đối tượng người dùng -->
       <section>
-        <h2>2. Form thu mua sách</h2>
-
+        <h2>3. Đối tượng người dùng</h2>
         <p>
-          Bạn có sách cũ không còn nhu cầu sử dụng? Hãy gửi thông tin về cuốn
-          sách cho BOOKBACK.
+          BOOKBACK hướng tới những đối tượng có nhu cầu mua, bán và sử dụng sách
+          cũ.
         </p>
 
-        <form>
-          <!-- HỌ TÊN -->
+        <h3>3.1. Sinh viên</h3>
+        <p>
+          Đây là nhóm người dùng chính của BOOKBACK. Sinh viên có thể tìm mua
+          giáo trình và sách tham khảo với mức giá phù hợp, đồng thời có thể bán
+          lại những cuốn sách không còn nhu cầu sử dụng.
+        </p>
 
-          <p>
-            <label for="buy-name"> Họ và tên: </label>
+        <h3>3.2. Giảng viên và thầy cô</h3>
+        <p>
+          Giảng viên có thể tìm kiếm các loại giáo trình, tài liệu và sách tham
+          khảo phục vụ cho quá trình giảng dạy.
+        </p>
 
-            <br />
+        <h3>3.3. Người yêu sách</h3>
+        <p>
+          Những người có nhu cầu đọc sách cũng có thể tìm kiếm các đầu sách cũ
+          phù hợp với sở thích và nhu cầu của mình.
+        </p>
+      </section>
 
-            <input
-              type="text"
-              id="buy-name"
-              name="buy-name"
-              placeholder="Nhập họ và tên"
-            />
-          </p>
+      <hr />
 
-          <!-- SỐ ĐIỆN THOẠI -->
+      <!-- 4. Giá trị mang lại -->
+      <section>
+        <h2>4. Giá trị BOOKBACK mang lại</h2>
+        <ol>
+          <li>
+            <strong>Tiết kiệm chi phí:</strong> Giúp người mua tiếp cận sách với
+            mức giá phù hợp hơn so với sách mới.
+          </li>
+          <li>
+            <strong>Tạo sự kết nối:</strong> Kết nối người đang sở hữu sách với
+            người đang có nhu cầu tìm mua.
+          </li>
+          <li>
+            <strong>Tăng khả năng tái sử dụng:</strong> Những cuốn sách đã qua
+            sử dụng vẫn có thể tiếp tục đến với người đọc mới.
+          </li>
+          <li>
+            <strong>Giảm lãng phí:</strong> Hạn chế tình trạng những cuốn sách
+            còn tốt bị bỏ quên hoặc không được sử dụng.
+          </li>
+          <li>
+            <strong>Thuận tiện:</strong> Tạo một địa điểm tập trung để người
+            dùng tìm kiếm và trao đổi sách cũ.
+          </li>
+        </ol>
+      </section>
 
-          <p>
-            <label for="buy-phone"> Số điện thoại: </label>
+      <hr />
 
-            <br />
-
-            <input
-              type="tel"
-              id="buy-phone"
-              name="buy-phone"
-              placeholder="Nhập số điện thoại"
-            />
-          </p>
-
-          <!-- TÊN SÁCH -->
-
-          <p>
-            <label for="book-name"> Tên sách: </label>
-
-            <br />
-
-            <input
-              type="text"
-              id="book-name"
-              name="book-name"
-              placeholder="Nhập tên sách"
-            />
-          </p>
-
-          <!-- TÌNH TRẠNG SÁCH -->
-
-          <p>
-            <label for="book-condition"> Tình trạng sách: </label>
-
-            <br />
-
-            <select id="book-condition" name="book-condition">
-              <option value="">-- Chọn tình trạng sách --</option>
-
-              <option value="new">Gần như mới</option>
-
-              <option value="good">Còn tốt</option>
-
-              <option value="used">Đã qua sử dụng</option>
-
-              <option value="old">Cũ</option>
-            </select>
-          </p>
-
-          <!-- GHI CHÚ -->
-
-          <p>
-            <label for="buy-note"> Ghi chú: </label>
-
-            <br />
-
-            <textarea
-              id="buy-note"
-              name="buy-note"
-              rows="6"
-              cols="50"
-              placeholder="Mô tả thêm về tình trạng sách..."
-            ></textarea>
-          </p>
-
-          <!-- NÚT -->
-
-          <p>
-            <button type="submit">Gửi yêu cầu thu mua</button>
-
-            <button type="reset">Xóa</button>
-          </p>
-        </form>
+      <!-- 5. Thành viên nhóm -->
+      <section>
+        <h2>5. Thành viên nhóm</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Họ và tên</th>
+              <th>Mã sinh viên</th>
+              <th>Vai trò</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Quách Phương Thảo</td>
+              <td>27A4043350</td>
+              <td>Nhóm trưởng</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Đặng Duy Quang</td>
+              <td>27A4043340</td>
+              <td>Thành viên</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Nguyễn Tấn Sang</td>
+              <td>27A4043343</td>
+              <td>Thành viên</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Đặng Xuân Quang</td>
+              <td>27A4043341</td>
+              <td>Thành viên</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
 
     <hr />
 
-    <!-- FOOTER -->
-
+    <!-- Footer -->
     <footer>
-      <p>© 2026 BOOKBACK - Mua sách cũ, trao giá trị mới.</p>
+      <div>
+        <h3>BOOKBACK</h3>
+        <p>Website mua bán sách cũ dành cho sinh viên Học viện Ngân hàng.</p>
+      </div>
+      <div>
+        <h4>Liên kết</h4>
+        <ul>
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="books.html">Danh mục sách</a></li>
+          <li><a href="about.html">Về BOOKBACK</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+          <li><a href="calculator.html">Công cụ tính</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <p>Email: bookback@gmail.com</p>
+        <p>Điện thoại: 0123 456 789</p>
+      </div>
+      <div>
+        <p>© 2026 BOOKBACK - Nhóm 7 TKWEB</p>
+      </div>
     </footer>
   </body>
 </html>

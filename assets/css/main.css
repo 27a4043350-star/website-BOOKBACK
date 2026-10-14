@@ -217,8 +217,8 @@ h4 { font-size: 1.15rem; }
 }
 
 .nav-link {
-    color: var(--ink-soft) !important;   /* !important để ưu tiên màu này hơn các màu khác */
-    font-weight: 650;
+    color: var(--muted) !important;   /* !important để ưu tiên màu này hơn các màu khác, do bên trên base có thẻ .a và .a:hover ghi đè lên .nav-link */
+    font-weight: 600;
 }
 
 .nav-link:hover {

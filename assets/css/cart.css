@@ -1,0 +1,467 @@
+/* tải 2 font Google: Fraunces (tiêu đề sang) + DM Sans (chữ thường dễ đọc) */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* khai báo biến */
+:root {
+    /* Màu nền giấy cũ */
+    --paper: #f7efdf;   /* màu nền chính của toàn trang */
+    --paper-dark: #eFE6D4;   /* màu nền tối hơn */
+    --card: #FFFCF6;   /* màu nền cho các thẻ card (sáng hơn --paper 1 chút) */
+    --white: #ffffff;   /* màu trắng tinh, dùng cho những chỗ cần nền trắng hoàn toàn */
+
+    /* Màu chữ */
+    --ink: #252922;   /* màu chữ chính (màu đen xanh đậm), dùng cho tiêu đề, nội dung quan trọng, đoạn văn chính. Có độ tưởng phản cao, dễ đọc */
+    --ink-soft: #3a4038;   /* màu chữ chính nhưng mềm hơn, dùng cho tiêu đề phụ, đoạn văn dài  */
+    --muted: #746e62;    /* màu chữ phụ (xám nâu), dùng cho mô tả, caption, thông tin ít quan trọng hơn (giá cũ, ngày đăng, tác giả,...) */
+    --muted-light: #9a9488;   /* màu chữ phụ nhạt hơn */
+
+    /* Viền */
+    --line: #e9ddc7; /* dùng cho border của card */
+    --line-strong: #d4c6a8;
+
+    /* Màu chủ đạo */
+    --forest: #263f32;   /* màu chính, dùng cho nút chính, link quan trong, icon nổi bật, header, footer */
+    --forest-2: #496650;   /* dùng cho hover nhẹ, secondary button, or text trên nền tối */
+    --forest-soft: #e5ebe2;   /* nền xanh rất nhat, dùng làm background nhẹ (tag, highlight, hover nền,...) */
+    --forest-hover: #1e3328;   /* màu khi hover, dùng cho trạng thái hover của nút/link chính */
+
+    /* Accent – vàng đồng */
+    --gold: #C69B4B;   /* màu nhấn chính, làm nổi bật các điểm quan trọng: giá khuyến mãi, icon đặc iệt, nút phụ, underline, rating cao... */
+    --gold-soft: #F3E7CB;   /* nền vàng nhạt, làm background nhẹ cho các vùng cần nhấn (tag, highlight, thông báo nhỏ,...) */
+    --gold-dark: #A67F35;   /* dùng cho trạng thái hover của các phần tử mang màu gold, or text vàng cần độ tương phản cao hơn */
+
+    /* Trạng thái */
+    --success: #2E7D4F;
+    --danger: #C0392B;
+    --hot: #E74C3C;
+
+    /* Font */
+    --serif: 'Fraunces', Georgia, 'Times New Roman', serif;   /* tiêu đề */
+    --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /* chữ thường */
+
+    /* Khoảng cách */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+    /* Bo góc */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;   /* bo tròn hoàn toàn, dùng cho avatar, nút tròn, pill, tag,... */
+
+    /* Đổ bóng */
+    --shadow-sm: 0 1px 3px rgba(37, 41, 34, 0.08);
+    --shadow-md: 0 4px 12px rgba(37, 41, 34, 0.1);
+    --shadow-lg: 0 8px 24px rgba(37, 41, 34, 0.12);
+
+    /* Hiệu ứng chuyển động */
+    --transition: 0.25s ease;   /* thời gian + kiểu chuyển động mặc định của toàn website */
+
+    /* Layout */
+    --container-max: 1140px;   /* chiều rộng tối đa của khung nội dung chính, giúp nd không bị quá rộng trên màn hình lớn */
+    --header-height: 72px;   /* chiều cao header, tính toán padding-top cho nd bên dưới, tránh bị header đè lên */
+}
+
+/* reset: xóa style mặc định của trình duyệt */
+*,
+*::before,
+*::after {   /* 3 dòng trên mục đích để áp dụng quy tắc cho mọi thứ, kẻ cả các phần tử giả */
+    box-sizing: border-box;   /* padding + border không làm tràn width, nó sẽ tự động co giãn hợp lý */
+    margin: 0;
+    padding: 0;   /* 2 dòng trên để xóa toàn bộ khoảng cách mặc định của trình duyệt => giúp kiểm soát hoàn toàn khoảng cách sau này */
+}
+html {
+  scroll-behavior: smooth;  /* cuộn mượt khi click link # thay vì là nhảy thẳng để tạo trải nghiệm dễ chịu hơn. Nó chỉ hoạt động với các liên kết nội trang */
+  font-size: 16px;
+}
+
+/* base: thiết lập lại style nền tảng */
+body {
+  font-family: var(--sans);   /* font chữ mặc định cho cả trang */
+  font-weight: 400;   /* độ đậm chữ thường */
+  color: var(--ink);   /* màu chữ chính */
+  background-color: var(--paper);   /* màu nền giấy cũ */
+  line-height: 1.6;   /* khoảng cách dòng */
+  min-height: 100vh;   /* cao ít nhất bằng chiều cao màn hình */
+  display: flex;
+  flex-direction: column;   /* xếp các phần tử từ trên xuống dưới */
+}
+
+img {
+  max-width: 100%;   /* ảnh không bao giờ tràn ra ngoài khung */
+  height: auto;
+  display: block;   /* loại bỏ khoảng cách thừa bên dưới ảnh */
+}
+
+a {
+  color: var(--forest);
+  text-decoration: none;
+  transition: color var(--transition);   /* đổi màu mượt khi hover */
+}
+
+a:hover {
+  color: var(--gold-dark);   /* khi di chuột vào thì đổi sang vàng */
+}
+
+ul, ol {
+  list-style: none;   /* bỏ dấu chấm/tròn mặc định của dsach */
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+
+
+/* Typography (chữ) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }  /* tự co giãn theo màn hình */
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+h4 { font-size: 1.15rem; }
+
+/* clamp(min, preferred, max) => chữ tự co giãn theo màn hình */
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--muted);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--container-max);  /* nội dung tối đa 1140px */
+  margin-left: auto;
+  margin-right: auto;               /* căn giữa */
+  padding-left: var(--space-md);   /* tạo khoảng cách 2 bên đẻ nd không dính sát mép màn hình */
+  padding-right: var(--space-md);
+}
+
+.section {
+  padding: var(--space-2xl) 0;      /* tạo khoảng cách trên dưới cho mỗi section của trang giúp các khối nd k bị dính sát nhau */
+}
+
+.section-title {
+  margin-bottom: var(--space-lg);   /* tạo khoảng cách phía dưới tiêu đề */
+  position: relative;   /* cbi cho gạch vàng dùng ::after */
+  display: inline-block;   /* chiều rộng của tiêu đề vừa với nd, gạch vàng bên dưới k bị dài hết trang */
+}
+
+/* Gạch vàng dưới tiêu đề */
+.section-title::after {
+  content: '';   /* bắt buộc phải có để pseudo-element hiện ra */
+  display: block;   /* xuống hàng dưới tiêu đề */
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: var(--space-sm);
+  border-radius: 2px;   /* bo góc 2 đầu */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.section-header .section-title::after {
+  margin-left: auto;
+  margin-right: auto;               /* gạch vàng cũng căn giữa */
+}
+
+/* Shared site header */
+.header {
+  height: 72px;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--forest);
+}
+
+/* ===== CART PAGE ===== */
+body {
+  background: linear-gradient(180deg, #f7f3ec 0%, #f2ead9 100%);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+main {
+  max-width: 1180px;
+  margin: 36px auto 52px;
+  padding: 0 20px;
+}
+
+.page-top {
+  margin-bottom: 28px;
+}
+
+.page-top h2 {
+  color: var(--ink);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 8px;
+}
+
+.page-top p {
+  color: #555;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 26px;
+}
+
+.cart-panel,
+.summary-box {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #eadfc6;
+  border-radius: 20px;
+  box-shadow: 0 10px 22px rgba(29, 77, 59, 0.06);
+}
+
+.cart-panel {
+  padding: 24px;
+}
+
+.cart-header,
+.cart-item {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr 0.8fr 0.8fr 0.7fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.cart-header {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #efe5d3;
+  color: #6b6459;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cart-item {
+  padding: 18px 0;
+  border-bottom: 1px solid #f0e4d0;
+}
+
+.book-thumb {
+  width: 84px;
+  height: 110px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #dfeee2 0%, #f5e7c8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d4d3b;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.book-info h3 {
+  color: #1d4d3b;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.book-info p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2d5af;
+  border-radius: 10px;
+  width: fit-content;
+  background: #fffdf8;
+}
+
+.qty-box button {
+  border: none;
+  background: transparent;
+  color: #1d4d3b;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.qty-box span {
+  min-width: 34px;
+  text-align: center;
+  font-weight: 700;
+  color: #2e2e2e;
+}
+
+.unit-price,
+.total-price {
+  color: #1d4d3b;
+  font-weight: 700;
+}
+
+.remove-btn {
+  border: none;
+  color: #8b3d36;
+  background: #fdf1f0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.summary-box {
+  padding: 24px;
+  height: fit-content;
+}
+
+.summary-box h3 {
+  color: #1d4d3b;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  color: #444;
+}
+
+.summary-row.total {
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #efe4d2;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1d4d3b;
+}
+
+.action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #1d4d3b 0%, #2b5a48 100%);
+  color: #fff;
+  box-shadow: 0 10px 18px rgba(29, 77, 59, 0.18);
+}
+
+.secondary-btn {
+  background: #f6f0e4;
+  color: #1d4d3b;
+  border: 1px solid #eadcb3;
+}
+
+.note {
+  margin-top: 18px;
+  background: #f5f1e8;
+  border: 1px solid #e7dcc0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #4d4d4d;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .cart-header {
+    display: none;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px 0;
+  }
+
+  .book-thumb {
+    width: 110px;
+    height: 130px;
+  }
+
+  .header {
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+  }
+}

@@ -4,50 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHI TIẾT SÁCH</title>
+    <!-- Kết nối Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/sang.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
       <!-- MENU ĐIỀU HƯỚNG -->
-    <a href="../index.html">Trang chủ</a> |
-    <a href="books.html">Sản phẩm</a>
+    
+<header class="header">
+    <div class="container header-inner">
+        <a href="../index.html" class="logo">BOOKBACK</a>
 
-    <hr>
+        <nav class="nav">
+            <a href="../index.html" class="nav-link">Trang chủ</a>
+            <a href="books.html" class="nav-link">Danh mục sách</a>
+            <a href="about.html" class="nav-link">Về BOOKBACK</a>
+            <a href="contact.html" class="nav-link">Liên hệ</a>
+            <a href="calculator.html" class="nav-link">Công cụ tính</a>
+        </nav>
+    </div>
+</header>
+
 
     <!-- TIÊU ĐỀ TRANG -->
+    
+<section class="book-detail-heading">
     <h1>Chi tiết sách</h1>
-
-    <p>
-        Thông tin chi tiết các sách và giáo trình cũ
-    </p>
-
-    <hr>
+    <p>Khám phá thông tin và lựa chọn cuốn sách phù hợp với bạn.</p>
+</section>
 
 
     <!-- ================= SÁCH 1 ================= -->
 
-    <h2>1. Giáo trình Lập trình C++</h2>
+<!-- Khung chứa thông tin chi tiết sách -->
+<div class="container mt-4">
 
-    <img src="../assets/images/giao-trinh-C++.webp" alt="Giáo trình C++" title="Giáo trình lập trình C++" width="200">
+    <!-- Chia nội dung thành một hàng -->
+    <div class="row">
 
-    <h3>Thông tin sách</h3>
+        <!-- CỘT BÊN TRÁI: ẢNH BÌA SÁCH -->
+        <div class="col-md-5">
 
-    <p><b>Tên sách:</b> Giáo trình Lập trình C++</p>
-    <p><b>Thể loại:</b> Lập trình</p>
-    <p><b>Tác giả:</b> Nguyễn Văn A</p>
-    <p><b>Giá:</b> 80.000đ</p>
-    <p><b>Độ mới:</b> 90%</p>
-    <p><b>Tình trạng:</b> Đã qua sử dụng, còn tốt</p>
+            <img src="../assets/images/giao-trinh-C++.webp"
+                 alt="Giáo trình C++"
+                 title="Giáo trình lập trình C++"
+                 class="img-fluid">
 
-    <h3>Mô tả</h3>
+        </div>
 
-    <p>
-        Giáo trình Lập trình C++ cung cấp những kiến thức cơ bản
-        về lập trình, biến, kiểu dữ liệu, câu lệnh điều kiện,
-        vòng lặp, mảng và hàm trong C++.
-    </p>
+        <!-- CỘT BÊN PHẢI: THÔNG TIN SÁCH -->
+        <div class="col-md-7 book-detail-info">
 
-    <hr>
+            <h2>Giáo trình Lập trình C++</h2>
 
+            <p><b>Thể loại:</b> Lập trình</p>
+
+            <p><b>Tác giả:</b> Nguyễn Văn A</p>
+
+            <p><b>Tình trạng:</b> Còn hàng</p>
+            <!-- Giá bán hiện tại -->
+             <p>
+                <b>Giá bán:</b>
+                <span class="font-weight-bold">80.000đ</span>
+            </p>
+         <!-- Giá niêm yết cũ -->
+          <p>
+            <b>Giá niêm yết cũ:</b>
+            <del>120.000đ</del>
+        </p>
+
+            <p><b>Độ mới:</b> 90%</p>
+
+            <h4>Mô tả sách</h4>
+
+            <p>
+                Giáo trình Lập trình C++ cung cấp những kiến thức cơ bản
+                về lập trình, biến, kiểu dữ liệu, câu lệnh điều kiện,
+                vòng lặp, mảng và hàm trong C++.
+            </p>
+
+            <!-- Chọn số lượng sách -->
+            <label for="quantity">Số lượng:</label>
+
+            <input type="number"
+                   id="quantity"
+                   name="quantity"
+                   value="1"
+                   min="1">
+
+            <br><br>
+
+            <!-- Nút thêm vào giỏ hàng -->
+             <button type="button" class="btn btn-outline-success">Thêm vào giỏ hàng</button>
+             <!-- Nút mua ngay -->
+              <button type="button" class="btn btn-success">Mua ngay</button>
+
+            <hr>
+
+            <!-- Thông tin bổ trợ -->
+            <p><b>Lượt xem:</b> 120</p>
+
+            <p><b>Lượt mua:</b> 35</p>
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- ================= SÁCH 2 ================= -->
 
@@ -228,7 +292,71 @@
     </p>
 
     <hr>
+    
+<!-- ================= SẢN PHẨM LIÊN QUAN ================= -->
 
+<div class="container mt-4">
+
+    <hr>
+
+    <h2>Sản phẩm liên quan</h2>
+
+    <div class="row">
+
+        <!-- Sản phẩm liên quan 1 -->
+        <div class="col-md-4">
+
+            <h4>Giáo trình Cơ sở dữ liệu</h4>
+
+            <img src="../assets/images/giao-trinh-C++.webp"
+                 alt="Giáo trình Cơ sở dữ liệu"
+                 width="150">
+
+            <p>Giá: 70.000đ</p>
+
+            <a href="book-detail.html">
+                Xem chi tiết
+            </a>
+
+        </div>
+
+        <!-- Sản phẩm liên quan 2 -->
+        <div class="col-md-4">
+
+            <h4>Marketing căn bản</h4>
+
+            <img src="../assets/images/MKT-can-ban.jpg"
+                 alt="Marketing căn bản"
+                 width="150">
+
+            <p>Giá: 100.000đ</p>
+
+            <a href="book-detail.html">
+                Xem chi tiết
+            </a>
+
+        </div>
+
+        <!-- Sản phẩm liên quan 3 -->
+        <div class="col-md-4">
+
+            <h4>Lập trình Web HTML và CSS</h4>
+
+            <img src="../assets/images/giao-trinh-C++.webp"
+                 alt="Lập trình Web HTML và CSS"
+                 width="150">
+
+            <p>Giá: 120.000đ</p>
+
+            <a href="books.html">
+                Xem chi tiết
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- QUAY LẠI -->
     <a href="books.html">Quay lại danh mục sách</a>
@@ -242,10 +370,10 @@
         <h4>Liên kết</h4>
         <ul>
             <a href="../index.html">Trang chủ</a>
-            <a href="pages/books.html">Danh mục sách</a>
-            <a href="pages/about.html">Về BOOKBACK</a>
-            <a href="pages/contact.html">Liên hệ</a>
-            <a href="pages/calculator.html">Công cụ tính</a>
+            <a href="books.html">Danh mục sách</a>
+            <a href="about.html">Về BOOKBACK</a>
+            <a href="contact.html">Liên hệ</a>
+            <a href="calculator.html">Công cụ tính</a>
         </ul>
     </div>
     <div>

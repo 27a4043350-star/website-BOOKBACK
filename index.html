@@ -7,28 +7,86 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body id="top">
-    <header class="header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo">BOOKBACK</a>
-            <nav class="nav">
-                <a href="index.html" class="nav-link">Trang chủ</a>
-                <a href="pages/books.html" class="nav-link">Danh mục sách</a>
-                <a href="pages/about.html" class="nav-link">Về BOOKBACK</a>
-                <a href="pages/contact.html" class="nav-link">Liên hệ</a>
-                <a href="pages/cart.html" class="nav-link">Giỏ hàng</a>
-                <a href="pages/checkout.html" class="nav-link">Thanh toán</a>
-                <a href="pages/calculator.html" class="nav-link">Công cụ tính</a>
-            </nav>
-        </div>
-    </header>
+    <header class="site-header">
+  <!-- Thanh tiện ích trên cùng -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left">
+        <a href="#">Đăng nhập</a>
+        <span class="sep">|</span>
+        <a href="#">Đăng ký</a>
+      </div>
+      <div class="top-right">
+        <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+        <a href="pages/cart.html" class="top-cart">
+          Giỏ hàng <span class="cart-count">0</span> sản phẩm
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header chính -->
+  <div class="header-main">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-block">
+        <span class="logo-text">BOOKBACK</span>
+        <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+      </a>
+
+      <nav class="nav" aria-label="Menu chính">
+        <a href="index.html" class="nav-link active">Trang chủ</a>
+        <a href="pages/about.html" class="nav-link">Giới thiệu</a>
+        <a href="pages/books.html" class="nav-link">Danh mục sách</a>
+        <a href="pages/contact.html" class="nav-link">Liên hệ</a>
+        <a href="pages/calculator.html" class="nav-link">Công cụ tính</a>
+        <a href="pages/contact.html" class="nav-link nav-cta">Thu mua sách</a>
+      </nav>
+    </div>
+  </div>
+</header>
     <main>
-    <section class="hero">
-        <div class="container">
-            <h2 class="section-title">Tìm sách cũ dễ dàng với BOOKBACK</h2>
-            <p>Mua sách cũ với giá phù hợp và bán lại những cuốn sách bạn không còn sử dụng.</p>
-            <a href="pages/books.html">Xem sách ngay</a>
+    <!-- BANNER CHÍNH -->
+    <section class="banner-slider" aria-label="Banner quảng bá">
+        <div class="slides">
+        <div class="slide active">
+            <img src="assets/images/MKT-can-ban.jpg" alt="Banner 1 - Welcome to BOOKBACK Shop">
+        </div>
+        <div class="slide">
+            <img src="assets/images/giao-trinh-C++.webp" alt="Banner 2 - Giáo trình C++">
+        </div>
+        <div class="slide">
+            <img src="assets/images/bg calculator ngang.png" alt="Banner 3 - BOOKBACK">
+        </div>
+        </div>
+
+        <button class="slider-btn prev" aria-label="Banner trước">‹</button>
+        <button class="slider-btn next" aria-label="Banner sau">›</button>
+
+        <div class="slider-dots">
+        <button class="dot active" data-index="0" aria-label="Banner 1"></button>
+        <button class="dot" data-index="1" aria-label="Banner 2"></button>
+        <button class="dot" data-index="2" aria-label="Banner 3"></button>
         </div>
     </section>
+
+    <!-- BANNER PHỤ – 3 ẢNH TĨNH -->
+    <section class="promo-banners">
+        <div class="container">
+        <div class="promo-banners-grid">
+            <a href="pages/books.html" class="promo-banner">
+            <img src="assets/images/MKT-can-ban.jpg" alt="Tưng bừng khai trương">
+            </a>
+            <a href="pages/books.html" class="promo-banner">
+            <img src="assets/images/giao-trinh-C++.webp" alt="Sách đồng giá 19k">
+            </a>
+            <a href="pages/books.html" class="promo-banner">
+            <img src="assets/images/bg calculator ngang.png" alt="Chỉ với 99k - Combo sách lý luận chính trị">
+            </a>
+        </div>
+        </div>
+    </section>
+
+</section>
     <section class="section">
         <div class="container">
             <h2 class="section-title">Sách nổi bật</h2>

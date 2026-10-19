@@ -245,17 +245,6 @@ h4 { font-size: 1.15rem; }
   background: var(--forest-soft);
 }
 
-.nav-cta {
-  background: var(--forest);
-  color: #fff !important;
-  margin-left: 8px;
-}
-
-.nav-cta:hover {
-  background: var(--forest-hover);
-}
-
-
 /* ===== SẢN PHẨM ===== */
 .section-desc {
   color: var(--ink);

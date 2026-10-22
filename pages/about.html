@@ -4,24 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Về dự án - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/about.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
 
   <body>
-    <!-- Header -->
-    <header>
-      <h1>BOOKBACK</h1>
-      <p>Mua sách cũ - Trao giá trị mới</p>
-    </header>
+    <header class="site-header">
+  <!-- Thanh tiện ích trên cùng -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left">
+        <a href="#">Đăng nhập</a>
+        <span class="sep">|</span>
+        <a href="#">Đăng ký</a>
+      </div>
+      <div class="top-right">
+        <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+        <a href="cart.html" class="top-cart">
+          Giỏ hàng <span class="cart-count">0</span> sản phẩm
+        </a>
+      </div>
+    </div>
+  </div>
 
-    <!-- Menu -->
-    <nav>
-      <a href="../index.html">Trang chủ</a> |
-      <a href="books.html">Danh mục sách</a> |
-      <a href="contact.html">Liên hệ & Thu mua</a> |
-      <a href="about.html">Về dự án</a> |
-      <a href="calculator.html">Công cụ tính</a>
-    </nav>
+  <!-- HEADER CHÍNH -->
+  <div class="header-main">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-block">
+        <span class="logo-text">BOOKBACK</span>
+        <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+      </a>
+
+      <nav class="nav" aria-label="Menu chính">
+        <a href="../index.html" class="nav-link">Trang chủ</a>
+        <a href="about.html" class="nav-link active">Giới thiệu</a>
+        <a href="books.html" class="nav-link">Danh mục sách</a>
+        <a href="calculator.html" class="nav-link">Công cụ tính</a>
+        <a href="contact.html" class="nav-link">Thu mua sách</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
     <hr />
 
@@ -143,22 +166,69 @@
 
       <hr />
 
+      <!-- Hình ảnh sách được tái sử dụng -->
+      <section class="project-books">
+        <h2>Sách tiếp tục hành trình</h2>
+        <p>
+          BOOKBACK giúp những cuốn sách còn giá trị tìm được người đọc tiếp theo.
+        </p>
+        <div class="book-gallery">
+          <figure>
+            <img
+              src="../assets/images/giao-trinh-C++.webp"
+              alt="Giáo trình lập trình C++ được trao lại cho người học mới"
+              loading="lazy"
+            />
+            <figcaption>Giáo trình Lập trình C++</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../assets/images/MKT-can-ban.jpg"
+              alt="Sách Marketing căn bản được tiếp tục sử dụng"
+              loading="lazy"
+            />
+            <figcaption>Marketing căn bản</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <!-- 5. Thành viên nhóm -->
       <section>
         <h2>5. Thành viên nhóm</h2>
-        <table border="1">
+        <p>Các thành viên đều cùng một lớp.</p>
+        <table>
           <thead>
             <tr>
               <th>STT</th>
               <th>Họ và tên</th>
               <th>Mã sinh viên</th>
-              <th>Vai trò</th>
+              <th>Lớp</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
               <td>Quách Phương Thảo</td>
+              <td>27A4043350</td>
+              <td>Cùng lớp</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Đặng Duy Quang</td>
+              <td>27a4043340</td>
+              <td>Cùng lớp</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Đặng Xuân Quang</td>
+              <td>27a4043341</td>
+              <td>Cùng lớp</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Nguyễn Tấn Sang</td>
+              <td>27a4043343</td>
+              <td>Cùng lớp</td>
             </tr>
           </tbody>
         </table>

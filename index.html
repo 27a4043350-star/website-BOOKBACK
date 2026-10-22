@@ -7,75 +7,209 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body id="top">
-    <header class="header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo">BOOKBACK</a>
-            <nav class="nav">
-                <a href="index.html" class="nav-link">Trang chủ</a>
-                <a href="pages/books.html" class="nav-link">Danh mục sách</a>
-                <a href="pages/about.html" class="nav-link">Về BOOKBACK</a>
-                <a href="pages/contact.html" class="nav-link">Liên hệ</a>
-                <a href="pages/calculator.html" class="nav-link">Công cụ tính</a>
-            </nav>
+    <header class="site-header">
+    <!-- Thanh tiện ích trên cùng -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+        <div class="top-left">
+            <a href="#">Đăng nhập</a>
+            <span class="sep">|</span>
+            <a href="#">Đăng ký</a>
         </div>
+        <div class="top-right">
+            <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+            <a href="pages/cart.html" class="top-cart">
+            Giỏ hàng <span class="cart-count">0</span> sản phẩm
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <!-- HEADER CHÍNH -->
+    <div class="header-main">
+        <div class="container header-inner">
+        <a href="index.html" class="logo-block">
+            <span class="logo-text">BOOKBACK</span>
+            <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+        </a>
+
+        <nav class="nav" aria-label="Menu chính">
+            <a href="index.html" class="nav-link active">Trang chủ</a>
+            <a href="pages/about.html" class="nav-link">Giới thiệu</a>
+            <a href="pages/books.html" class="nav-link">Danh mục sách</a>
+            <a href="pages/calculator.html" class="nav-link">Công cụ tính</a>
+            <a href="pages/contact.html" class="nav-link">Thu mua sách</a>
+        </nav>
+        </div>
+    </div>
     </header>
     <main>
-    <section class="hero">
-        <h2>Tìm sách cũ dễ dàng với BOOKBACK</h2>
-        <p>
-            Mua sách cũ với giá phù hợp và bán lại những cuốn sách bạn không còn sử dụng.
-        </p>
-        <a href="pages/books.html">Xem sách ngay</a>
-    </section>
-    <section>
-        <h2>Sách nổi bật</h2>
-        <p>Đây là những cuốn sách được yêu thích.</p>
-        <div>
-            <h3>Giáo trình Marketing căn bản</h3>
-            <p>Giá: 50.000 VND</p>
-            <a href="pages/book-detail.html">Xem chi tiết</a>
+<!-- BANNER CHÍNH -->
+    <section class="banner-slider" aria-label="Banner quảng bá">
+        <div class="slides">
+        <div class="slide active">
+            <img src="assets/images/banner chính.jpg" alt="Banner 1 - Welcome to BOOKBACK Shop">
         </div>
-        <div>
-            <h3>Giáo trình Kinh tế vi mô</h3>
-            <p>Giá: 45.000 VND</p>
-            <a href="pages/book-detail.html">Xem chi tiết</a>
+        <div class="slide">
+            <img src="assets/images/banner 2.png" alt="Banner 2 - Mỗi cuốn sách là 1 hành trình">
         </div>
-        <div>
-            <h3>Giáo trình Tài chính tiền tệ</h3>
-            <p>Giá: 60.000 VND</p>
-            <a href="pages/book-detail.html">Xem chi tiết</a>
+        <div class="slide">
+            <img src="assets/images/bg calculator ngang.png" alt="Banner 3 - BOOKBACK">
+        </div>
+        </div>
+
+        <button class="slider-btn prev" aria-label="Banner trước">‹</button>
+        <button class="slider-btn next" aria-label="Banner sau">›</button>
+
+        <div class="slider-dots">
+        <button class="dot active" data-index="0" aria-label="Banner 1"></button>
+        <button class="dot" data-index="1" aria-label="Banner 2"></button>
+        <button class="dot" data-index="2" aria-label="Banner 3"></button>
         </div>
     </section>
+
+<!-- BANNER PHỤ – 3 ẢNH -->
+    <section class="promo-banners">
+        <div class="container">
+        <div class="promo-banners-grid">
+            <a href="pages/books.html" class="promo-banner">
+            <img src="assets/images/Welcome.png" alt="Tưng bừng khai trương">
+            </a>
+            <a href="pages/books.html" class="promo-banner">
+            <img src="assets/images/Sách đồng giá 19k.png" alt="Sách đồng giá 19k">
+            </a>
+            <a href="pages/books.html" class="promo-banner">
+            <img src="assets/images/Combo 99k.png" alt="Chỉ với 99k - Combo sách lý luận chính trị">
+            </a>
+        </div>
+        </div>
+    </section>
+
+
+<!-- SÁCH NỔI BẬT -->
+</section>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Sách nổi bật</h2>
+            <p class="section-desc">Đây là những cuốn sách được yêu thích và bán chạy tại BOOKBACK.</p>
+            <div class="product-list">
+                <div class="product-card">
+                    <h3>Giáo trình Marketing căn bản</h3>
+                    <p>Giá: 50.000 VND</p>
+                    <a href="pages/book-detail.html">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <h3>Giáo trình Kinh tế vi mô</h3>
+                    <p>Giá: 45.000 VND</p>
+                    <a href="pages/book-detail.html">Xem chi tiết</a>
+                </div>
+                <div class="product-card">
+                    <h3>Giáo trình Tài chính tiền tệ</h3>
+                    <p>Giá: 60.000 VND</p>
+                    <a href="pages/book-detail.html">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <section>
         <h2>BẠN CÓ SÁCH KHÔNG CÒN SỬ DỤNG?</h2>
         <p>Hãy đăng bán sách của bạn trên BOOKBACK để tìm ra chủ nhân mới của nó.</p>
         <a href="pages/contact.html">Liên hệ thu mua</a>
     </section>
-    <p><a href = "#top">Quay về đầu trang</a></p>
+    
     </main>
-<!-- Footer -->
-    <footer>
-    <div>
-        <h3>BOOKBACK</h3>
-        <p>Website mua bán sách cũ dành cho sinh viên Học viện Ngân hàng.</p>
-    </div>
-    <div>
-        <h4>Liên kết</h4>
-        <ul>
-            <a href="../index.html">Trang chủ</a>
-            <a href="pages/books.html">Danh mục sách</a>
-            <a href="pages/about.html">Về BOOKBACK</a>
-            <a href="pages/contact.html">Liên hệ</a>
-            <a href="pages/calculator.html">Công cụ tính</a>
+
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container footer-main">
+        <!-- Cột Thông tin liên hệ -->
+        <div class="footer-col footer-brand">
+        <a href="index.html" class="footer-logo">
+            <span class="footer-logo-text">BOOKBACK</span>
+        </a>
+        <p class="footer-slogan">Sách cũ – Quay trở lại với tri thức</p>
+
+        <ul class="footer-contact">
+            <li>
+            <span class="footer-icon" aria-hidden="true">📍</span>
+            <span>12 Chùa Bộc, Đống Đa, Hà Nội</span>
+            </li>
+            <li>
+            <span class="footer-icon" aria-hidden="true">📞</span>
+            <div>
+                <a href="tel:0969990579">0969990579</a>
+            </div>
+            </li>
+            <li>
+            <span class="footer-icon" aria-hidden="true">@</span>
+            <a href="mailto:27a4043350@hvnh.edu.vn">27a4043350@hvnh.edu.vn</a>
+            </li>
+            <li><a href = "#top">Quay về đầu trang</a></li>
         </ul>
+
+        <!-- Mạng xã hội -->
+        <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">fb</a>
+            <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">ig</a>
+        </div>
+        </div>
+        
+        <!-- Cột Tiện ích người dùng -->
+        <div class="footer-col">
+        <h4 class="footer-title">Tiện ích</h4>
+        <ul class="footer-links">
+            <li><a href="#">Tìm kiếm nhanh</a></li>
+            <li><a href="#">Đăng nhập / Đăng ký</a></li>
+            <li><a href="pages/cart.html">Giỏ hàng của bạn</a></li>
+            <li><a href="pages/calculator.html">Công cụ tính giá sách</a></li>
+        </ul>
+        </div>
+
+        <!-- Cột Menu điều hướng phụ -->
+        <div class="footer-col">
+        <h4 class="footer-title">Menu</h4>
+        <ul class="footer-links">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="pages/about.html">Giới thiệu</a></li>
+            <li><a href="pages/books.html">Danh mục sách</a></li>
+            <li><a href="pages/contact.html">Liên hệ</a></li>
+            <li><a href="pages/contact.html">Thu mua sách</a></li>
+        </ul>
+        </div>
+
+        <!-- Cột Chính sách -->
+        <div class="footer-col">
+        <h4 class="footer-title">Chính sách</h4>
+        <ul class="footer-links">
+            <li><a href="chinh-sach-bao-mat.html">Chính sách bảo mật dữ liệu</a></li>
+            <li><a href="chinh-sach-thanh-toan.html">Chính sách bảo mật thanh toán</a></li>
+            <li><a href="chinh-sach-doi-tra.html">Chính sách đổi trả sản phẩm</a></li>
+            <li><a href="chinh-sach-giao-hang.html">Chính sách giao hàng</a></li>
+        </div>
+
+        <!-- Cột Hướng dẫn -->
+        <div class="footer-col">
+        <h4 class="footer-title">Hướng dẫn</h4>
+        <ul class="footer-links">
+            <li><a href="huong-dan-mua-hang.html">Hướng dẫn mua hàng</a></li>
+            <li><a href="huong-dan-thanh-toan.html">Hướng dẫn thanh toán</a></li>
+            <li><a href="dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li>
+            <li><a href="contact.html">Gửi yêu cầu hỗ trợ</a></li>
+        </ul>
+        </div>
+
     </div>
-    <div>
-        <h4>Liên hệ</h4>
-        <p>Email: bookback@gmail.com</p>
-        <p>Điện thoại: 0123 456 789</p>
-    </div>
-    <div>
-        <p>2026 BOOKBACK NHÓM 7 TKWEB</p>
+
+    <!-- Thanh bản quyền -->
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+        <p>2026 <strong>BOOKBACK</strong> – Nhóm 7 TKWEB. Website mua bán sách cũ dành cho sinh viên Học viện Ngân hàng.</p>
+        </div>
     </div>
 </footer>
 </body>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ hàng - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/cart.css" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+  <!-- Thanh tiện ích trên cùng -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left">
+        <a href="#">Đăng nhập</a>
+        <span class="sep">|</span>
+        <a href="#">Đăng ký</a>
+      </div>
+      <div class="top-right">
+        <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+        <a href="cart.html" class="top-cart">
+          Giỏ hàng <span class="cart-count">0</span> sản phẩm
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER CHÍNH -->
+  <div class="header-main">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-block">
+        <span class="logo-text">BOOKBACK</span>
+        <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+      </a>
+
+      <nav class="nav" aria-label="Menu chính">
+        <a href="../index.html" class="nav-link">Trang chủ</a>
+        <a href="about.html" class="nav-link">Giới thiệu</a>
+        <a href="books.html" class="nav-link">Danh mục sách</a>
+        <a href="calculator.html" class="nav-link">Công cụ tính</a>
+        <a href="contact.html" class="nav-link">Thu mua sách</a>
+      </nav>
+    </div>
+  </div>
+</header>
+    <main>
+      <div class="page-top">
+        <h2>Giỏ hàng của bạn</h2>
+        <p>Bạn đang có 3 cuốn sách trong giỏ hàng.</p>
+      </div>
+
+      <div class="cart-layout">
+        <section class="cart-panel">
+          <div class="cart-header">
+            <span>Sản phẩm</span>
+            <span>Tên sách</span>
+            <span>Giá</span>
+            <span>Số lượng</span>
+            <span>Thao tác</span>
+          </div>
+
+          <div class="cart-item">
+            <div class="book-thumb">C++</div>
+            <div class="book-info">
+              <h3>Giáo trình C++</h3>
+              <p>Đã kiểm tra tình trạng • Bìa còn nguyên</p>
+            </div>
+            <div class="unit-price">90.000đ</div>
+            <div class="qty-box">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+            <button class="remove-btn">Xóa</button>
+          </div>
+
+          <div class="cart-item">
+            <div class="book-thumb">DB</div>
+            <div class="book-info">
+              <h3>Cơ sở dữ liệu</h3>
+              <p>Đã có tay bút mờ trang 20 • Còn sử dụng tốt</p>
+            </div>
+            <div class="unit-price">75.000đ</div>
+            <div class="qty-box">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+            <button class="remove-btn">Xóa</button>
+          </div>
+
+          <div class="cart-item">
+            <div class="book-thumb">MKT</div>
+            <div class="book-info">
+              <h3>Marketing căn bản</h3>
+              <p>Hiện trạng 95% • Học tập tốt</p>
+            </div>
+            <div class="unit-price">120.000đ</div>
+            <div class="qty-box">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+            <button class="remove-btn">Xóa</button>
+          </div>
+        </section>
+
+        <aside class="summary-box">
+          <h3>Tóm tắt đơn hàng</h3>
+
+          <div class="summary-row">
+            <span>Tạm tính</span>
+            <strong>285.000đ</strong>
+          </div>
+          <div class="summary-row">
+            <span>Phí vận chuyển</span>
+            <strong>20.000đ</strong>
+          </div>
+          <div class="summary-row">
+            <span>Giảm giá</span>
+            <strong>-15.000đ</strong>
+          </div>
+          <div class="summary-row total">
+            <span>Tổng cộng</span>
+            <strong>290.000đ</strong>
+          </div>
+
+          <div class="action-row">
+            <a class="primary-btn" href="checkout.html">Tiến hành thanh toán</a>
+            <button class="secondary-btn">Tiếp tục mua sắm</button>
+          </div>
+
+          <div class="note">
+            Vui lòng kiểm tra kỹ số lượng và tình trạng sách trước khi thanh toán.
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

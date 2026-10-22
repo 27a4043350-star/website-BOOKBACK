@@ -1,0 +1,144 @@
+
+/* ===== ABOUT PAGE ===== */
+body {
+  background: linear-gradient(180deg, #f7f4ee 0%, #f1ebdf 100%);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+main {
+  width: 100%;
+  min-width: 0;
+  max-width: 1000px;
+  margin: 32px auto 48px;
+  padding: 0 20px;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ece3d2;
+  border-radius: 18px;
+  padding: 26px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(31, 77, 59, 0.06);
+}
+
+section h2 {
+  color: var(--ink);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 12px;
+}
+
+section h3 {
+  color: #2d5b46;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+p {
+  margin-bottom: 12px;
+  color: #3d3d3d;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+  margin-top: 12px;
+}
+
+ul li,
+ol li {
+  margin-bottom: 8px;
+  color: #3d3d3d;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dfe7df;
+  margin: 12px 0 22px;
+}
+
+strong {
+  color: #1f4d3b;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 10px;
+  display: block;
+  overflow-x: auto;
+}
+
+th,
+td {
+  border: 1px solid #e2dcc8;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+th {
+  background: #edf5ee;
+  color: #1f4d3b;
+  font-weight: 700;
+}
+
+.book-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.book-gallery figure {
+  overflow: hidden;
+  border: 1px solid #e2dcc8;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.book-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.book-gallery figcaption {
+  padding: 10px 14px;
+  color: #1f4d3b;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .header {
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+  }
+
+  section {
+    padding: 20px 18px;
+  }
+
+  .book-gallery {
+    grid-template-columns: 1fr;
+  }
+}

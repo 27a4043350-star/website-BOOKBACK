@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/checkout.css" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+  <!-- Thanh tiện ích trên cùng -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left">
+        <a href="#">Đăng nhập</a>
+        <span class="sep">|</span>
+        <a href="#">Đăng ký</a>
+      </div>
+      <div class="top-right">
+        <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+        <a href="cart.html" class="top-cart">
+          Giỏ hàng <span class="cart-count">0</span> sản phẩm
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER CHÍNH -->
+  <div class="header-main">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-block">
+        <span class="logo-text">BOOKBACK</span>
+        <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+      </a>
+
+      <nav class="nav" aria-label="Menu chính">
+        <a href="../index.html" class="nav-link">Trang chủ</a>
+        <a href="about.html" class="nav-link">Giới thiệu</a>
+        <a href="books.html" class="nav-link">Danh mục sách</a>
+        <a href="calculator.html" class="nav-link">Công cụ tính</a>
+        <a href="contact.html" class="nav-link">Thu mua sách</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="page-top">
+        <h2>Thanh toán</h2>
+        <p>Vui lòng điền thông tin để hoàn tất đơn hàng.</p>
+      </div>
+
+      <div class="checkout-layout">
+        <section class="form-panel">
+          <h3 class="section-title">Thông tin giao hàng</h3>
+
+          <form>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Họ và tên</label>
+                <input id="name" type="text" placeholder="Nhập họ tên" />
+              </div>
+
+              <div class="field">
+                <label for="phone">Số điện thoại</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="0987654321"
+                  inputmode="numeric"
+                  pattern="0[0-9]{9}"
+                  minlength="10"
+                  maxlength="10"
+                  title="Số điện thoại phải gồm 10 chữ số và bắt đầu bằng số 0."
+                  required
+                />
+              </div>
+
+              <div class="field full">
+                <label for="email-local">Email</label>
+                <div class="email-input">
+                  <input
+                    id="email-local"
+                    type="text"
+                    data-gmail-local
+                    placeholder="ten.email"
+                    autocomplete="email"
+                    pattern="[^@\s]+"
+                    title="Chỉ nhập phần tên email trước @gmail.com."
+                  />
+                  <span aria-hidden="true">@gmail.com</span>
+                </div>
+                <input type="hidden" name="email" data-gmail-address />
+              </div>
+
+              <div class="field full">
+                <label for="address">Địa chỉ nhận hàng</label>
+                <textarea id="address" placeholder="Số nhà, tên đường, phường/xã..."></textarea>
+              </div>
+
+              <div class="field">
+                <label for="city">Tỉnh / Thành phố</label>
+                <select id="city">
+                  <option>Hà Nội</option>
+                  <option>Đà Nẵng</option>
+                  <option>Hồ Chí Minh</option>
+                  <option>Khác</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="district">Quận / Huyện</label>
+                <input id="district" type="text" placeholder="Nhập quận/huyện" />
+              </div>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 28px;">Phương thức thanh toán</h3>
+            <div class="payment-methods">
+              <label class="payment-option">
+                <input type="radio" name="payment" checked />
+                <span>Thanh toán khi nhận hàng (COD)</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" />
+                <span>Chuyển khoản ngân hàng</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" />
+                <span>Ví điện tử / Momo</span>
+              </label>
+            </div>
+          </form>
+        </section>
+
+        <aside class="summary-panel">
+          <h3>Đơn hàng của bạn</h3>
+
+          <div class="order-list">
+            <div class="order-item">
+              <div>
+                <div class="item-name">Giáo trình C++</div>
+                <div class="item-meta">Số lượng: 1</div>
+              </div>
+              <strong>90.000đ</strong>
+            </div>
+
+            <div class="order-item">
+              <div>
+                <div class="item-name">Cơ sở dữ liệu</div>
+                <div class="item-meta">Số lượng: 1</div>
+              </div>
+              <strong>75.000đ</strong>
+            </div>
+
+            <div class="order-item">
+              <div>
+                <div class="item-name">Marketing căn bản</div>
+                <div class="item-meta">Số lượng: 1</div>
+              </div>
+              <strong>120.000đ</strong>
+            </div>
+          </div>
+
+          <div class="summary-row">
+            <span>Tạm tính</span>
+            <strong>285.000đ</strong>
+          </div>
+          <div class="summary-row">
+            <span>Phí vận chuyển</span>
+            <strong>20.000đ</strong>
+          </div>
+          <div class="summary-row">
+            <span>Giảm giá</span>
+            <strong>-15.000đ</strong>
+          </div>
+          <div class="summary-row total">
+            <span>Tổng thanh toán</span>
+            <strong>290.000đ</strong>
+          </div>
+
+          <button class="checkout-btn">Xác nhận đặt hàng</button>
+
+          <div class="note">
+            BOOKBACK sẽ liên hệ xác nhận đơn hàng qua điện thoại hoặc email trong vòng 30 phút.
+          </div>
+        </aside>
+      </div>
+    </main>
+    <script src="../assets/js/gmail-email.js" defer></script>
+  </body>
+</html>

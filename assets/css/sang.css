@@ -230,3 +230,160 @@ h4 { font-size: 1.15rem; }
     text-align: center;
 }
 
+/* TIÊU ĐỀ TRANG DANH MỤC SÁCH */
+.book-heading {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.book-heading h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.book-heading p {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+
+/* TIÊU ĐỀ TRANG DANH MỤC SÁCH */
+.book-heading {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.book-heading h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.book-heading p {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+
+/* KHUNG DANH MỤC VÀ BỘ LỌC */
+.category-panel,
+.filter-panel {
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    height: auto;
+    min-width: 0;
+}
+
+/* Tiêu đề danh mục và bộ lọc */
+.category-panel h2,
+.filter-panel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Danh mục bên trái */
+.category-list p {
+    margin-bottom: 10px;
+}
+
+.category-list a {
+    display: block;
+    padding: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    background-color: var(--paper);
+    overflow-wrap: break-word;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.category-list a:hover {
+    background-color: var(--forest-soft);
+    color: var(--forest-hover);
+}
+
+/* Ô tìm kiếm */
+.filter-search {
+    margin-bottom: 15px;
+}
+
+.filter-search label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-search input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+}
+
+/* Các lựa chọn bộ lọc */
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-item {
+    flex: 1 1 140px;
+    min-width: 0;
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-item select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+/* Nút áp dụng nằm bên trái */
+#book-filters button {
+    display: block;
+    margin-top: 15px;
+    margin-left: 0;
+    padding: 8px 12px;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+/* ĐIỆN THOẠI VÀ MÀN HÌNH NHỎ */
+@media (max-width: 767px) {
+    .category-panel,
+    .filter-panel {
+        padding: 15px;
+        margin-bottom: 16px;
+    }
+
+    .category-list a {
+        padding: 10px;
+    }
+
+    .filter-options {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .filter-item {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    #book-filters button {
+        width: 100%;
+    }
+}

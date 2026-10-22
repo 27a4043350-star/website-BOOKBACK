@@ -4,280 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DANH MỤC SÁCH</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/sang.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-      <!-- MENU ĐIỀU HƯỚNG -->
+     <!-- MENU ĐIỀU HƯỚNG -->
+    
+<header class="header">
+    <div class="container header-inner">
+        <a href="../index.html" class="logo">BOOKBACK</a>
 
-    <nav>
-        <a href="../index.html">Trang chủ</a>
-        <a href="pages/books.html">Danh mục sách</a>
-        <a href="pages/about.html">Về BOOKBACK</a>            
-        <a href="pages/contact.html">Liên hệ</a>
-        <a href="pages/calculator.html">Công cụ tính</a>
-    </nav>
-
-    <hr>
+        <nav class="nav">
+            <a href="../index.html" class="nav-link">Trang chủ</a>
+            <a href="books.html" class="nav-link">Danh mục sách</a>
+            <a href="about.html" class="nav-link">Về BOOKBACK</a>
+            <a href="contact.html" class="nav-link">Liên hệ</a>
+            <a href="calculator.html" class="nav-link">Công cụ tính</a>
+        </nav>
+    </div>
+</header>
 
 
     <!-- TIÊU ĐỀ TRANG -->
+     <section class="book-heading">
+        <h1>Danh mục sách</h1>
+        <p>Khám phá các loại sách và giáo trình cũ</p>
+     </section>
+     
+<!-- KHU VỰC DANH MỤC VÀ BỘ LỌC -->
+<div class="container">
+    <div class="row">
 
-    <h1>Danh mục sách</h1>
+        <!-- DANH MỤC SÁCH BÊN TRÁI -->
+        <div class="col-md-4">
+            <div class="category-panel">
+                <h2>Danh mục</h2>
 
-    <p>
-        Khám phá các loại sách và giáo trình cũ
-    </p>
-    <!-- BỘ LỌC -->
+                <div class="category-list">
+                    <p><a href="#">Sách Công nghệ thông tin</a></p>
+                    <p><a href="#">Sách Kinh tế</a></p>
+                    <p><a href="#">Sách Marketing</a></p>
+                    <p><a href="#">Sách Ngoại ngữ</a></p>
+                    <p><a href="#">Sách Kỹ năng sống</a></p>
+                    <p><a href="#">Sách Cơ sở dữ liệu</a></p>
+                </div>
+            </div>
+        </div>
 
-    <h2>Bộ lọc sách</h2>
+        <!-- BỘ LỌC VÀ DANH SÁCH SÁCH BÊN PHẢI -->
+        <div class="col-md-8">
+            <div class="filter-panel">
 
-    <form id="book-filters">
+                <h2>Bộ lọc sách</h2>
 
-        <!-- Tìm kiếm -->
+                <form id="book-filters">
 
-        <label for="book-search">Tìm kiếm:</label>
-        <input id="book-search" type="search" placeholder="Nhập tên sách, ví dụ: hạt">
+                    <div class="filter-search">
+                        <label for="book-search">Tìm kiếm:</label>
+                        <input id="book-search" type="search"
+                               placeholder="Nhập tên sách...">
+                    </div>
 
-        <br><br>
+                    <div class="filter-options">
 
+                        <div class="filter-item">
+                            <label for="category-filter">Thể loại:</label>
+                            <select id="category-filter">
+                                <option value="">Tất cả</option>
+                                <option value="Lập trình">Lập trình</option>
+                                <option value="Cơ sở dữ liệu">Cơ sở dữ liệu</option>
+                                <option value="Kinh tế">Kinh tế</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Ngoại ngữ">Ngoại ngữ</option>
+                                <option value="Kỹ năng sống">Kỹ năng sống</option>
+                            </select>
+                        </div>
 
-        <!-- Thể loại -->
+                        <div class="filter-item">
+                            <label for="price-filter">Khoảng giá:</label>
+                            <select id="price-filter">
+                                <option value="">Tất cả mức giá</option>
+                                <option value="under-50000">Dưới 50.000đ</option>
+                                <option value="50000-100000">50.000đ - 100.000đ</option>
+                                <option value="100000-200000">100.000đ - 200.000đ</option>
+                                <option value="over-200000">Trên 200.000đ</option>
+                            </select>
+                        </div>
 
-        <label>Thể loại:</label>
+                        <div class="filter-item">
+                            <label for="condition-filter">Độ mới:</label>
+                            <select id="condition-filter">
+                                <option value="">Tất cả</option>
+                                <option value="90-100">90% - 100%</option>
+                                <option value="70-89">70% - 89%</option>
+                                <option value="under-70">Dưới 70%</option>
+                            </select>
+                        </div>
 
-        <select id="category-filter">
+                        <div class="filter-item">
+                            <label for="sort-order">Sắp xếp:</label>
+                            <select id="sort-order">
+                                <option value="">Mặc định</option>
+                                <option value="price-asc" selected>Giá tăng dần</option>
+                                <option value="price-desc">Giá giảm dần</option>
+                            </select>
+                        </div>
 
-            <option value="">Tất cả</option>
-            <option value="Lập trình">Lập trình</option>
-            <option value="Cơ sở dữ liệu">Cơ sở dữ liệu</option>
-            <option value="Kinh tế">Kinh tế</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Ngoại ngữ">Ngoại ngữ</option>
-            <option value="Kỹ năng sống">Kỹ năng sống</option>
+                    </div>
 
-        </select>
+                    <button type="submit">Áp dụng bộ lọc</button>
 
-        <br><br>
+                </form>
+            </div>
+        </div>
 
-
-        <!-- Khoảng giá -->
-
-        <label>Khoảng giá:</label>
-
-        <select id="price-filter">
-
-            <option value="">Tất cả mức giá</option>
-            <option value="under-50000">Dưới 50.000đ</option>
-            <option value="50000-100000">50.000đ - 100.000đ</option>
-            <option value="100000-200000">100.000đ - 200.000đ</option>
-            <option value="over-200000">Trên 200.000đ</option>
-
-        </select>
-
-        <br><br>
-
-
-        <!-- Độ mới -->
-
-        <label>Độ mới:</label>
-
-        <select id="condition-filter">
-
-            <option value="">Tất cả</option>
-            <option value="90-100">90% - 100%</option>
-            <option value="70-89">70% - 89%</option>
-            <option value="under-70">Dưới 70%</option>
-
-        </select>
-
-        <br><br>
-
-
-        <label for="sort-order">Sắp xếp:</label>
-        <select id="sort-order">
-            <option value="">Mặc định</option>
-            <option value="price-asc" selected>Giá tăng dần</option>
-            <option value="price-desc">Giá giảm dần</option>
-        </select>
-        <button type="submit">Áp dụng bộ lọc</button>
-
-    </form>
+    </div>
+</div>
 
 
-    <hr>
-
-
-    <!-- DANH SÁCH SÁCH -->
-
+<!-- DANH SÁCH SÁCH -->
+<div class="container">
     <h2>Danh sách sách</h2>
-    <p id="load-status" role="status" aria-live="polite">Đang tải sách...</p>
 
-
-    <table id="book-list">
-
-        <tr>
-
-            <th>Ảnh</th>
-
-            <th>Tên sách</th>
-
-            <th>Giá</th>
-
-        </tr>
-
+    <div class="row">
 
         <!-- SÁCH 1 -->
-
-        <tr>
-
-            <td>
-                <img src="sach1.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Giáo trình Lập trình C++
-                </a>
-            </td>
-
-            <td>80.000đ</td>
-
-        </tr>
-
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach1.jpg" alt="Giáo trình Lập trình C++" width="100%">
+                <h3>Giáo trình Lập trình C++</h3>
+                <p>80.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
         <!-- SÁCH 2 -->
-
-        <tr>
-
-            <td>
-                <img src="sach2.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Giáo trình Cơ sở dữ liệu
-                </a>
-            </td>
-
-            <td>70.000đ</td>
-
-        </tr>
-
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach2.jpg" alt="Giáo trình Cơ sở dữ liệu" width="100%">
+                <h3>Giáo trình Cơ sở dữ liệu</h3>
+                <p>70.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
         <!-- SÁCH 3 -->
-
-        <tr>
-
-            <td>
-                <img src="sach3.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Lập trình Java cơ bản
-                </a>
-            </td>
-
-            <td>90.000đ</td>
-
-        </tr>
-
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach3.jpg" alt="Lập trình Java cơ bản" width="100%">
+                <h3>Lập trình Java cơ bản</h3>
+                <p>90.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
         <!-- SÁCH 4 -->
-
-        <tr>
-
-            <td>
-<img src="sach4.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Marketing căn bản
-                </a>
-            </td>
-
-            <td>100.000đ</td>
-
-        </tr>
-
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach4.jpg" alt="Marketing căn bản" width="100%">
+                <h3>Marketing căn bản</h3>
+                <p>100.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
         <!-- SÁCH 5 -->
-
-        <tr>
-
-            <td>
-                <img src="sach5.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Kinh tế học cơ bản
-                </a>
-            </td>
-
-            <td>60.000đ</td>
-
-        </tr>
-
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach5.jpg" alt="Kinh tế học cơ bản" width="100%">
+                <h3>Kinh tế học cơ bản</h3>
+                <p>60.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
         <!-- SÁCH 6 -->
-
-        <tr>
-
-            <td>
-                <img src="sach6.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Tiếng Anh giao tiếp
-                </a>
-            </td>
-
-            <td>75.000đ</td>
-
-        </tr>
-
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach6.jpg" alt="Tiếng Anh giao tiếp" width="100%">
+                <h3>Tiếng Anh giao tiếp</h3>
+                <p>75.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
         <!-- SÁCH 7 -->
-
-        <tr>
-
-            <td>
-                <img src="sach7.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Lập trình Web HTML và CSS
-                </a>
-            </td>
-
-            <td>120.000đ</td>
-
-        </tr>
-
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach7.jpg" alt="Lập trình Web HTML và CSS" width="100%">
+                <h3>Lập trình Web HTML và CSS</h3>
+                <p>120.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
         <!-- SÁCH 8 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="book-card">
+                <img src="sach8.jpg" alt="Quản trị kinh doanh" width="100%">
+                <h3>Quản trị kinh doanh</h3>
+                <p>55.000đ</p>
+                <a href="book-detail.html">Xem chi tiết</a>
+            </div>
+        </div>
 
-        <tr>
-
-            <td>
-                <img src="sach8.jpg" width="100">
-            </td>
-
-            <td>
-                <a href="book-detail.html">
-                    Quản trị kinh doanh
-                </a>
-            </td>
-
-            <td>55.000đ</td>
-
-        </tr>
-
-
-    </table>
+    </div>
+</div>  
+    
 <!-- Footer -->
     <footer>
     <div>

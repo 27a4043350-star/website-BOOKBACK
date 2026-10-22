@@ -1,115 +1,100 @@
-/* tải 2 font Google: Fraunces (tiêu đề sang) + DM Sans (chữ thường dễ đọc) */
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
-/* khai báo biến */
+/* Biến màu & layout */
 :root {
-    /* Màu nền giấy cũ */
-    --paper: #f7efdf;   /* màu nền chính của toàn trang */
-    --paper-dark: #eFE6D4;   /* màu nền tối hơn */
-    --card: #FFFCF6;   /* màu nền cho các thẻ card (sáng hơn --paper 1 chút) */
-    --white: #ffffff;   /* màu trắng tinh, dùng cho những chỗ cần nền trắng hoàn toàn */
+  --paper: #f7efdf;
+  --paper-dark: #efe6d4;
+  --card: #fffcf6;
+  --white: #ffffff;
 
-    /* Màu chữ */
-    --ink: #252922;   /* màu chữ chính (màu đen xanh đậm), dùng cho tiêu đề, nội dung quan trọng, đoạn văn chính. Có độ tưởng phản cao, dễ đọc */
-    --ink-soft: #3a4038;   /* màu chữ chính nhưng mềm hơn, dùng cho tiêu đề phụ, đoạn văn dài  */
-    --muted: #746e62;    /* màu chữ phụ (xám nâu), dùng cho mô tả, caption, thông tin ít quan trọng hơn (giá cũ, ngày đăng, tác giả,...) */
-    --muted-light: #9a9488;   /* màu chữ phụ nhạt hơn */
+  --ink: #252922;
+  --ink-soft: #3a4038;
+  --muted: #746e62;
+  --muted-light: #9a9488;
 
-    /* Viền */
-    --line: #e9ddc7; /* dùng cho border của card */
-    --line-strong: #d4c6a8;
+  --line: #e9ddc7;
+  --line-strong: #d4c6a8;
 
-    /* Màu chủ đạo */
-    --forest: #263f32;   /* màu chính, dùng cho nút chính, link quan trong, icon nổi bật, header, footer */
-    --forest-2: #496650;   /* dùng cho hover nhẹ, secondary button, or text trên nền tối */
-    --forest-soft: #e5ebe2;   /* nền xanh rất nhat, dùng làm background nhẹ (tag, highlight, hover nền,...) */
-    --forest-hover: #1e3328;   /* màu khi hover, dùng cho trạng thái hover của nút/link chính */
+  --forest: #263f32;
+  --forest-2: #496650;
+  --forest-soft: #e5ebe2;
+  --forest-hover: #1e3328;
 
-    /* Accent – vàng đồng */
-    --gold: #C69B4B;   /* màu nhấn chính, làm nổi bật các điểm quan trọng: giá khuyến mãi, icon đặc iệt, nút phụ, underline, rating cao... */
-    --gold-soft: #F3E7CB;   /* nền vàng nhạt, làm background nhẹ cho các vùng cần nhấn (tag, highlight, thông báo nhỏ,...) */
-    --gold-dark: #A67F35;   /* dùng cho trạng thái hover của các phần tử mang màu gold, or text vàng cần độ tương phản cao hơn */
+  --gold: #c69b4b;
+  --gold-soft: #f3e7cb;
+  --gold-dark: #a67f35;
 
-    /* Trạng thái */
-    --success: #2E7D4F;
-    --danger: #C0392B;
-    --hot: #E74C3C;
+  --success: #2e7d4f;
+  --danger: #c0392b;
+  --hot: #e74c3c;
 
-    /* Font */
-    --serif: 'Fraunces', Georgia, 'Times New Roman', serif;   /* tiêu đề */
-    --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /* chữ thường */
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 
-    /* Khoảng cách */
-    --space-xs: 4px;
-    --space-sm: 8px;
-    --space-md: 16px;
-    --space-lg: 24px;
-    --space-xl: 32px;
-    --space-2xl: 48px;
-    --space-3xl: 64px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
 
-    /* Bo góc */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --radius-full: 9999px;   /* bo tròn hoàn toàn, dùng cho avatar, nút tròn, pill, tag,... */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
 
-    /* Đổ bóng */
-    --shadow-sm: 0 1px 3px rgba(37, 41, 34, 0.08);
-    --shadow-md: 0 4px 12px rgba(37, 41, 34, 0.1);
-    --shadow-lg: 0 8px 24px rgba(37, 41, 34, 0.12);
+  --shadow-sm: 0 1px 3px rgba(37, 41, 34, 0.08);
+  --shadow-md: 0 4px 12px rgba(37, 41, 34, 0.1);
+  --shadow-lg: 0 8px 24px rgba(37, 41, 34, 0.12);
 
-    /* Hiệu ứng chuyển động */
-    --transition: 0.25s ease;   /* thời gian + kiểu chuyển động mặc định của toàn website */
-
-    /* Layout */
-    --container-max: 1140px;   /* chiều rộng tối đa của khung nội dung chính, giúp nd không bị quá rộng trên màn hình lớn */
-    --header-height: 72px;   /* chiều cao header, tính toán padding-top cho nd bên dưới, tránh bị header đè lên */
+  --transition: 0.25s ease;
+  --container-max: 1140px;
+  --header-height: 72px;
 }
 
-/* reset: xóa style mặc định của trình duyệt */
-*,
-*::before,
-*::after {   /* 3 dòng trên mục đích để áp dụng quy tắc cho mọi thứ, kẻ cả các phần tử giả */
-    box-sizing: border-box;   /* padding + border không làm tràn width, nó sẽ tự động co giãn hợp lý */
-    margin: 0;
-    padding: 0;   /* 2 dòng trên để xóa toàn bộ khoảng cách mặc định của trình duyệt => giúp kiểm soát hoàn toàn khoảng cách sau này */
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 html {
-  scroll-behavior: smooth;  /* cuộn mượt khi click link # thay vì là nhảy thẳng để tạo trải nghiệm dễ chịu hơn. Nó chỉ hoạt động với các liên kết nội trang */
+  scroll-behavior: smooth;
   font-size: 16px;
 }
 
-/* base: thiết lập lại style nền tảng */
 body {
-  font-family: var(--sans);   /* font chữ mặc định cho cả trang */
-  font-weight: 400;   /* độ đậm chữ thường */
-  color: var(--ink);   /* màu chữ chính */
-  background-color: var(--paper);   /* màu nền giấy cũ */
-  line-height: 1.6;   /* khoảng cách dòng */
-  min-height: 100vh;   /* cao ít nhất bằng chiều cao màn hình */
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--ink);
+  background-color: var(--paper);
+  line-height: 1.6;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;   /* xếp các phần tử từ trên xuống dưới */
+  flex-direction: column;
 }
 
 img {
-  max-width: 100%;   /* ảnh không bao giờ tràn ra ngoài khung */
-  height: auto;   
-  display: block;   /* loại bỏ khoảng cách thừa bên dưới ảnh */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
   color: var(--forest);
   text-decoration: none;
-  transition: color var(--transition);   /* đổi màu mượt khi hover */
+  transition: color var(--transition);
 }
 
 a:hover {
-  color: var(--gold-dark);   /* khi di chuột vào thì đổi sang vàng */
+  color: var(--gold-dark);
 }
 
 ul, ol {
-  list-style: none;   /* bỏ dấu chấm/tròn mặc định của dsach */
+  list-style: none;
 }
 
 button, input, select, textarea {
@@ -117,9 +102,7 @@ button, input, select, textarea {
   font-size: inherit;
 }
 
-
-
-/* Typography (chữ) */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--serif);
   font-weight: 700;
@@ -127,55 +110,43 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ink);
 }
 
-h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }  /* tự co giãn theo màn hình */
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
 h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
 h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
 h4 { font-size: 1.15rem; }
 
-/* clamp(min, preferred, max) => chữ tự co giãn theo màn hình */
+.lead { font-size: 1.125rem; color: var(--muted); }
+.text-muted { color: var(--muted); }
+.text-center { text-align: center; }
 
-.lead {
-  font-size: 1.125rem;
-  color: var(--muted);
-}
-
-.text-muted {
-  color: var(--muted);
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* Layout helpers */
+/* Layout */
 .container {
   width: 100%;
-  max-width: var(--container-max);  /* nội dung tối đa 1140px */
+  max-width: var(--container-max);
   margin-left: auto;
-  margin-right: auto;               /* căn giữa */
-  padding-left: var(--space-md);   /* tạo khoảng cách 2 bên đẻ nd không dính sát mép màn hình */
+  margin-right: auto;
+  padding-left: var(--space-md);
   padding-right: var(--space-md);
 }
 
 .section {
-  padding: var(--space-2xl) 0;      /* tạo khoảng cách trên dưới cho mỗi section của trang giúp các khối nd k bị dính sát nhau */
+  padding: var(--space-2xl) 0;
 }
 
 .section-title {
-  margin-bottom: var(--space-lg);   /* tạo khoảng cách phía dưới tiêu đề */
-  position: relative;   /* cbi cho gạch vàng dùng ::after */
-  display: inline-block;   /* chiều rộng của tiêu đề vừa với nd, gạch vàng bên dưới k bị dài hết trang */
+  margin-bottom: var(--space-lg);
+  position: relative;
+  display: inline-block;
 }
 
-/* Gạch vàng dưới tiêu đề */
 .section-title::after {
-  content: '';   /* bắt buộc phải có để pseudo-element hiện ra */
-  display: block;   /* xuống hàng dưới tiêu đề */
+  content: '';
+  display: block;
   width: 48px;
   height: 3px;
   background: var(--gold);
   margin-top: var(--space-sm);
-  border-radius: 2px;   /* bo góc 2 đầu */
+  border-radius: 2px;
 }
 
 .section-header {
@@ -185,10 +156,69 @@ h4 { font-size: 1.15rem; }
 
 .section-header .section-title::after {
   margin-left: auto;
-  margin-right: auto;               /* gạch vàng cũng căn giữa */
+  margin-right: auto;
 }
 
-/* Header chính */
+/* Header */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar {
+  background: var(--forest);
+  color: #fff;
+  font-size: 0.8125rem;
+  padding: 6px 0;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-left a,
+.top-right a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.top-left a:hover,
+.top-right a:hover {
+  color: var(--gold);
+}
+
+.sep {
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: var(--gold);
+  color: var(--forest);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 999px;
+  margin-left: 4px;
+}
+
 .header-main {
   padding: 14px 0;
   background: var(--white);
@@ -240,12 +270,13 @@ h4 { font-size: 1.15rem; }
   transition: all 0.2s;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--forest);
   background: var(--forest-soft);
 }
 
-/* ===== SẢN PHẨM ===== */
+/* Sản phẩm */
 .section-desc {
   color: var(--ink);
   margin-bottom: 32px;
@@ -265,68 +296,8 @@ h4 { font-size: 1.15rem; }
   text-align: center;
   transition: var(--transition);
 }
-/* ========== HEADER ========== */
-.site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
 
-/* Thanh trên cùng */
-.top-bar {
-  background: var(--forest);
-  color: #fff;
-  font-size: 0.8125rem;
-  padding: 6px 0;
-}
-
-.top-bar-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.top-left a,
-.top-right a {
-  color: rgba(255,255,255,0.9);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.top-left a:hover,
-.top-right a:hover {
-  color: var(--gold);
-}
-
-.sep {
-  margin: 0 8px;
-  opacity: 0.5;
-}
-
-.top-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.cart-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
-  background: var(--gold);
-  color: var(--forest);
-  font-size: 0.7rem;
-  font-weight: 700;
-  border-radius: 999px;
-  margin-left: 4px;
-}
-
-/* ========== BANNER SLIDER ========== */
+/* Banner slider */
 .banner-slider {
   position: relative;
   width: 100%;
@@ -357,12 +328,11 @@ h4 { font-size: 1.15rem; }
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;             /* ảnh luôn phủ kín khung */
+  object-fit: cover;
   object-position: center;
   display: block;
 }
 
-/* Nút prev / next */
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -389,15 +359,9 @@ h4 { font-size: 1.15rem; }
   color: var(--gold-dark);
 }
 
-.slider-btn.prev {
-  left: 16px;
-}
+.slider-btn.prev { left: 16px; }
+.slider-btn.next { right: 16px; }
 
-.slider-btn.next {
-  right: 16px;
-}
-
-/* Chấm */
 .slider-dots {
   position: absolute;
   bottom: 16px;
@@ -424,24 +388,7 @@ h4 { font-size: 1.15rem; }
   transform: scale(1.2);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .banner-slider {
-    aspect-ratio: 1400 / 500;
-  }
-
-  .slider-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1.3rem;
-  }
-
-  .slider-btn.prev { left: 8px; }
-  .slider-btn.next { right: 8px; }
-}
-
-
-/* ========== BANNER PHỤ 3 ẢNH ========== */
+/* Banner phụ */
 .promo-banners {
   padding: 32px 0 8px;
   background: var(--paper);
@@ -475,13 +422,7 @@ h4 { font-size: 1.15rem; }
   box-shadow: var(--shadow-md);
 }
 
-@media (max-width: 768px) {
-  .promo-banners-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========== FOOTER ========== */
+/* Footer */
 .site-footer {
   margin-top: auto;
   background: var(--forest);
@@ -496,7 +437,6 @@ h4 { font-size: 1.15rem; }
   padding: 52px 0 44px;
 }
 
-/* ----- Cột 1: Thương hiệu + Liên hệ ----- */
 .footer-brand .footer-logo {
   display: inline-block;
   margin-bottom: 6px;
@@ -551,11 +491,9 @@ h4 { font-size: 1.15rem; }
   color: var(--gold);
 }
 
-/* Nút mạng xã hội */
 .footer-social {
   display: flex;
   gap: 10px;
-  font-style: normal;
 }
 
 .social-btn {
@@ -579,7 +517,6 @@ h4 { font-size: 1.15rem; }
   transform: translateY(-2px);
 }
 
-/* ----- Tiêu đề các cột ----- */
 .footer-title {
   font-family: var(--serif);
   font-size: 1.05rem;
@@ -603,7 +540,6 @@ h4 { font-size: 1.15rem; }
   opacity: 0.7;
 }
 
-/* ----- Danh sách link ----- */
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -622,7 +558,6 @@ h4 { font-size: 1.15rem; }
   padding-left: 5px;
 }
 
-/* ----- Thanh bản quyền ----- */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(0, 0, 0, 0.18);
@@ -645,7 +580,7 @@ h4 { font-size: 1.15rem; }
   font-weight: 600;
 }
 
-/* ----- Responsive ----- */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 1100px) {
   .footer-main {
     grid-template-columns: 1.3fr 1fr 1fr 1fr;

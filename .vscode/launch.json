@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "f:\\APP\\GITHUB\\website-BOOKBACK\\website-BOOKBACK\\index.html"
+            "file": "${workspaceFolder}/index.html"
         }
     ]
 }

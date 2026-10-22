@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Công cụ tính giá - BOOKBACK</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/cal.css">
+=======
     <link rel="stylesheet" href="../assets/css/main.css"/>
     <link rel="stylesheet" href="../assets/css/cal.css"/>
     <style>
@@ -344,9 +348,46 @@ body::before {
             .nav { justify-content: center; flex-wrap: wrap; gap: 8px 16px; }
         }
     </style>
+>>>>>>> bc819a33ffac4e44e4b169e04b9f6361c745c818
 </head>
-<body>
+<body id="top">
     <header class="site-header">
+<<<<<<< HEAD
+<!-- Thanh tiện ích trên cùng -->
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-left">
+                    <a href="#">Đăng nhập</a>
+                    <span class="sep">|</span>
+                    <a href="#">Đăng ký</a>
+                </div>
+                <div class="top-right">
+                    <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+                    <a href="cart.html" class="top-cart">
+                        Giỏ hàng <span class="cart-count">0</span> sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
+<!-- HEADER CHÍNH -->
+        <div class="header-main">
+            <div class="container header-inner">
+                <a href="../index.html" class="logo-block">
+                    <span class="logo-text">BOOKBACK</span>
+                    <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+                </a>
+                <nav class="nav" aria-label="Menu chính">
+                    <a href="../index.html" class="nav-link">Trang chủ</a>
+                    <a href="about.html" class="nav-link">Giới thiệu</a>
+                    <a href="books.html" class="nav-link">Danh mục sách</a>
+                    <a href="contact.html" class="nav-link">Liên hệ</a>
+                    <a href="calculator.html" class="nav-link active" aria-current="page">Công cụ tính</a>
+                    <a href="contact.html" class="nav-link">Thu mua sách</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+=======
   <!-- Thanh tiện ích trên cùng -->
   <div class="top-bar">
     <div class="container top-bar-inner">
@@ -382,6 +423,7 @@ body::before {
     </div>
   </div>
 </header>
+>>>>>>> bc819a33ffac4e44e4b169e04b9f6361c745c818
     <main class="container calculator-main">
       <section class="section calculator-content">
         <div class="calculator-intro">
@@ -393,7 +435,7 @@ body::before {
             <p>Ước tính nhanh giá trị hợp lý cho một cuốn sách đã qua sử dụng và số tiền tiết kiệm được so với mua sách mới.</p>
             <p><strong>Cách dùng:</strong> Nhập giá sách khi còn mới, chọn hoặc nhập độ mới của cuốn sách (%), thêm phí ship (nếu có), rồi bấm “Tính giá trị” để xem kết quả.</p>
         </div>
-    <form id="calcForm" class="calculator-form">
+    <form id="calcForm" class="calculator-form" novalidate>
         <div>
             <label for="giaMoi">Giá sách mới</label>
             <input type="number" id="giaMoi" name="giaMoi" min="1" step="1" placeholder="Ví dụ: 150000" required>
@@ -419,94 +461,173 @@ body::before {
         </div>
         <button type="submit">Tính giá trị</button>
     </form>
-    <div>
-        <span>KẾT QUẢ</span>
-    </div>
-    <div class="result">
-        <div id="stampMark">ĐÃ TÍNH</div>
-        <div>Giá ước tính hợp lý cho cuốn sách cũ này</div>
-        <div id="giaUocTinh"><span>— chưa có dữ liệu —</span></div>
-        <div>
+    <h2 class="result-heading">KẾT QUẢ</h2>
+    <section class="result" aria-label="Kết quả tính giá" aria-live="polite">
+        <div id="stampMark" class="result-stamp">ĐÃ TÍNH</div>
+        <div class="result-caption">Giá ước tính hợp lý cho cuốn sách cũ này</div>
+        <output id="giaUocTinh"><span>— chưa có dữ liệu —</span></output>
+        <div class="result-savings">
             <span>Tiết kiệm so với mua sách mới</span>
             <span id="tietKiem">—</span>
         </div>
         <div id="breakdown">
             Nhập thông tin phía trên rồi bấm "Tính giá trị" để xem chi tiết cách tính.
         </div>
-    </div>
+    </section>
     <p>Công thức tham khảo: Giá ước tính = Giá mới × Độ mới × 0.6 (hệ số thị trường sách cũ) + Phí ship</p>
       </section>
     </main>
-    <footer class="calculator-footer">
-        <div class="container calculator-footer-inner">
-            <div>
-                <h2>BOOKBACK</h2>
-                <p>Website mua bán sách cũ dành cho sinh viên Học viện Ngân hàng.</p>
+<!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <!-- Cột Thông tin liên hệ -->
+            <div class="footer-col footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <span class="footer-logo-text">BOOKBACK</span>
+                </a>
+                <p class="footer-slogan">Sách cũ – Quay trở lại với tri thức</p>
+
+                <ul class="footer-contact">
+                    <li>
+                        <span class="footer-icon" aria-hidden="true">📍</span>
+                        <span>12 Chùa Bộc, Đống Đa, Hà Nội</span>
+                    </li>
+                    <li>
+                        <span class="footer-icon" aria-hidden="true">📞</span>
+                        <div>
+                            <a href="tel:0969990579">0969990579</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="footer-icon" aria-hidden="true">@</span>
+                        <a href="mailto:27a4043350@hvnh.edu.vn">27a4043350@hvnh.edu.vn</a>
+                    </li>
+                    <li><a href="#top">Quay về đầu trang</a></li>
+                </ul>
+
+                <!-- Mạng xã hội -->
+                <div class="footer-social">
+                    <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">fb</a>
+                    <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">ig</a>
+                </div>
             </div>
-            <p>© 2026 BOOKBACK - Nhóm 7 TKWEB</p>
+
+            <!-- Cột Tiện ích người dùng -->
+            <div class="footer-col">
+                <h4 class="footer-title">Tiện ích</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Tìm kiếm nhanh</a></li>
+                    <li><a href="#">Đăng nhập / Đăng ký</a></li>
+                    <li><a href="cart.html">Giỏ hàng của bạn</a></li>
+                    <li><a href="calculator.html">Công cụ tính giá sách</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột Menu điều hướng phụ -->
+            <div class="footer-col">
+                <h4 class="footer-title">Menu</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="books.html">Danh mục sách</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="contact.html">Thu mua sách</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột Chính sách -->
+            <div class="footer-col">
+                <h4 class="footer-title">Chính sách</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Chính sách bảo mật dữ liệu</a></li>
+                    <li><a href="#">Chính sách bảo mật thanh toán</a></li>
+                    <li><a href="#">Chính sách đổi trả sản phẩm</a></li>
+                    <li><a href="#">Chính sách giao hàng</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột Hướng dẫn -->
+            <div class="footer-col">
+                <h4 class="footer-title">Hướng dẫn</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Hướng dẫn thanh toán</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="contact.html">Gửi yêu cầu hỗ trợ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Thanh bản quyền -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>2026 <strong>BOOKBACK</strong> – Nhóm 7 TKWEB. Website mua bán sách cũ dành cho sinh viên Học viện Ngân hàng.</p>
+            </div>
         </div>
     </footer>
     <script>
-        const form = document.getElementById('calcForm');
-        const giaMoiInput = document.getElementById('giaMoi');
-        const doMoiInput = document.getElementById('doMoi');
-        const phiShipInput = document.getElementById('phiShip');
-        const giaUocTinhEl = document.getElementById('giaUocTinh');
-        const tietKiemEl = document.getElementById('tietKiem');
-        const breakdownEl = document.getElementById('breakdown');
-        const stampEl = document.getElementById('stampMark');
-        const HE_SO_THI_TRUONG = 0.6;
-        function formatVND(n) {
-            return Math.round(n).toLocaleString('vi-VN') + ' đ';
-        }
-        document.querySelectorAll('[data-value]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                doMoiInput.value = btn.dataset.value;
+        (() => {
+            const form = document.getElementById('calcForm');
+            const giaMoiInput = document.getElementById('giaMoi');
+            const doMoiInput = document.getElementById('doMoi');
+            const phiShipInput = document.getElementById('phiShip');
+            const giaUocTinhEl = document.getElementById('giaUocTinh');
+            const tietKiemEl = document.getElementById('tietKiem');
+            const breakdownEl = document.getElementById('breakdown');
+            const HE_SO_THI_TRUONG = 0.6;
+            const dinhDangTien = new Intl.NumberFormat('vi-VN', {
+                maximumFractionDigits: 0
+            });
+            const formatVND = amount => `${dinhDangTien.format(Math.round(amount))} đ`;
+
+            function hienThiLoi(message, input) {
+                const error = document.createElement('span');
+                error.textContent = message;
+                giaUocTinhEl.replaceChildren(error);
+                tietKiemEl.textContent = '—';
+                breakdownEl.textContent = message;
+                input.focus();
+            }
+
+            form.addEventListener('click', event => {
+                const preset = event.target.closest('[data-value]');
+                if (!preset) return;
+
+                doMoiInput.value = preset.dataset.value;
                 doMoiInput.focus();
             });
-        });
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const giaMoi = parseFloat(giaMoiInput.value);
-            const doMoi = parseFloat(doMoiInput.value);
-            const phiShip = parseFloat(phiShipInput.value) || 0;
-            if (isNaN(giaMoi) || giaMoi <= 0) {
-            giaUocTinhEl.innerHTML = '<span>Giá sách mới phải lớn hơn 0</span>';
-            tietKiemEl.textContent = '—';
-            breakdownEl.textContent = 'Giá sách mới cần lớn hơn 0.';
-            giaMoiInput.focus();
-         return;
-         }
-            if (isNaN(doMoi) || doMoi < 1 || doMoi > 100) {
-                giaUocTinhEl.innerHTML = '<span>Vui lòng nhập độ mới từ 1–100%</span>';
-                tietKiemEl.textContent = '—';
-                breakdownEl.textContent = 'Độ mới của sách cần nằm trong khoảng 1% đến 100%.';
-                doMoiInput.focus();
-                return;
-             }
-            if (isNaN(phiShip) || phiShip < 0) { 
-            giaUocTinhEl.innerHTML = '<span>Phí ship phải lớn hơn hoặc bằng 0</span>';
-            tietKiemEl.textContent = '—';
-            breakdownEl.textContent = 'Phí ship không được nhỏ hơn 0.';
-            phiShipInput.focus();
-            return;
-             }
-            if (isNaN(doMoi) || doMoi < 1 || doMoi > 100) {
-                giaUocTinhEl.innerHTML = '<span>Vui lòng nhập độ mới từ 1–100%</span>';
-                tietKiemEl.textContent = '—';
-                breakdownEl.textContent = 'Độ mới của sách cần nằm trong khoảng 1% đến 100%.';
-                doMoiInput.focus();
-                return;
-            }
-            const giaTheoDoMoi = giaMoi * (doMoi / 100) * HE_SO_THI_TRUONG;
-            const giaUocTinh = giaTheoDoMoi + phiShip;
-            const tietKiem = giaMoi - giaUocTinh;
-            giaUocTinhEl.textContent = formatVND(giaUocTinh);
-            tietKiemEl.textContent = tietKiem >= 0 ? formatVND(tietKiem) : formatVND(0);
-            breakdownEl.innerHTML =
-                `Giá mới <span>${formatVND(giaMoi)}</span> × độ mới <span>${doMoi}%</span> × hệ số 0.6 = <span>${formatVND(giaTheoDoMoi)}</span><br>`
-                + `Cộng phí ship <span>${formatVND(phiShip)}</span> → Giá ước tính <span>${formatVND(giaUocTinh)}</span>`;
-        });
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+
+                const giaMoi = Number(giaMoiInput.value);
+                const doMoi = Number(doMoiInput.value);
+                const phiShip = phiShipInput.value === '' ? 0 : Number(phiShipInput.value);
+
+                if (!Number.isFinite(giaMoi) || giaMoi <= 0) {
+                    hienThiLoi('Giá sách mới phải lớn hơn 0.', giaMoiInput);
+                    return;
+                }
+                if (!Number.isFinite(doMoi) || doMoi < 1 || doMoi > 100) {
+                    hienThiLoi('Độ mới của sách cần nằm trong khoảng 1% đến 100%.', doMoiInput);
+                    return;
+                }
+                if (!Number.isFinite(phiShip) || phiShip < 0) {
+                    hienThiLoi('Phí ship phải lớn hơn hoặc bằng 0.', phiShipInput);
+                    return;
+                }
+
+                const giaTheoDoMoi = giaMoi * (doMoi / 100) * HE_SO_THI_TRUONG;
+                const giaUocTinh = giaTheoDoMoi + phiShip;
+                const tietKiem = Math.max(0, giaMoi - giaUocTinh);
+
+                giaUocTinhEl.textContent = formatVND(giaUocTinh);
+                tietKiemEl.textContent = formatVND(tietKiem);
+                breakdownEl.innerHTML =
+                    `Giá mới <span>${formatVND(giaMoi)}</span> × độ mới <span>${doMoi}%</span> × hệ số ${HE_SO_THI_TRUONG} = <span>${formatVND(giaTheoDoMoi)}</span><br>`
+                    + `Cộng phí ship <span>${formatVND(phiShip)}</span> → Giá ước tính <span>${formatVND(giaUocTinh)}</span>`;
+            });
+        })();
     </script>
 </body>
 </html>

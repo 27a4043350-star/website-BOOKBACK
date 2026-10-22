@@ -10,193 +10,172 @@
 
   <body>
     <header class="site-header">
-  <!-- Thanh tiện ích trên cùng -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-left">
-        <a href="#">Đăng nhập</a>
-        <span class="sep">|</span>
-        <a href="#">Đăng ký</a>
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <div class="top-left">
+            <a href="#">Đăng nhập</a>
+            <span class="sep">|</span>
+            <a href="#">Đăng ký</a>
+          </div>
+          <div class="top-right">
+            <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+            <a href="cart.html" class="top-cart">
+              Giỏ hàng <span class="cart-count">0</span> sản phẩm
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="top-right">
-        <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
-        <a href="cart.html" class="top-cart">
-          Giỏ hàng <span class="cart-count">0</span> sản phẩm
-        </a>
+      <div class="header-main">
+        <div class="container header-inner">
+          <a href="../index.html" class="logo-block">
+            <span class="logo-text">BOOKBACK</span>
+            <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+          </a>
+          <nav class="nav" aria-label="Menu chính">
+            <a href="../index.html" class="nav-link">Trang chủ</a>
+            <a href="about.html" class="nav-link active" aria-current="page">Giới thiệu</a>
+            <a href="books.html" class="nav-link">Danh mục sách</a>
+            <a href="calculator.html" class="nav-link">Công cụ tính</a>
+            <a href="contact.html" class="nav-link">Thu mua sách</a>
+          </nav>
+        </div>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <!-- HEADER CHÍNH -->
-  <div class="header-main">
-    <div class="container header-inner">
-      <a href="../index.html" class="logo-block">
-        <span class="logo-text">BOOKBACK</span>
-        <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
-      </a>
-
-      <nav class="nav" aria-label="Menu chính">
-        <a href="../index.html" class="nav-link">Trang chủ</a>
-        <a href="about.html" class="nav-link active">Giới thiệu</a>
-        <a href="books.html" class="nav-link">Danh mục sách</a>
-        <a href="calculator.html" class="nav-link">Công cụ tính</a>
-        <a href="contact.html" class="nav-link">Thu mua sách</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-    <hr />
-
-    <!-- Nội dung chính -->
     <main>
-      <!-- 1. Giới thiệu ý tưởng -->
-      <section>
-        <h2>1. Giới thiệu ý tưởng BOOKBACK</h2>
-        <p>
-          BOOKBACK là một website bán và thu mua sách cũ, được xây dựng với mục
-          tiêu giúp sinh viên dễ dàng tìm kiếm, mua và bán lại những cuốn sách
-          đã qua sử dụng.
-        </p>
-        <p>
-          Ý tưởng BOOKBACK bắt đầu từ chính nhu cầu thực tế của một sinh viên.
-          Mỗi học kỳ mới, sinh viên thường phải chuẩn bị giáo trình, sách tham
-          khảo và tài liệu phục vụ cho các môn học.
-        </p>
-        <p>
-          Tuy nhiên, sau khi kết thúc học kỳ, nhiều cuốn sách vẫn còn tốt nhưng
-          không còn được sử dụng thường xuyên. Trong khi đó, những sinh viên ở
-          khóa hoặc học kỳ sau lại đang cần chính những cuốn sách đó.
-        </p>
-        <p>
-          Vì vậy, BOOKBACK được xây dựng như một nơi kết nối người đang có sách
-          với người đang cần sách. Qua đó giúp sách tiếp tục được sử dụng thay
-          vì bị bỏ quên.
-        </p>
+      <section class="about-hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Sách cũ · Giá trị mới</span>
+          <h1>Mỗi cuốn sách xứng đáng có thêm một hành trình.</h1>
+          <p>
+            Kết nối người trao sách với người cần sách, để học tập tiết kiệm và tri thức được sẻ chia.
+          </p>
+          <a class="hero-button" href="books.html">Khám phá sách <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-books" aria-label="Một số đầu sách tại BOOKBACK">
+          <figure class="hero-book hero-book-main">
+            <img
+              src="../assets/images/giao-trinh-C++.webp"
+              alt="Giáo trình Lập trình C++"
+            />
+          </figure>
+          <figure class="hero-book hero-book-secondary">
+            <img
+              src="../assets/images/MKT-can-ban.jpg"
+              alt="Sách Marketing căn bản"
+            />
+          </figure>
+          <span class="hero-note">Đọc tiếp. Trao tay. Lan tỏa.</span>
+        </div>
       </section>
 
-      <hr />
-
-      <!-- 2. Vấn đề cần giải quyết -->
-      <section>
-        <h2>2. Vấn đề cần giải quyết</h2>
+      <section class="about-section about-problem">
+        <div class="section-heading">
+          <span class="eyebrow">Vì sao BOOKBACK bắt đầu?</span>
+          <h2>Để sách không bị bỏ quên</h2>
+        </div>
         <p>
-          BOOKBACK hướng tới việc giải quyết một số vấn đề thường gặp trong quá
-          trình học tập của sinh viên:
+          Nhiều giáo trình chỉ dùng vài học kỳ, nhưng vẫn có người học đang tìm đúng những cuốn sách ấy.
         </p>
-        <ul>
-          <li>Chi phí mua giáo trình và sách tham khảo khá cao.</li>
-          <li>Sinh viên phải mua nhiều sách vào đầu mỗi học kỳ.</li>
-          <li>Một số sách chỉ được sử dụng trong một hoặc vài học kỳ.</li>
-          <li>
-            Sau khi học xong, sinh viên gặp khó khăn trong việc bán lại sách.
-          </li>
-          <li>
-            Sinh viên có nhu cầu mua sách cũ khó tìm được đúng đầu sách mình
-            cần.
-          </li>
-          <li>
-            Việc mua bán sách cũ hiện nay có thể phải thực hiện thông qua nhiều
-            nhóm hoặc nhiều nền tảng khác nhau.
-          </li>
-          <li>
-            Những cuốn sách còn sử dụng tốt có thể bị bỏ quên, gây lãng phí.
-          </li>
+        <ul class="problem-list">
+          <li>Giáo trình mới tạo thêm chi phí mỗi học kỳ.</li>
+          <li>Sách còn tốt nhưng khó tìm người mua lại.</li>
+          <li>Người học khó tìm đúng sách cũ với giá phù hợp.</li>
+          <li>Sách bị bỏ quên thay vì tiếp tục được sử dụng.</li>
         </ul>
       </section>
 
-      <hr />
-
-      <!-- 3. Đối tượng người dùng -->
-      <section>
-        <h2>3. Đối tượng người dùng</h2>
-        <p>
-          BOOKBACK hướng tới những đối tượng có nhu cầu mua, bán và sử dụng sách
-          cũ.
-        </p>
-
-        <h3>3.1. Sinh viên</h3>
-        <p>
-          Đây là nhóm người dùng chính của BOOKBACK. Sinh viên có thể tìm mua
-          giáo trình và sách tham khảo với mức giá phù hợp, đồng thời có thể bán
-          lại những cuốn sách không còn nhu cầu sử dụng.
-        </p>
-
-        <h3>3.2. Giảng viên và thầy cô</h3>
-        <p>
-          Giảng viên có thể tìm kiếm các loại giáo trình, tài liệu và sách tham
-          khảo phục vụ cho quá trình giảng dạy.
-        </p>
-
-        <h3>3.3. Người yêu sách</h3>
-        <p>
-          Những người có nhu cầu đọc sách cũng có thể tìm kiếm các đầu sách cũ
-          phù hợp với sở thích và nhu cầu của mình.
-        </p>
+      <section class="about-section audience-section">
+        <div class="section-heading">
+          <span class="eyebrow">Dành cho cộng đồng học tập</span>
+          <h2>Một điểm hẹn cho người đọc</h2>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card">
+            <img
+              class="audience-image"
+              src="../assets/images/giao-trinh-C++.webp"
+              alt="Giáo trình dành cho sinh viên"
+              loading="lazy"
+            />
+            <div class="audience-copy">
+              <span class="card-index">01</span>
+              <h3>Sinh viên</h3>
+              <p>Mua sách phù hợp, trao lại sau mỗi học kỳ.</p>
+            </div>
+          </article>
+          <article class="audience-card">
+            <img
+              class="audience-image"
+              src="../assets/images/MKT-can-ban.jpg"
+              alt="Sách tham khảo và tài liệu giảng dạy"
+              loading="lazy"
+            />
+            <div class="audience-copy">
+              <span class="card-index">02</span>
+              <h3>Giảng viên</h3>
+              <p>Tìm giáo trình và tài liệu giảng dạy.</p>
+            </div>
+          </article>
+          <article class="audience-card">
+            <img
+              class="audience-image"
+              src="../assets/images/giao-trinh-C++.webp"
+              alt="Một cuốn sách được trao cho người đọc mới"
+              loading="lazy"
+            />
+            <div class="audience-copy">
+              <span class="card-index">03</span>
+              <h3>Người yêu sách</h3>
+              <p>Khám phá sách hay, trao sách thêm vòng đời mới.</p>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <hr />
-
-      <!-- 4. Giá trị mang lại -->
-      <section>
-        <h2>4. Giá trị BOOKBACK mang lại</h2>
-        <ol>
-          <li>
-            <strong>Tiết kiệm chi phí:</strong> Giúp người mua tiếp cận sách với
-            mức giá phù hợp hơn so với sách mới.
+      <section class="about-section value-section" id="gia-tri">
+        <div class="section-heading">
+          <span class="eyebrow">Giá trị BOOKBACK mang lại</span>
+          <h2>Thêm giá trị từ sách cũ</h2>
+        </div>
+        <ol class="value-list">
+          <li class="value-card">
+            <span class="value-number" aria-hidden="true">1.</span>
+            <div>
+              <strong>Tiết kiệm chi phí</strong>
+              <span>Sách học tập với mức giá phù hợp.</span>
+            </div>
           </li>
-          <li>
-            <strong>Tạo sự kết nối:</strong> Kết nối người đang sở hữu sách với
-            người đang có nhu cầu tìm mua.
+          <li class="value-card">
+            <span class="value-number" aria-hidden="true">2.</span>
+            <div>
+              <strong>Kết nối người đọc</strong>
+              <span>Sách đến đúng người cần đọc.</span>
+            </div>
           </li>
-          <li>
-            <strong>Tăng khả năng tái sử dụng:</strong> Những cuốn sách đã qua
-            sử dụng vẫn có thể tiếp tục đến với người đọc mới.
+          <li class="value-card">
+            <span class="value-number" aria-hidden="true">3.</span>
+            <div>
+              <strong>Khuyến khích tái sử dụng</strong>
+              <span>Sách tiếp tục đồng hành cùng người học.</span>
+            </div>
           </li>
-          <li>
-            <strong>Giảm lãng phí:</strong> Hạn chế tình trạng những cuốn sách
-            còn tốt bị bỏ quên hoặc không được sử dụng.
-          </li>
-          <li>
-            <strong>Thuận tiện:</strong> Tạo một địa điểm tập trung để người
-            dùng tìm kiếm và trao đổi sách cũ.
+          <li class="value-card">
+            <span class="value-number" aria-hidden="true">4.</span>
+            <div>
+              <strong>Hạn chế lãng phí</strong>
+              <span>Trao cơ hội mới cho sách còn tốt.</span>
+            </div>
           </li>
         </ol>
       </section>
 
-      <hr />
-
-      <!-- Hình ảnh sách được tái sử dụng -->
-      <section class="project-books">
-        <h2>Sách tiếp tục hành trình</h2>
-        <p>
-          BOOKBACK giúp những cuốn sách còn giá trị tìm được người đọc tiếp theo.
-        </p>
-        <div class="book-gallery">
-          <figure>
-            <img
-              src="../assets/images/giao-trinh-C++.webp"
-              alt="Giáo trình lập trình C++ được trao lại cho người học mới"
-              loading="lazy"
-            />
-            <figcaption>Giáo trình Lập trình C++</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../assets/images/MKT-can-ban.jpg"
-              alt="Sách Marketing căn bản được tiếp tục sử dụng"
-              loading="lazy"
-            />
-            <figcaption>Marketing căn bản</figcaption>
-          </figure>
+      <section class="team-section">
+        <div class="section-heading">
+          <span class="eyebrow">Những người thực hiện</span>
+          <h2>Đội ngũ BOOKBACK</h2>
         </div>
-      </section>
-
-      <!-- 5. Thành viên nhóm -->
-      <section>
-        <h2>5. Thành viên nhóm</h2>
-        <p>Các thành viên đều cùng một lớp.</p>
-        <table>
+        <table class="team-table">
           <thead>
             <tr>
               <th>STT</th>
@@ -210,25 +189,25 @@
               <td>1</td>
               <td>Quách Phương Thảo</td>
               <td>27A4043350</td>
-              <td>Cùng lớp</td>
+              <td>K27HTTTA</td>
             </tr>
             <tr>
               <td>2</td>
               <td>Đặng Duy Quang</td>
               <td>27a4043340</td>
-              <td>Cùng lớp</td>
+              <td>K27HTTTA</td>
             </tr>
             <tr>
               <td>3</td>
               <td>Đặng Xuân Quang</td>
               <td>27a4043341</td>
-              <td>Cùng lớp</td>
+              <td>K27HTTTA</td>
             </tr>
             <tr>
               <td>4</td>
               <td>Nguyễn Tấn Sang</td>
               <td>27a4043343</td>
-              <td>Cùng lớp</td>
+              <td>K27HTTTA</td>
             </tr>
           </tbody>
         </table>

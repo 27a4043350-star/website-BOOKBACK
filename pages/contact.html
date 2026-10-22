@@ -10,47 +10,43 @@
 
   <body>
     <header class="site-header">
-  <!-- Thanh tiện ích trên cùng -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-left">
-        <a href="#">Đăng nhập</a>
-        <span class="sep">|</span>
-        <a href="#">Đăng ký</a>
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <div class="top-left">
+            <a href="#">Đăng nhập</a>
+            <span class="sep">|</span>
+            <a href="#">Đăng ký</a>
+          </div>
+          <div class="top-right">
+            <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+            <a href="cart.html" class="top-cart">
+              Giỏ hàng <span class="cart-count">0</span> sản phẩm
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="top-right">
-        <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
-        <a href="cart.html" class="top-cart">
-          Giỏ hàng <span class="cart-count">0</span> sản phẩm
-        </a>
+      <div class="header-main">
+        <div class="container header-inner">
+          <a href="../index.html" class="logo-block">
+            <span class="logo-text">BOOKBACK</span>
+            <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+          </a>
+          <nav class="nav" aria-label="Menu chính">
+            <a href="../index.html" class="nav-link">Trang chủ</a>
+            <a href="about.html" class="nav-link">Giới thiệu</a>
+            <a href="books.html" class="nav-link">Danh mục sách</a>
+            <a href="calculator.html" class="nav-link">Công cụ tính</a>
+            <a href="contact.html" class="nav-link active" aria-current="page">Thu mua sách</a>
+          </nav>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <!-- HEADER CHÍNH -->
-  <div class="header-main">
-    <div class="container header-inner">
-      <a href="../index.html" class="logo-block">
-        <span class="logo-text">BOOKBACK</span>
-        <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
-      </a>
-
-      <nav class="nav" aria-label="Menu chính">
-        <a href="../index.html" class="nav-link">Trang chủ</a>
-        <a href="about.html" class="nav-link">Giới thiệu</a>
-        <a href="books.html" class="nav-link">Danh mục sách</a>
-        <a href="calculator.html" class="nav-link">Công cụ tính</a>
-        <a href="contact.html" class="nav-link active">Thu mua sách</a>
-      </nav>
-    </div>
-  </div>
-</header>
+    </header>
 
     <main>
       <section class="contact-hero">
         <div class="hero-copy">
           <div class="badge">Liên hệ BOOKBACK</div>
-          <h2>Thu mua sách cũ, hỗ trợ nhanh chóng và minh bạch.</h2>
+          <h1>Thu mua sách cũ, hỗ trợ nhanh chóng và minh bạch.</h1>
           <p>
             Bạn muốn bán lại sách cũ, tìm sách cần mua, hay cần tư vấn giá thu
             mua? Hãy để BOOKBACK hỗ trợ bạn nhanh nhất với quy trình đơn giản,
@@ -93,12 +89,12 @@
       <section class="contact-grid">
         <div class="contact-card">
           <span class="label">Hotline</span>
-          <h3>0123 456 789</h3>
+          <h3><a href="tel:+84976235756">0976 235 756</a></h3>
           <p>Hỗ trợ nhanh mọi lúc</p>
         </div>
         <div class="contact-card">
           <span class="label">Email</span>
-          <h3>bookback@gmail.com</h3>
+          <h3><a href="mailto:bookback@gmail.com">bookback@gmail.com</a></h3>
           <p>Gửi yêu cầu và hình ảnh sách</p>
         </div>
         <div class="contact-card">
@@ -201,18 +197,30 @@
       <section class="faq-box">
         <h3>Câu hỏi thường gặp</h3>
         <div class="faq-list">
-          <div class="faq-item">
-            <strong>BOOKBACK thu mua những loại sách nào?</strong>
+          <details class="faq-item">
+            <summary>BOOKBACK thu mua những loại sách nào?</summary>
             <p>Chúng tôi thu mua giáo trình, sách tham khảo, tài liệu học tập và một số đầu sách văn học phổ biến.</p>
-          </div>
-          <div class="faq-item">
-            <strong>Giá thu mua dựa trên tiêu chí nào?</strong>
+          </details>
+          <details class="faq-item">
+            <summary>Giá thu mua dựa trên tiêu chí nào?</summary>
             <p>Giá sẽ phụ thuộc vào tình trạng sách, số lượng, năm xuất bản và mức nhu cầu trên thị trường.</p>
-          </div>
-          <div class="faq-item">
-            <strong>Nếu tôi muốn mua sách cũ, có cần đặt chỗ trước không?</strong>
+          </details>
+          <details class="faq-item">
+            <summary>Nếu tôi muốn mua sách cũ, có cần đặt chỗ trước không?</summary>
             <p>Không cần. Bạn chỉ cần liên hệ với BOOKBACK để được tư vấn và tìm đúng đầu sách bạn cần.</p>
-          </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="meeting-point" aria-label="Bản đồ Học viện Ngân hàng">
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=Banking+Academy,+12+Chua+Boc,+Hanoi&output=embed"
+            title="Bản đồ Học viện Ngân hàng"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
         </div>
       </section>
     </main>

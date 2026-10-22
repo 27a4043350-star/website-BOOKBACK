@@ -8,8 +8,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open calculator.html",
-            "file": "f:\\APP\\GITHUB\\website-BOOKBACK\\pages\\calculator.html"
+            "name": "Open index.html",
+            "file": "f:\\APP\\GITHUB\\website-BOOKBACK\\website-BOOKBACK\\index.html"
         }
     ]
 }

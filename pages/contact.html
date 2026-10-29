@@ -42,81 +42,36 @@
       </div>
     </header>
 
-    <main>
-      <section class="contact-hero">
-        <div class="hero-copy">
-          <div class="badge">Liên hệ BOOKBACK</div>
-          <h1>Thu mua sách cũ, hỗ trợ nhanh chóng và minh bạch.</h1>
-          <p>
-            Bạn muốn bán lại sách cũ, tìm sách cần mua, hay cần tư vấn giá thu
-            mua? Hãy để BOOKBACK hỗ trợ bạn nhanh nhất với quy trình đơn giản,
-            rõ ràng và tiện lợi.
-          </p>
-          <p>
-            Chúng tôi kết nối người có sách với người đang cần sách, giúp tài
-            liệu tiếp tục được sử dụng và tiết kiệm chi phí cho sinh viên.
-          </p>
-        </div>
+    <main class="contact-main">
+      <section class="contact-layout" aria-label="Liên hệ và thu mua sách">
+        <div class="contact-panel">
+          <section class="contact-details" aria-labelledby="contact-title">
+            <h1 id="contact-title">Thông tin liên hệ</h1>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <a href="tel:0969990579">0969990579</a>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <a href="mailto:27a4043350@hvnh.edu.vn">27a4043350@hvnh.edu.vn</a>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">⌖</span>
+                <span>12 Chùa Bộc, Đống Đa, Hà Nội</span>
+              </li>
+            </ul>
+          </section>
 
-        <div class="hero-panel">
-          <h3>Cam kết của chúng tôi</h3>
-          <div class="quick-list">
-            <div class="quick-item">
-              <div class="quick-icon">✓</div>
-              <div>
-                <strong>Giá thu mua rõ ràng</strong>
-                <p>Đánh giá theo tình trạng sách, năm xuất bản và nhu cầu thị trường.</p>
-              </div>
-            </div>
-            <div class="quick-item">
-              <div class="quick-icon">⚡</div>
-              <div>
-                <strong>Phản hồi nhanh</strong>
-                <p>Hỗ trợ trong vòng 30 phút đến 2 giờ làm việc.</p>
-              </div>
-            </div>
-            <div class="quick-item">
-              <div class="quick-icon">📚</div>
-              <div>
-                <strong>Thu mua đa dạng</strong>
-                <p>Giáo trình, sách tham khảo, tài liệu học tập và sách văn học.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-grid">
-        <div class="contact-card">
-          <span class="label">Hotline</span>
-          <h3><a href="tel:0969990579">0969990579</a></h3>
-          <p>Hỗ trợ nhanh mọi lúc</p>
-        </div>
-        <div class="contact-card">
-          <span class="label">Email</span>
-          <h3><a href="mailto:27a4043350@hvnh.edu.vn">27a4043350@hvnh.edu.vn</a></h3>
-          <p>Gửi yêu cầu và hình ảnh sách</p>
-        </div>
-        <div class="contact-card">
-          <span class="label">Địa chỉ</span>
-          <h3>12 Chùa Bộc, Đống Đa</h3>
-          <p>Hà Nội, Việt Nam</p>
-        </div>
-        <div class="contact-card">
-          <span class="label">Giờ làm việc</span>
-          <h3>8:00 - 20:00</h3>
-          <p>Thứ 2 - Chủ nhật</p>
-        </div>
-      </section>
-
-      <section class="main-grid">
-        <div class="form-box">
-          <h3>Gửi yêu cầu cho BOOKBACK</h3>
-          <form>
-            <div class="form-grid">
+          <section class="request-section" aria-labelledby="request-title">
+            <h2 id="request-title">Bạn cần hỗ trợ thu mua?</h2>
+            <p class="request-intro">
+              Gửi thông tin sách và BOOKBACK sẽ liên hệ tư vấn cho bạn.
+            </p>
+            <form class="request-form">
               <div class="field">
                 <label for="name">Họ và tên</label>
-                <input id="name" type="text" placeholder="Nhập họ tên của bạn" />
+                <input id="name" type="text" placeholder="Nhập họ tên của bạn" autocomplete="name" />
               </div>
 
               <div class="field">
@@ -152,7 +107,7 @@
               </div>
 
               <div class="field">
-                <label for="purpose">Mục đích</label>
+                <label for="purpose">Bạn cần hỗ trợ về</label>
                 <select id="purpose">
                   <option>Thu mua sách cũ</option>
                   <option>Mua sách cũ</option>
@@ -161,59 +116,19 @@
                 </select>
               </div>
 
-              <div class="field full">
-                <label for="message">Nội dung</label>
-                <textarea id="message" placeholder="Ví dụ: Tôi muốn bán 10 cuốn giáo trình công nghệ thông tin..."></textarea>
+              <div class="field">
+                <label for="message">Thông tin sách</label>
+                <textarea
+                  id="message"
+                  placeholder="Tên sách, tình trạng và số lượng bạn muốn bán..."
+                ></textarea>
               </div>
-            </div>
-
-            <button type="submit" class="submit-btn">Gửi yêu cầu</button>
-          </form>
+              <button type="submit" class="submit-btn">Gửi yêu cầu</button>
+            </form>
+          </section>
         </div>
 
-        <aside class="info-box">
-          <h3>Thông tin cần chuẩn bị</h3>
-          <ul>
-            <li>
-              <strong>1. Tên sách</strong>
-              Tên đầy đủ hoặc ảnh bìa sách của bạn.
-            </li>
-            <li>
-              <strong>2. Tình trạng</strong>
-              Sách còn mới, cũ, có ghi chú, rách trang, thiếu bìa...
-            </li>
-            <li>
-              <strong>3. Số lượng</strong>
-              Nếu có nhiều cuốn, vui lòng ghi rõ số lượng cần bán hoặc mua.
-            </li>
-            <li>
-              <strong>4. Thời gian</strong>
-              Chúng tôi sẽ liên hệ lại theo giờ làm việc gần nhất.
-            </li>
-          </ul>
-        </aside>
-      </section>
-
-      <section class="faq-box">
-        <h3>Câu hỏi thường gặp</h3>
-        <div class="faq-list">
-          <details class="faq-item">
-            <summary>BOOKBACK thu mua những loại sách nào?</summary>
-            <p>Chúng tôi thu mua giáo trình, sách tham khảo, tài liệu học tập và một số đầu sách văn học phổ biến.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Giá thu mua dựa trên tiêu chí nào?</summary>
-            <p>Giá sẽ phụ thuộc vào tình trạng sách, số lượng, năm xuất bản và mức nhu cầu trên thị trường.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Nếu tôi muốn mua sách cũ, có cần đặt chỗ trước không?</summary>
-            <p>Không cần. Bạn chỉ cần liên hệ với BOOKBACK để được tư vấn và tìm đúng đầu sách bạn cần.</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="meeting-point" aria-label="Bản đồ Học viện Ngân hàng">
-        <div class="map-frame">
+        <section class="map-panel" aria-label="Bản đồ Học viện Ngân hàng">
           <iframe
             src="https://www.google.com/maps?q=Banking+Academy,+12+Chua+Boc,+Hanoi&output=embed"
             title="Bản đồ Học viện Ngân hàng"
@@ -221,7 +136,7 @@
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen
           ></iframe>
-        </div>
+        </section>
       </section>
     </main>
 

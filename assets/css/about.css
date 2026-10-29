@@ -172,8 +172,7 @@ main {
   font-weight: 700;
 }
 
-.about-section,
-.team-section {
+.about-section {
   margin-bottom: 24px;
   padding: clamp(20px, 3vw, 28px);
   border: 1px solid var(--line);
@@ -315,17 +314,13 @@ main {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.value-icon {
+.value-index {
   flex: 0 0 auto;
-  display: grid;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(243, 231, 203, 0.14);
   color: #e6c986;
-  font-size: 1.2rem;
+  font-family: var(--serif);
+  font-size: 1.5rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 .value-card > div {
@@ -347,39 +342,53 @@ main {
   font-size: 0.9rem;
 }
 
-.team-section {
-  margin-bottom: 0;
+.about-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid var(--forest);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(198, 155, 75, 0.18), transparent 42%),
+    var(--forest);
+  box-shadow: var(--shadow-md);
 }
 
-.team-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 18px;
-  overflow: hidden;
-  border: 1px solid var(--line);
+.about-cta .eyebrow {
+  margin-bottom: 6px;
+  color: #e6c986;
+}
+
+.about-cta h2 {
+  margin-bottom: 6px;
+  color: var(--white);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.about-cta p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.about-cta-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
   border-radius: var(--radius-md);
-  background: var(--white);
-}
-
-.team-table th,
-.team-table td {
-  padding: 11px 13px;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-}
-
-.team-table th {
-  background: var(--forest-soft);
+  background: var(--gold-soft);
   color: var(--forest);
   font-weight: 700;
+  transition: background var(--transition), transform var(--transition);
 }
 
-.team-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-
-.team-table tbody tr:hover {
-  background: var(--paper);
+.about-cta-button:hover {
+  transform: translateY(-2px);
+  background: var(--white);
+  color: var(--forest);
 }
 
 @media (max-width: 640px) {
@@ -408,7 +417,7 @@ main {
   }
 
   .about-section,
-  .team-section {
+  .about-cta {
     padding: 18px 16px;
   }
 
@@ -428,9 +437,14 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .team-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+  .about-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .about-cta-button {
+    width: 100%;
+    justify-content: center;
   }
 }

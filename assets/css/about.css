@@ -342,6 +342,59 @@ main {
   font-size: 0.9rem;
 }
 
+.commitment-section {
+  padding: clamp(28px, 5vw, 48px);
+}
+
+.commitment-section .section-heading {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.commitment-section .section-heading h2::after {
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin: 12px auto 0;
+  border-radius: var(--radius-full);
+  background: var(--gold);
+  content: "";
+}
+
+.commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.commitment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.commitment-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  color: var(--gold-dark);
+}
+
+.commitment-item h3 {
+  margin: 0 0 8px;
+  color: var(--forest);
+  font-size: 1.15rem;
+}
+
+.commitment-item p {
+  max-width: 310px;
+  margin: 0;
+  color: var(--muted);
+}
+
 .about-cta {
   display: flex;
   align-items: center;
@@ -435,6 +488,23 @@ main {
 
   .value-list {
     grid-template-columns: 1fr;
+  }
+
+  .commitment-section .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .commitment-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .commitment-item {
+    padding: 0 8px;
+  }
+
+  .commitment-icon {
+    margin-bottom: 12px;
   }
 
   .about-cta {

@@ -62,50 +62,51 @@
                 <!-- Danh mục -->
                 <h2>Danh mục</h2>
 
-                <div class="category-list">
+               <div class="category-list">
 
     <p>
-        <a href="#" class="category-link" data-category="all">
+        <a href="#" class="category-link" data-group="all">
             Tất cả sách
         </a>
     </p>
 
     <p>
-        <a href="#" class="category-link" data-category="cong-nghe">
+        <a href="#" class="category-link" data-group="Công nghệ thông tin">
             Sách Công nghệ thông tin
         </a>
     </p>
 
     <p>
-        <a href="#" class="category-link" data-category="kinh-te">
+        <a href="#" class="category-link" data-group="Kinh tế">
             Sách Kinh tế
         </a>
     </p>
 
     <p>
-        <a href="#" class="category-link" data-category="marketing">
+        <a href="#" class="category-link" data-group="Marketing">
             Sách Marketing
         </a>
     </p>
 
     <p>
-        <a href="#" class="category-link" data-category="ngoai-ngu">
+        <a href="#" class="category-link" data-group="Ngoại ngữ">
             Sách Ngoại ngữ
         </a>
     </p>
 
     <p>
-        <a href="#" class="category-link" data-category="ky-nang">
+        <a href="#" class="category-link" data-group="Kỹ năng sống">
             Sách Kỹ năng sống
         </a>
     </p>
 
     <p>
-        <a href="#" class="category-link" data-category="co-so-du-lieu">
+        <a href="#" class="category-link" data-group="Cơ sở dữ liệu">
             Sách Cơ sở dữ liệu
         </a>
     </p>
 
+</div>
 </div>
 
                 <hr>
@@ -178,8 +179,7 @@
     <h2>Danh sách sách</h2>
 
     <!-- Nơi hiển thị sách -->
-    <div class="row" id="book-list">
-    </div>
+    <div class="row" id="book-list"></div>
 
     <!-- Thông báo khi không tìm thấy sách -->
     <p id="no-books" hidden>
@@ -187,9 +187,7 @@
     </p>
 
 </div>
-                </div>
-            </div>
-        </div>
+</div>
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="container footer-main">
@@ -278,6 +276,7 @@
     </div>
 </footer>
 <script src="../assets/js/main.js" defer></script>
-<script src="../assets/js/book.js"></script>
+<script src="../assets/js/book-data.js" defer></script>
+<script src="../assets/js/books.js" defer></script>
 </body>
 </html>

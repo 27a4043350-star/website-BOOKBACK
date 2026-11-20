@@ -404,7 +404,15 @@
 
 .bookback-chatbot-social-link--instagram span {
   background: linear-gradient(135deg, #783bd2, #ed4371, #f8a83b);
-  font-size: 16px;
+}
+
+.bookback-chatbot-social-link--instagram svg {
+  width: 11px;
+  height: 11px;
+  display: block;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.8;
 }
 
 .bookback-chatbot-form {

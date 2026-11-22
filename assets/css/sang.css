@@ -199,3 +199,46 @@
         width: 100%;
     }
 }
+
+
+/* Khung ảnh sách */
+.book-image-wrapper {
+    display: block;
+    position: relative;
+}
+
+/* Nhãn độ mới trên ảnh */
+.book-condition {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #ff6b35;
+    color: white;
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Hai mức giá */
+.book-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+/* Giá cũ */
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+/* Giá mới */
+.new-price {
+    color: #e53935;
+    font-size: 19px;
+    font-weight: bold;
+}
+

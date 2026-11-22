@@ -56,11 +56,11 @@ if (selectedBook) {
 
             <div class="col-md-7 book-detail-info">
 
-                <h2>${selectedBook.name}</h2>
+                <h2>${selectedBook.title}</h2>
 
                 <p>
-                    <b>Thể loại:</b>
-                    ${selectedBook.type}
+                    <b>Khoa:</b>
+                    ${selectedBook.group}
                 </p>
 
                 <p>
@@ -175,7 +175,7 @@ if (selectedBook) {
 
                     </a>
 
-                    <h3>${book.name}</h3>
+                    <h3>${book.title}</h3>
 
                     <p>${formatPrice(book.price)}</p>
 

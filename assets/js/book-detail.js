@@ -2,7 +2,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 
-const bookId = Number(urlParams.get("id"));
+const bookId = urlParams.get("id");
 
 
 // TÌM CUỐN SÁCH CÓ ID TƯƠNG ỨNG

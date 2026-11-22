@@ -48,12 +48,12 @@ function displayBooks(list) {
                     <a href="book-detail.html?id=${book.id}">
 
                         <img src="${book.image}"
-                             alt="${book.name}"
+                             alt="${book.title}"
                              width="100%">
 
                     </a>
 
-                    <h3>${book.name}</h3>
+                    <h3>${book.title}</h3>
 
                     <p>${formatPrice(book.price)}</p>
 
@@ -96,7 +96,7 @@ function filterBooks() {
 
     // Lấy giá trị người dùng nhập
 
-    const keyword = searchInput.value.toLowerCase().trim();
+    const keyword = searchInput.value.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
 
     const selectedType = categoryFilter.value;
 
@@ -112,14 +112,8 @@ function filterBooks() {
 
         // 1. Lọc theo tên sách
 
-        const matchName = book.name.toLowerCase().includes(keyword);
-
-
-        // 2. Lọc theo nhóm danh mục
-
-        const matchGroup =
-            selectedGroup === "all" ||
-            book.group === selectedGroup;
+        const bookTitle = book.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
+        const matchName = bookTitle.includes(keyword);
 
 
         // 3. Lọc theo thể loại

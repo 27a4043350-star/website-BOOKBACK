@@ -21,6 +21,20 @@ const noBooks = document.getElementById("no-books");
 
 let selectedGroup = "all";
 
+// PHÂN TRANG
+let currentPage = 1;
+const booksPerPage = 12;
+let filteredBooks = bookData;
+
+// TẠO KHU VỰC PHÂN TRANG
+const pagination = document.createElement("div");
+
+pagination.id = "pagination";
+
+pagination.className ="d-flex justify-content-center align-items-center gap-2 mt-4 mb-4";
+
+bookList.insertAdjacentElement("afterend", pagination);
+
 
 // ĐỊNH DẠNG GIÁ TIỀN
 
@@ -33,51 +47,79 @@ function formatPrice(price) {
 
 // HIỂN THỊ DANH SÁCH SÁCH
 
+// HIỂN THỊ DANH SÁCH SÁCH
 function displayBooks(list) {
+
+    filteredBooks = list;
+
+    // Tính tổng số trang
+    const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+
+    // Đảm bảo trang hiện tại hợp lệ
+    if (currentPage > totalPages) {
+        currentPage = totalPages || 1;
+    }
+
+    // Xác định vị trí sách cần hiển thị
+    const start = (currentPage - 1) * booksPerPage;
+
+    const end = start + booksPerPage;
+
+    const booksToShow = filteredBooks.slice(start, end);
 
     bookList.innerHTML = "";
 
-    list.forEach(function(book) {
+    booksToShow.forEach(function(book) {
 
-        bookList.innerHTML += `
+        
+bookList.innerHTML += `
 
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+    <div class="col-12 col-sm-6 col-lg-3 mb-4">
 
-                <div class="book-card">
+        <div class="book-card">
 
-                    <a href="book-detail.html?id=${book.id}">
+            <a href="book-detail.html?id=${book.id}" class="book-image-wrapper">
 
-                        <img src="${book.image}"
-                             alt="${book.name}"
-                             width="100%">
+                <img src="${book.image}"
+                     alt="${book.title}"
+                     width="100%">
 
-                    </a>
+                <span class="book-condition">
+                    ${book.condition}% mới
+                </span>
 
-                    <h3>${book.name}</h3>
+            </a>
 
-                    <p>${formatPrice(book.price)}</p>
+            <h3>${book.title}</h3>
 
-                    <p>Độ mới: ${book.condition}%</p>
+            <div class="book-price">
+                <span class="old-price">
+                    ${formatPrice(book.oldPrice)}
+                </span>
 
-                    <a href="book-detail.html?id=${book.id}"
-                       class="btn btn-primary">
-
-                        Xem chi tiết
-
-                    </a>
-
-                </div>
-
+                <span class="new-price">
+                    ${formatPrice(book.price)}
+                </span>
             </div>
 
-        `;
+            <a href="book-detail.html?id=${book.id}"
+               class="btn btn-primary">
+
+                Xem chi tiết
+
+            </a>
+
+        </div>
+
+    </div>
+
+`;
+
 
     });
 
-
-    // Nếu không còn sách nào thì hiện thông báo
-
-    if (list.length === 0) {
+    // Hiện thông báo nếu không có sách
+    if (filteredBooks.length === 0) {
 
         noBooks.hidden = false;
 
@@ -87,8 +129,84 @@ function displayBooks(list) {
 
     }
 
+    // Hiển thị nút chuyển trang
+    renderPagination(totalPages);
 }
 
+// HIỂN THỊ CÁC NÚT CHUYỂN TRANG
+function renderPagination(totalPages) {
+
+    pagination.innerHTML = "";
+
+    // Không cần chuyển trang nếu chỉ có 1 trang
+    if (totalPages <= 1) {
+        return;
+    }
+
+    // Nút trang trước
+    const previousButton = document.createElement("button");
+
+    previousButton.textContent = "«";
+
+    previousButton.className = "btn btn-outline-primary";
+
+    previousButton.disabled = currentPage === 1;
+
+    previousButton.addEventListener("click", function() {
+
+        currentPage--;
+
+        displayBooks(filteredBooks);
+
+    });
+
+    pagination.appendChild(previousButton);
+
+
+    // Các nút số trang
+    for (let i = 1; i <= totalPages; i++) {
+
+        const pageButton = document.createElement("button");
+
+        pageButton.textContent = i;
+
+        pageButton.className =
+            i === currentPage
+                ? "btn btn-primary"
+                : "btn btn-outline-primary";
+
+        pageButton.addEventListener("click", function() {
+
+            currentPage = i;
+
+            displayBooks(filteredBooks);
+
+        });
+
+        pagination.appendChild(pageButton);
+
+    }
+
+
+    // Nút trang tiếp theo
+    const nextButton = document.createElement("button");
+
+    nextButton.textContent = "»";
+
+    nextButton.className = "btn btn-outline-primary";
+
+    nextButton.disabled = currentPage === totalPages;
+
+    nextButton.addEventListener("click", function() {
+
+        currentPage++;
+
+        displayBooks(filteredBooks);
+
+    });
+
+    pagination.appendChild(nextButton);
+}
 
 // CHỨC NĂNG LỌC SÁCH
 
@@ -96,7 +214,7 @@ function filterBooks() {
 
     // Lấy giá trị người dùng nhập
 
-    const keyword = searchInput.value.toLowerCase().trim();
+    const keyword = searchInput.value.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
 
     const selectedType = categoryFilter.value;
 
@@ -112,14 +230,13 @@ function filterBooks() {
 
         // 1. Lọc theo tên sách
 
-        const matchName = book.name.toLowerCase().includes(keyword);
+        const bookTitle = book.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
+        const matchName = bookTitle.includes(keyword);
 
-
-        // 2. Lọc theo nhóm danh mục
-
+        // 2. Lọc theo khoa
         const matchGroup =
-            selectedGroup === "all" ||
-            book.group === selectedGroup;
+        selectedGroup === "all" ||
+        book.group === selectedGroup;
 
 
         // 3. Lọc theo thể loại
@@ -207,10 +324,11 @@ function filterBooks() {
     }
 
 
-    // Hiển thị kết quả cuối cùng
+// Khi lọc hoặc tìm kiếm, quay về trang đầu tiên
 
-    displayBooks(result);
+currentPage = 1;
 
+displayBooks(result);
 }
 
 

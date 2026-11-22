@@ -243,39 +243,60 @@
 }
 
 
+
 /* KHUNG SẢN PHẨM LIÊN QUAN */
 .related-carousel {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 35px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 10px 40px;
 }
 
-/* KHU VỰC CUỘN SÁCH */
+/* KHUNG CHỨA 3 SẢN PHẨM */
 .related-track {
     display: flex;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    box-sizing: border-box;
 }
 
 .related-track::-webkit-scrollbar {
     display: none;
 }
 
-/* MỖI SẢN PHẨM CHIẾM 1/3 */
+/* MỖI CUỐN CHIẾM ĐÚNG 1/3 KHUNG */
 .related-item {
-    flex: 0 0 33.3333%;
+    flex: 0 0 33.333333%;
+    width: 33.333333%;
     min-width: 0;
+    max-width: 33.333333%;
     padding: 10px;
+    box-sizing: border-box;
     scroll-snap-align: start;
+}
+
+/* KHÔNG ĐỂ THẺ SÁCH TRÀN RA NGOÀI */
+.related-item .book-card {
+    width: 100%;
+    min-width: 0;
     box-sizing: border-box;
 }
 
-/* NÚT MŨI TÊN */
+.related-item img {
+    max-width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+/* MŨI TÊN */
 .related-arrow {
     position: absolute;
     top: 50%;
@@ -304,11 +325,6 @@
     background: #e8eee7;
 }
 
-/* HIỂN THỊ TRÊN ĐIỆN THOẠI */
-@media (max-width: 576px) {
-    .related-item {
-        flex: 0 0 100%;
-    }
-}
+
 
 

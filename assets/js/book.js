@@ -71,38 +71,50 @@ function displayBooks(list) {
 
     booksToShow.forEach(function(book) {
 
-        bookList.innerHTML += `
+        
+bookList.innerHTML += `
 
-            <div class="col-12 col-sm-6 col-lg-3 mb-4">
+    <div class="col-12 col-sm-6 col-lg-3 mb-4">
 
-                <div class="book-card">
+        <div class="book-card">
 
-                    <a href="book-detail.html?id=${book.id}">
+            <a href="book-detail.html?id=${book.id}" class="book-image-wrapper">
 
-                        <img src="${book.image}"
-                             alt="${book.title}"
-                             width="100%">
+                <img src="${book.image}"
+                     alt="${book.title}"
+                     width="100%">
 
-                    </a>
+                <span class="book-condition">
+                    ${book.condition}% mới
+                </span>
 
-                    <h3>${book.title}</h3>
+            </a>
 
-                    <p>${formatPrice(book.price)}</p>
+            <h3>${book.title}</h3>
 
-                    <p>Độ mới: ${book.condition}%</p>
+            <div class="book-price">
+                <span class="old-price">
+                    ${formatPrice(book.oldPrice)}
+                </span>
 
-                    <a href="book-detail.html?id=${book.id}"
-                       class="btn btn-primary">
-
-                        Xem chi tiết
-
-                    </a>
-
-                </div>
-
+                <span class="new-price">
+                    ${formatPrice(book.price)}
+                </span>
             </div>
 
-        `;
+            <a href="book-detail.html?id=${book.id}"
+               class="btn btn-primary">
+
+                Xem chi tiết
+
+            </a>
+
+        </div>
+
+    </div>
+
+`;
+
 
     });
 
@@ -221,6 +233,11 @@ function filterBooks() {
         const bookTitle = book.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
         const matchName = bookTitle.includes(keyword);
 
+        // 2. Lọc theo khoa
+        const matchGroup =
+        selectedGroup === "all" ||
+        book.group === selectedGroup;
+
 
         // 3. Lọc theo thể loại
 
@@ -312,6 +329,7 @@ function filterBooks() {
 currentPage = 1;
 
 displayBooks(result);
+}
 
 
 // CLICK DANH MỤC BÊN TRÁI

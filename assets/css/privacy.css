@@ -44,3 +44,41 @@
     padding: 24px 18px;
   }
 }
+/* chấm tròn đầu dòng */
+.policy-page ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 20px;
+    margin: 12px 0 20px;
+}
+
+.policy-page li {
+    padding-left: 0;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+/* Cần hỗ trợ thêm? */
+.policy-support {
+    background-color: #FFFCF6;
+    border-radius: 20px;
+    padding: 30px 20px;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+.policy-support p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.policy-support a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.policy-support a:hover {
+    text-decoration: underline;
+}

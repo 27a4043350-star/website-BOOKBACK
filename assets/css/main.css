@@ -109,7 +109,7 @@ a:hover {
 }
 
 ul, ol {
-  list-style: none;   /* bỏ dấu chấm/tròn mặc định của dsach */
+  list-style: none;    /* bỏ dấu chấm/tròn mặc định của dsach */
 }
 
 button, input, select, textarea {

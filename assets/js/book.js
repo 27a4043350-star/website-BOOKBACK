@@ -21,6 +21,20 @@ const noBooks = document.getElementById("no-books");
 
 let selectedGroup = "all";
 
+// PHÂN TRANG
+let currentPage = 1;
+const booksPerPage = 12;
+let filteredBooks = bookData;
+
+// TẠO KHU VỰC PHÂN TRANG
+const pagination = document.createElement("div");
+
+pagination.id = "pagination";
+
+pagination.className ="d-flex justify-content-center align-items-center gap-2 mt-4 mb-4";
+
+bookList.insertAdjacentElement("afterend", pagination);
+
 
 // ĐỊNH DẠNG GIÁ TIỀN
 
@@ -33,15 +47,33 @@ function formatPrice(price) {
 
 // HIỂN THỊ DANH SÁCH SÁCH
 
+// HIỂN THỊ DANH SÁCH SÁCH
 function displayBooks(list) {
+
+    filteredBooks = list;
+
+    // Tính tổng số trang
+    const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+
+    // Đảm bảo trang hiện tại hợp lệ
+    if (currentPage > totalPages) {
+        currentPage = totalPages || 1;
+    }
+
+    // Xác định vị trí sách cần hiển thị
+    const start = (currentPage - 1) * booksPerPage;
+
+    const end = start + booksPerPage;
+
+    const booksToShow = filteredBooks.slice(start, end);
 
     bookList.innerHTML = "";
 
-    list.forEach(function(book) {
+    booksToShow.forEach(function(book) {
 
         bookList.innerHTML += `
 
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="col-12 col-sm-6 col-lg-3 mb-4">
 
                 <div class="book-card">
 
@@ -74,10 +106,8 @@ function displayBooks(list) {
 
     });
 
-
-    // Nếu không còn sách nào thì hiện thông báo
-
-    if (list.length === 0) {
+    // Hiện thông báo nếu không có sách
+    if (filteredBooks.length === 0) {
 
         noBooks.hidden = false;
 
@@ -87,8 +117,84 @@ function displayBooks(list) {
 
     }
 
+    // Hiển thị nút chuyển trang
+    renderPagination(totalPages);
 }
 
+// HIỂN THỊ CÁC NÚT CHUYỂN TRANG
+function renderPagination(totalPages) {
+
+    pagination.innerHTML = "";
+
+    // Không cần chuyển trang nếu chỉ có 1 trang
+    if (totalPages <= 1) {
+        return;
+    }
+
+    // Nút trang trước
+    const previousButton = document.createElement("button");
+
+    previousButton.textContent = "«";
+
+    previousButton.className = "btn btn-outline-primary";
+
+    previousButton.disabled = currentPage === 1;
+
+    previousButton.addEventListener("click", function() {
+
+        currentPage--;
+
+        displayBooks(filteredBooks);
+
+    });
+
+    pagination.appendChild(previousButton);
+
+
+    // Các nút số trang
+    for (let i = 1; i <= totalPages; i++) {
+
+        const pageButton = document.createElement("button");
+
+        pageButton.textContent = i;
+
+        pageButton.className =
+            i === currentPage
+                ? "btn btn-primary"
+                : "btn btn-outline-primary";
+
+        pageButton.addEventListener("click", function() {
+
+            currentPage = i;
+
+            displayBooks(filteredBooks);
+
+        });
+
+        pagination.appendChild(pageButton);
+
+    }
+
+
+    // Nút trang tiếp theo
+    const nextButton = document.createElement("button");
+
+    nextButton.textContent = "»";
+
+    nextButton.className = "btn btn-outline-primary";
+
+    nextButton.disabled = currentPage === totalPages;
+
+    nextButton.addEventListener("click", function() {
+
+        currentPage++;
+
+        displayBooks(filteredBooks);
+
+    });
+
+    pagination.appendChild(nextButton);
+}
 
 // CHỨC NĂNG LỌC SÁCH
 
@@ -201,11 +307,11 @@ function filterBooks() {
     }
 
 
-    // Hiển thị kết quả cuối cùng
+// Khi lọc hoặc tìm kiếm, quay về trang đầu tiên
 
-    displayBooks(result);
+currentPage = 1;
 
-}
+displayBooks(result);
 
 
 // CLICK DANH MỤC BÊN TRÁI

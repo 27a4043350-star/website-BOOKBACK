@@ -145,54 +145,90 @@ if (selectedBook) {
         </div>
 
     `;
+    
+// HIỂN THỊ SẢN PHẨM LIÊN QUAN
 
+const related = bookData.filter(function(book) {
+    return book.group === selectedBook.group &&
+           book.id !== selectedBook.id;
+});
 
-    // HIỂN THỊ SẢN PHẨM LIÊN QUAN
+relatedBooks.innerHTML = `
+    <div class="related-carousel">
 
-    const related = bookData.filter(function(book) {
+        <button class="related-arrow related-prev"
+                type="button"
+                aria-label="Sách trước">
+            &#10094;
+        </button>
 
-        return book.group === selectedBook.group &&
-               book.id !== selectedBook.id;
+        <div class="related-track" id="related-track"></div>
 
-    });
+        <button class="related-arrow related-next"
+                type="button"
+                aria-label="Sách tiếp theo">
+            &#10095;
+        </button>
 
+    </div>
+`;
 
-    relatedBooks.innerHTML = "";
+const relatedTrack = document.getElementById("related-track");
 
-    related.forEach(function(book) {
+related.forEach(function(book) {
+    relatedTrack.innerHTML += `
+        <div class="related-item">
 
-        relatedBooks.innerHTML += `
+            <div class="book-card">
 
-            <div class="col-md-4 col-sm-6 mb-4">
+                <a href="book-detail.html?id=${book.id}">
+                    <img src="${book.image}"
+                         alt="${book.title}"
+                         width="100%">
+                </a>
 
-                <div class="book-card">
+                <h3>${book.title}</h3>
 
-                    <a href="book-detail.html?id=${book.id}">
+                <div class="book-price">
+                    <span class="old-price">
+                        ${formatPrice(book.oldPrice)}
+                    </span>
 
-                        <img src="${book.image}"
-                             alt="${book.name}"
-                             width="100%">
-
-                    </a>
-
-                    <h3>${book.title}</h3>
-
-                    <p>${formatPrice(book.price)}</p>
-
-                    <a href="book-detail.html?id=${book.id}"
-                       class="btn btn-primary">
-
-                        Xem chi tiết
-
-                    </a>
-
+                    <span class="new-price">
+                        ${formatPrice(book.price)}
+                    </span>
                 </div>
+
+                <a href="book-detail.html?id=${book.id}"
+                   class="btn btn-primary">
+                    Xem chi tiết
+                </a>
 
             </div>
 
-        `;
+        </div>
+    `;
+});
 
+// NÚT CUỘN TRÁI VÀ PHẢI
+
+const prevButton = relatedBooks.querySelector(".related-prev");
+const nextButton = relatedBooks.querySelector(".related-next");
+
+nextButton.addEventListener("click", function() {
+    relatedTrack.scrollBy({
+        left: relatedTrack.clientWidth,
+        behavior: "smooth"
     });
+});
+
+prevButton.addEventListener("click", function() {
+    relatedTrack.scrollBy({
+        left: -relatedTrack.clientWidth,
+        behavior: "smooth"
+    });
+});
+
 
 
 } else {

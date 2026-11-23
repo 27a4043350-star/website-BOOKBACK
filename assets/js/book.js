@@ -4,8 +4,6 @@ const bookList = document.getElementById("book-list");
 
 const searchInput = document.getElementById("book-search");
 
-const categoryFilter = document.getElementById("category-filter");
-
 const priceFilter = document.getElementById("price-filter");
 
 const conditionFilter = document.getElementById("condition-filter");
@@ -223,7 +221,6 @@ function filterBooks() {
     const keyword = searchInput.value.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
     
     // Lấy các tiêu chí lọc
-    const selectedType = categoryFilter.value;
     const selectedPrice = priceFilter.value;
     const selectedCondition = conditionFilter.value;
 
@@ -240,11 +237,6 @@ function filterBooks() {
         const matchGroup =
             selectedGroup === "all" ||
             book.group === selectedGroup;
-
-        // Lọc theo thể loại
-        const matchType =
-            selectedType === "" ||
-            book.type === selectedType;
 
         // Lọc theo giá
         let matchPrice = true;
@@ -282,7 +274,6 @@ function filterBooks() {
         // Kết hợp các điều kiện lọc
         return matchName &&
                matchGroup &&
-               matchType &&
                matchPrice &&
                matchCondition;
     });
@@ -342,8 +333,6 @@ filterForm.addEventListener("submit", function(event) {
 
 searchInput.addEventListener("input", filterBooks);
 
-categoryFilter.addEventListener("change", filterBooks);
-
 priceFilter.addEventListener("change", filterBooks);
 
 conditionFilter.addEventListener("change", filterBooks);
@@ -361,7 +350,6 @@ resetAllBooks.addEventListener("click", function() {
     searchInput.value = "";
 
     // Đặt lại các bộ lọc
-    categoryFilter.value = "";
     priceFilter.value = "";
     conditionFilter.value = "";
     sortOrder.value = "";

@@ -9,7 +9,7 @@ const bookData = [
         author: "Nicholas G. Carr",
         price: 85000, oldPrice: 120000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B001.jpg",
+        image: "../assets/images/books/cntt-kts/B001.jpg",
         description: "Cuốn sách bàn về vai trò của công nghệ thông tin trong hoạt động kinh doanh và những thay đổi về lợi thế cạnh tranh khi công nghệ ngày càng phổ biến.",
         views: 0, purchases: 0
     },
@@ -20,7 +20,7 @@ const bookData = [
         author: "",
         price: 95000, oldPrice: 135000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B002.jpg",
+        image: "../assets/images/books/cntt-kts/B002.jpg",
         description: "Tài liệu về công nghệ bán dẫn, một lĩnh vực quan trọng trong sản xuất linh kiện điện tử và phát triển các thiết bị công nghệ hiện đại.",
         views: 0, purchases: 0
     },
@@ -31,7 +31,7 @@ const bookData = [
         author: "",
         price: 65000, oldPrice: 95000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B003.jpg",
+        image: "../assets/images/books/cntt-kts/B003.jpg",
         description: "Giáo trình giới thiệu kiến thức về hệ thống thông tin và cách ứng dụng công nghệ thông tin trong hoạt động quản lý của tổ chức.",
         views: 0, purchases: 0
     },
@@ -42,7 +42,7 @@ const bookData = [
         author: "Nguyễn Văn Vy",
         price: 75000, oldPrice: 110000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B004.jpg",
+        image: "../assets/images/books/cntt-kts/B004.jpg",
         description: "Tài liệu cung cấp kiến thức về phân tích yêu cầu, mô hình hóa và thiết kế hệ thống thông tin phục vụ công tác quản lý.",
         views: 0, purchases: 0
     },
@@ -53,7 +53,7 @@ const bookData = [
         author: "Đường Hữu Thanh",
         price: 70000, oldPrice: 100000, condition: 88,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B005.jpg",
+        image: "../assets/images/books/cntt-kts/B005.jpg",
         description: "Giáo trình về các kiến thức cơ bản trong phát triển phần mềm, từ quy trình xây dựng đến tổ chức và quản lý sản phẩm phần mềm.",
         views: 0, purchases: 0
     },
@@ -64,7 +64,7 @@ const bookData = [
         author: "",
         price: 80000, oldPrice: 115000, condition: 92,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B006.jpg",
+        image: "../assets/images/books/cntt-kts/B006.jpg",
         description: "Giáo trình giới thiệu những kiến thức về lập kế hoạch, tổ chức, theo dõi và kiểm soát các dự án công nghệ thông tin.",
         views: 0, purchases: 0
     },
@@ -75,7 +75,7 @@ const bookData = [
         author: "",
         price: 90000, oldPrice: 130000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B007.jpg",
+        image: "../assets/images/books/cntt-kts/B007.jpg",
         description: "Cuốn sách đề cập đến việc quản lý thông tin trong lĩnh vực y tế, cùng vai trò của dữ liệu và công nghệ trong hoạt động chăm sóc sức khỏe.",
         views: 0, purchases: 0
     },
@@ -86,7 +86,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B008.webp",
+        image: "../assets/images/books/cntt-kts/B008.webp",
         description: "Giáo trình cung cấp kiến thức về an toàn mạng, các nguy cơ mất an toàn thông tin và những nguyên tắc bảo vệ hệ thống mạng.",
         views: 0, purchases: 0
     },
@@ -97,7 +97,7 @@ const bookData = [
         author: "Nguyễn Trâm Anh, Lê Hồng Thái",
         price: 85000, oldPrice: 120000, condition: 93,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B009.jpg",
+        image: "../assets/images/books/cntt-kts/B009.jpg",
         description: "Tài liệu giới thiệu các kiến thức và kỹ thuật lập trình, hỗ trợ người học rèn luyện tư duy thuật toán và kỹ năng viết chương trình.",
         views: 0, purchases: 0
     },
@@ -108,7 +108,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 105000, condition: 87,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B010.jpg",
+        image: "../assets/images/books/cntt-kts/B010.jpg",
         description: "Giáo trình phục vụ học tập kỹ thuật lập trình, giúp người học tiếp cận các phương pháp xây dựng và triển khai chương trình.",
         views: 0, purchases: 0
     },
@@ -119,7 +119,7 @@ const bookData = [
         author: "",
         price: 95000, oldPrice: 140000, condition: 96,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B011.jpg",
+        image: "../assets/images/books/cntt-kts/B011.jpg",
         description: "Ấn phẩm cung cấp thông tin về tình hình khoa học, công nghệ và hoạt động đổi mới sáng tạo tại Việt Nam năm 2024.",
         views: 0, purchases: 0
     },
@@ -130,7 +130,7 @@ const bookData = [
         author: "Vương Toàn",
         price: 80000, oldPrice: 115000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/cntt-kts/B012.jpg",
+        image: "../assets/images/books/cntt-kts/B012.jpg",
         description: "Cuốn sách đề cập đến việc ứng dụng công nghệ thông tin và truyền thông nhằm đổi mới hoạt động tổ chức, quản lý và phục vụ của thư viện.",
         views: 0, purchases: 0
     },
@@ -143,7 +143,7 @@ const bookData = [
         author: "Lê Thị Thu Thủy",
         price: 75000, oldPrice: 110000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK001.png",
+        image: "../assets/images/books/ngan-hang/NK001.png",
         description: "Giáo trình giới thiệu những vấn đề pháp lý cơ bản liên quan đến hoạt động ngân hàng và các quy định điều chỉnh lĩnh vực ngân hàng.",
         views: 0, purchases: 0
     },
@@ -154,7 +154,7 @@ const bookData = [
         author: "",
         price: 90000, oldPrice: 130000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK002.jpg",
+        image: "../assets/images/books/ngan-hang/NK002.jpg",
         description: "Cuốn sách đề cập đến mô hình Greg Shaw và vấn đề quản trị rủi ro đạo đức trong hoạt động của ngân hàng.",
         views: 0, purchases: 0
     },
@@ -165,7 +165,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK003.jpg",
+        image: "../assets/images/books/ngan-hang/NK003.jpg",
         description: "Giáo trình cung cấp kiến thức về quản trị ngân hàng, các hoạt động điều hành và quản lý trong tổ chức tín dụng.",
         views: 0, purchases: 0
     },
@@ -176,7 +176,7 @@ const bookData = [
         author: "",
         price: 65000, oldPrice: 95000, condition: 88,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK004.jpg",
+        image: "../assets/images/books/ngan-hang/NK004.jpg",
         description: "Tài liệu giới thiệu nghiệp vụ tín dụng ngân hàng, quy trình cấp tín dụng và những kiến thức cơ bản về hoạt động cho vay.",
         views: 0, purchases: 0
     },
@@ -187,7 +187,7 @@ const bookData = [
         author: "",
         price: 85000, oldPrice: 120000, condition: 92,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK005.png",
+        image: "../assets/images/books/ngan-hang/NK005.png",
         description: "Giáo trình giới thiệu hoạt động ngân hàng quốc tế và các nghiệp vụ ngân hàng trong môi trường tài chính toàn cầu.",
         views: 0, purchases: 0
     },
@@ -198,7 +198,7 @@ const bookData = [
         author: "Nguyễn Văn Tiến",
         price: 70000, oldPrice: 100000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK006.png",
+        image: "../assets/images/books/ngan-hang/NK006.png",
         description: "Tài liệu trình bày các nội dung về tín dụng ngân hàng và nghiệp vụ cấp tín dụng trong hoạt động kinh doanh ngân hàng.",
         views: 0, purchases: 0
     },
@@ -209,7 +209,7 @@ const bookData = [
         author: "",
         price: 95000, oldPrice: 135000, condition: 93,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK007.jpg",
+        image: "../assets/images/books/ngan-hang/NK007.jpg",
         description: "Cuốn sách giới thiệu các nghiệp vụ trên thị trường tiền tệ liên ngân hàng và vai trò của thị trường này trong hệ thống tài chính.",
         views: 0, purchases: 0
     },
@@ -220,7 +220,7 @@ const bookData = [
         author: "",
         price: 80000, oldPrice: 115000, condition: 87,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK008.webp",
+        image: "../assets/images/books/ngan-hang/NK008.webp",
         description: "Giáo trình giới thiệu chức năng, vai trò và các hoạt động cơ bản của ngân hàng trung ương trong nền kinh tế.",
         views: 0, purchases: 0
     },
@@ -231,7 +231,7 @@ const bookData = [
         author: "",
         price: 100000, oldPrice: 145000, condition: 96,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK009.webp",
+        image: "../assets/images/books/ngan-hang/NK009.webp",
         description: "Cuốn sách đề cập đến quá trình chuyển đổi số trong lĩnh vực ngân hàng và những thay đổi trong cách cung cấp dịch vụ tài chính.",
         views: 0, purchases: 0
     },
@@ -242,7 +242,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 110000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK010.webp",
+        image: "../assets/images/books/ngan-hang/NK010.webp",
         description: "Tài liệu tham khảo về hoạt động quản trị ngân hàng và các vấn đề liên quan đến tổ chức, điều hành ngân hàng.",
         views: 0, purchases: 0
     },
@@ -253,7 +253,7 @@ const bookData = [
         author: "Sandeep Deobhakta",
         price: 110000, oldPrice: 155000, condition: 97,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK011.webp",
+        image: "../assets/images/books/ngan-hang/NK011.webp",
         description: "Cuốn sách giới thiệu tư duy thiết kế và cách tiếp cận đổi mới nhằm cải thiện trải nghiệm khách hàng trong lĩnh vực ngân hàng.",
         views: 0, purchases: 0
     },
@@ -264,7 +264,7 @@ const bookData = [
         author: "",
         price: 90000, oldPrice: 130000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngan-hang/NK012.jpg",
+        image: "../assets/images/books/ngan-hang/NK012.jpg",
         description: "Nghiên cứu về hiệu quả hoạt động của các ngân hàng thương mại tại Việt Nam thông qua việc phân tích và đánh giá hoạt động ngân hàng.",
         views: 0, purchases: 0
     },
@@ -277,7 +277,7 @@ const bookData = [
         author: "",
         price: 65000, oldPrice: 95000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N001.jpg",
+        image: "../assets/images/books/ngoai-ngu/N001.jpg",
         description: "Cuốn sách đề cập đến những vấn đề tâm lý học có liên quan đến quá trình dạy và học ngoại ngữ.",
         views: 0, purchases: 0
     },
@@ -288,7 +288,7 @@ const bookData = [
         author: "",
         price: 55000, oldPrice: 80000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N002.webp",
+        image: "../assets/images/books/ngoai-ngu/N002.webp",
         description: "Giáo trình tiếng Trung trình độ HSK 1, dành cho người mới bắt đầu làm quen với từ vựng và cấu trúc tiếng Trung cơ bản.",
         views: 0, purchases: 0
     },
@@ -299,7 +299,7 @@ const bookData = [
         author: "Gabriel Wyner",
         price: 105000, oldPrice: 150000, condition: 93,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N003.jpeg",
+        image: "../assets/images/books/ngoai-ngu/N003.jpeg",
         description: "Cuốn sách chia sẻ phương pháp học ngoại ngữ, ghi nhớ từ vựng và xây dựng khả năng sử dụng ngôn ngữ lâu dài.",
         views: 0, purchases: 0
     },
@@ -310,7 +310,7 @@ const bookData = [
         author: "",
         price: 60000, oldPrice: 85000, condition: 88,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N004.jpg",
+        image: "../assets/images/books/ngoai-ngu/N004.jpg",
         description: "Tài liệu học tiếng Nhật dành cho người học ngoại ngữ 2, hỗ trợ làm quen với từ vựng và kiến thức tiếng Nhật cơ bản.",
         views: 0, purchases: 0
     },
@@ -321,7 +321,7 @@ const bookData = [
         author: "",
         price: 55000, oldPrice: 80000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N005.webp",
+        image: "../assets/images/books/ngoai-ngu/N005.webp",
         description: "Giáo trình tiếng Trung trình độ HSK 2, tiếp nối kiến thức cơ bản và mở rộng vốn từ vựng cho người học.",
         views: 0, purchases: 0
     },
@@ -332,7 +332,7 @@ const bookData = [
         author: "",
         price: 60000, oldPrice: 85000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N006.webp",
+        image: "../assets/images/books/ngoai-ngu/N006.webp",
         description: "Giáo trình tiếng Trung trình độ HSK 3, giúp người học phát triển thêm vốn từ và khả năng sử dụng tiếng Trung.",
         views: 0, purchases: 0
     },
@@ -343,7 +343,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 105000, condition: 87,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N007.webp",
+        image: "../assets/images/books/ngoai-ngu/N007.webp",
         description: "Tài liệu tự học tiếng Đức dành cho người mới bắt đầu, hỗ trợ tiếp cận những kiến thức ngôn ngữ nền tảng.",
         views: 0, purchases: 0
     },
@@ -354,7 +354,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 92,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N008.webp",
+        image: "../assets/images/books/ngoai-ngu/N008.webp",
         description: "Cuốn sách cung cấp kiến thức nền tảng về phiên dịch Việt - Anh, phù hợp với người học muốn rèn luyện kỹ năng chuyển ngữ.",
         views: 0, purchases: 0
     },
@@ -365,7 +365,7 @@ const bookData = [
         author: "",
         price: 65000, oldPrice: 90000, condition: 94,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N009.jpg",
+        image: "../assets/images/books/ngoai-ngu/N009.jpg",
         description: "Giáo trình tiếng Trung trình độ HSK 4, tập trung phát triển kiến thức và kỹ năng ngôn ngữ ở trình độ trung cấp.",
         views: 0, purchases: 0
     },
@@ -376,7 +376,7 @@ const bookData = [
         author: "",
         price: 85000, oldPrice: 120000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N010.jpg",
+        image: "../assets/images/books/ngoai-ngu/N010.jpg",
         description: "Sách hướng dẫn kỹ năng viết IELTS, hỗ trợ người học rèn luyện cách triển khai ý và cải thiện bài viết.",
         views: 0, purchases: 0
     },
@@ -387,7 +387,7 @@ const bookData = [
         author: "",
         price: 45000, oldPrice: 65000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N011.jpg",
+        image: "../assets/images/books/ngoai-ngu/N011.jpg",
         description: "Tài liệu tổng hợp các động từ bất quy tắc trong tiếng Anh, hỗ trợ người học tra cứu và ghi nhớ cách chia động từ.",
         views: 0, purchases: 0
     },
@@ -398,7 +398,7 @@ const bookData = [
         author: "Lê Khánh Bằng, Nguyễn Văn Tư",
         price: 70000, oldPrice: 100000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/ngoai-ngu/N012.jpg",
+        image: "../assets/images/books/ngoai-ngu/N012.jpg",
         description: "Cuốn sách đề cập đến phương pháp tự học và cách tổ chức hoạt động tự học ngoại ngữ nhằm nâng cao hiệu quả học tập.",
         views: 0, purchases: 0
     },
@@ -411,7 +411,7 @@ const bookData = [
         author: "",
         price: 80000, oldPrice: 115000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/luat/L001.jpg",
+        image: "../assets/images/books/luat/L001.jpg",
         description: "Giáo trình giới thiệu những kiến thức cơ bản về luật hiến pháp và các quy định nền tảng trong hệ thống pháp luật Việt Nam.",
         views: 0, purchases: 0
     },
@@ -422,7 +422,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 105000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/luat/L002.jpg",
+        image: "../assets/images/books/luat/L002.jpg",
         description: "Tài liệu giới thiệu các phương pháp nghiên cứu khoa học pháp lý, hỗ trợ người học trong quá trình tìm hiểu và nghiên cứu luật học.",
         views: 0, purchases: 0
     },
@@ -433,7 +433,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 88,
         status: "Đang bán",
-        image: "assets/images/books/luat/L003.jpg",
+        image: "../assets/images/books/luat/L003.jpg",
         description: "Giáo trình cung cấp kiến thức khái quát về nhà nước, pháp luật và những vấn đề cơ bản của đời sống pháp lý.",
         views: 0, purchases: 0
     },
@@ -444,7 +444,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 105000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/luat/L004.jpg",
+        image: "../assets/images/books/luat/L004.jpg",
         description: "Giáo trình tìm hiểu mối quan hệ giữa pháp luật và xã hội, cũng như vai trò của pháp luật trong đời sống xã hội.",
         views: 0, purchases: 0
     },
@@ -455,7 +455,7 @@ const bookData = [
         author: "",
         price: 65000, oldPrice: 95000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/luat/L005.jpg",
+        image: "../assets/images/books/luat/L005.jpg",
         description: "Tài liệu giới thiệu các quy định pháp luật liên quan đến hoạt động kinh doanh và những quan hệ pháp lý trong nền kinh tế.",
         views: 0, purchases: 0
     },
@@ -466,7 +466,7 @@ const bookData = [
         author: "",
         price: 80000, oldPrice: 115000, condition: 92,
         status: "Đang bán",
-        image: "assets/images/books/luat/L006.webp",
+        image: "../assets/images/books/luat/L006.webp",
         description: "Giáo trình trình bày những kiến thức về luật hành chính và các quy định pháp lý liên quan đến quản lý hành chính nhà nước.",
         views: 0, purchases: 0
     },
@@ -477,7 +477,7 @@ const bookData = [
         author: "",
         price: 35000, oldPrice: 50000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/luat/L007.webp",
+        image: "../assets/images/books/luat/L007.webp",
         description: "Ấn phẩm tập hợp nội dung Hiến pháp năm 2013, văn bản pháp lý nền tảng quy định những vấn đề cơ bản của Nhà nước và quyền con người, quyền công dân.",
         views: 0, purchases: 0
     },
@@ -488,7 +488,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/luat/L008.webp",
+        image: "../assets/images/books/luat/L008.webp",
         description: "Giáo trình cung cấp cơ sở lý luận về nhà nước và pháp luật, phục vụ việc học tập các môn khoa học pháp lý.",
         views: 0, purchases: 0
     },
@@ -499,7 +499,7 @@ const bookData = [
         author: "",
         price: 45000, oldPrice: 65000, condition: 97,
         status: "Đang bán",
-        image: "assets/images/books/luat/L009.webp",
+        image: "../assets/images/books/luat/L009.webp",
         description: "Ấn phẩm về pháp luật đầu tư, phục vụ việc tra cứu các quy định liên quan đến hoạt động đầu tư.",
         views: 0, purchases: 0
     },
@@ -510,7 +510,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 86,
         status: "Đang bán",
-        image: "assets/images/books/luat/L010.jpg",
+        image: "../assets/images/books/luat/L010.jpg",
         description: "Giáo trình nghiên cứu các vấn đề xã hội học trong lĩnh vực pháp luật và sự tác động qua lại giữa pháp luật với xã hội.",
         views: 0, purchases: 0
     },
@@ -521,7 +521,7 @@ const bookData = [
         author: "",
         price: 55000, oldPrice: 80000, condition: 93,
         status: "Đang bán",
-        image: "assets/images/books/luat/L011.webp",
+        image: "../assets/images/books/luat/L011.webp",
         description: "Ấn phẩm tập hợp các quy định về trình tự, thủ tục giải quyết các vụ việc dân sự tại tòa án.",
         views: 0, purchases: 0
     },
@@ -532,7 +532,7 @@ const bookData = [
         author: "",
         price: 50000, oldPrice: 75000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/luat/L012.webp",
+        image: "../assets/images/books/luat/L012.webp",
         description: "Ấn phẩm về các quy định pháp luật liên quan đến thành lập, tổ chức, quản lý và hoạt động của doanh nghiệp.",
         views: 0, purchases: 0
     },
@@ -545,7 +545,7 @@ const bookData = [
         author: "Paul Krugman, Robin Wells",
         price: 120000, oldPrice: 170000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT001.webp",
+        image: "../assets/images/books/kinh-te/KT001.webp",
         description: "Cuốn sách giới thiệu những nguyên lý kinh tế học cơ bản, giúp người đọc hiểu cách cá nhân, doanh nghiệp và nền kinh tế đưa ra quyết định.",
         views: 0, purchases: 0
     },
@@ -556,7 +556,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 110000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT002.png",
+        image: "../assets/images/books/kinh-te/KT002.png",
         description: "Giáo trình cung cấp kiến thức nền tảng về kinh tế học, hỗ trợ người học tiếp cận các khái niệm và nguyên lý kinh tế.",
         views: 0, purchases: 0
     },
@@ -567,7 +567,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 88,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT003.png",
+        image: "../assets/images/books/kinh-te/KT003.png",
         description: "Giáo trình giới thiệu các vấn đề kinh tế liên quan đến lao động, việc làm, tiền lương và thị trường lao động.",
         views: 0, purchases: 0
     },
@@ -578,7 +578,7 @@ const bookData = [
         author: "",
         price: 85000, oldPrice: 120000, condition: 92,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT004.jpg",
+        image: "../assets/images/books/kinh-te/KT004.jpg",
         description: "Giáo trình cung cấp kiến thức về thương mại quốc tế, quan hệ kinh tế giữa các quốc gia và hoạt động kinh tế trong môi trường toàn cầu.",
         views: 0, purchases: 0
     },
@@ -589,7 +589,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 105000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT005.jpg",
+        image: "../assets/images/books/kinh-te/KT005.jpg",
         description: "Giáo trình tìm hiểu các vấn đề kinh tế liên quan đến thuế, chính sách thuế và tác động của thuế đối với nền kinh tế.",
         views: 0, purchases: 0
     },
@@ -600,7 +600,7 @@ const bookData = [
         author: "",
         price: 80000, oldPrice: 115000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT006.webp",
+        image: "../assets/images/books/kinh-te/KT006.webp",
         description: "Tài liệu giới thiệu các nguyên lý kinh tế học vi mô, tập trung vào hành vi của người tiêu dùng, doanh nghiệp và hoạt động thị trường.",
         views: 0, purchases: 0
     },
@@ -611,7 +611,7 @@ const bookData = [
         author: "",
         price: 70000, oldPrice: 100000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT007.webp",
+        image: "../assets/images/books/kinh-te/KT007.webp",
         description: "Giáo trình giới thiệu các khái niệm và nguyên lý kinh tế học cơ bản, phù hợp với người học mới tiếp cận lĩnh vực kinh tế.",
         views: 0, purchases: 0
     },
@@ -622,7 +622,7 @@ const bookData = [
         author: "",
         price: 90000, oldPrice: 130000, condition: 93,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT008.webp",
+        image: "../assets/images/books/kinh-te/KT008.webp",
         description: "Cuốn sách đề cập đến cuộc cách mạng công nghiệp lần thứ tư và những thay đổi do công nghệ mới tạo ra đối với kinh tế và xã hội.",
         views: 0, purchases: 0
     },
@@ -633,7 +633,7 @@ const bookData = [
         author: "",
         price: 80000, oldPrice: 115000, condition: 88,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT009.webp",
+        image: "../assets/images/books/kinh-te/KT009.webp",
         description: "Giáo trình cung cấp kiến thức về các hoạt động kinh tế quốc tế và mối quan hệ kinh tế giữa các quốc gia.",
         views: 0, purchases: 0
     },
@@ -644,7 +644,7 @@ const bookData = [
         author: "",
         price: 105000, oldPrice: 150000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT010.webp",
+        image: "../assets/images/books/kinh-te/KT010.webp",
         description: "Cuốn sách tập hợp những nội dung tham khảo về năng lực lãnh đạo, quản lý con người và điều hành tổ chức.",
         views: 0, purchases: 0
     },
@@ -655,7 +655,7 @@ const bookData = [
         author: "",
         price: 100000, oldPrice: 145000, condition: 92,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT011.webp",
+        image: "../assets/images/books/kinh-te/KT011.webp",
         description: "Cuốn sách phân tích vai trò của đổi mới sáng tạo trong phát triển kinh tế và cạnh tranh giữa các quốc gia trên thế giới.",
         views: 0, purchases: 0
     },
@@ -666,7 +666,7 @@ const bookData = [
         author: "Đặng Mộng Lân",
         price: 85000, oldPrice: 120000, condition: 87,
         status: "Đang bán",
-        image: "assets/images/books/kinh-te/KT012.webp",
+        image: "../assets/images/books/kinh-te/KT012.webp",
         description: "Cuốn sách đề cập đến nền kinh tế tri thức và vai trò của tri thức, thông tin và công nghệ trong phát triển kinh tế.",
         views: 0, purchases: 0
     },
@@ -679,7 +679,7 @@ const bookData = [
         author: "",
         price: 95000, oldPrice: 135000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC001.webp",
+        image: "../assets/images/books/tai-chinh/TC001.webp",
         description: "Tài liệu hướng dẫn các nội dung liên quan đến lập, đọc, phân tích và kiểm tra báo cáo tài chính của doanh nghiệp.",
         views: 0, purchases: 0
     },
@@ -690,7 +690,7 @@ const bookData = [
         author: "",
         price: 85000, oldPrice: 120000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC002.jpg",
+        image: "../assets/images/books/tai-chinh/TC002.jpg",
         description: "Giáo trình giới thiệu các vấn đề về tài chính quốc tế, thị trường tài chính toàn cầu và những hoạt động tài chính xuyên biên giới.",
         views: 0, purchases: 0
     },
@@ -701,7 +701,7 @@ const bookData = [
         author: "Nguyễn Văn Ngọc",
         price: 90000, oldPrice: 130000, condition: 93,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC003.webp",
+        image: "../assets/images/books/tai-chinh/TC003.webp",
         description: "Cuốn sách cung cấp kiến thức về tiền tệ, hoạt động ngân hàng và thị trường tài chính trong nền kinh tế.",
         views: 0, purchases: 0
     },
@@ -712,7 +712,7 @@ const bookData = [
         author: "",
         price: 75000, oldPrice: 105000, condition: 88,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC004.jpg",
+        image: "../assets/images/books/tai-chinh/TC004.jpg",
         description: "Giáo trình giới thiệu các nguyên tắc và nghiệp vụ kế toán tài chính, phục vụ việc ghi nhận và trình bày thông tin tài chính.",
         views: 0, purchases: 0
     },
@@ -723,7 +723,7 @@ const bookData = [
         author: "Thomas R. Ittelson",
         price: 100000, oldPrice: 145000, condition: 95,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC005.jpg",
+        image: "../assets/images/books/tai-chinh/TC005.jpg",
         description: "Cuốn sách hỗ trợ người đọc tìm hiểu cách đọc và hiểu các báo cáo tài chính cơ bản của doanh nghiệp.",
         views: 0, purchases: 0
     },
@@ -734,7 +734,7 @@ const bookData = [
         author: "Stuart Warner, Si Hussain",
         price: 110000, oldPrice: 155000, condition: 97,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC006.png",
+        image: "../assets/images/books/tai-chinh/TC006.png",
         description: "Cuốn sách giới thiệu các khái niệm và nội dung cơ bản về tài chính doanh nghiệp theo cách trình bày trực quan.",
         views: 0, purchases: 0
     },
@@ -745,7 +745,7 @@ const bookData = [
         author: "Lê Văn Tề",
         price: 75000, oldPrice: 105000, condition: 85,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC007.webp",
+        image: "../assets/images/books/tai-chinh/TC007.webp",
         description: "Tài liệu trình bày những kiến thức lý luận về tài chính, tiền tệ và các vấn đề liên quan trong nền kinh tế.",
         views: 0, purchases: 0
     },
@@ -756,7 +756,7 @@ const bookData = [
         author: "",
         price: 90000, oldPrice: 130000, condition: 92,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC008.webp",
+        image: "../assets/images/books/tai-chinh/TC008.webp",
         description: "Cuốn sách đề cập đến tài chính toàn diện và những vấn đề đặt ra trong bối cảnh phát triển công nghệ của cuộc Cách mạng công nghiệp 4.0.",
         views: 0, purchases: 0
     },
@@ -767,7 +767,7 @@ const bookData = [
         author: "Pamela Peterson Drake, Frank J. Fabozzi",
         price: 105000, oldPrice: 150000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC009.jpg",
+        image: "../assets/images/books/tai-chinh/TC009.jpg",
         description: "Tài liệu giới thiệu những kiến thức nền tảng về tài chính, hỗ trợ người học tiếp cận các khái niệm và quyết định tài chính.",
         views: 0, purchases: 0
     },
@@ -778,7 +778,7 @@ const bookData = [
         author: "Dan Lok",
         price: 95000, oldPrice: 135000, condition: 96,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC010.png",
+        image: "../assets/images/books/tai-chinh/TC010.png",
         description: "Cuốn sách chia sẻ góc nhìn về tài chính và tư duy phát triển hoạt động kinh doanh.",
         views: 0, purchases: 0
     },
@@ -789,7 +789,7 @@ const bookData = [
         author: "",
         price: 65000, oldPrice: 95000, condition: 90,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC011.jpg",
+        image: "../assets/images/books/tai-chinh/TC011.jpg",
         description: "Cuốn sách giới thiệu những kiến thức cơ bản về quản lý tài chính cá nhân và các vấn đề liên quan đến chi tiêu, tiết kiệm.",
         views: 0, purchases: 0
     },
@@ -800,7 +800,7 @@ const bookData = [
         author: "Dan McCrum",
         price: 100000, oldPrice: 145000, condition: 94,
         status: "Đang bán",
-        image: "assets/images/books/tai-chinh/TC012.png",
+        image: "../assets/images/books/tai-chinh/TC012.png",
         description: "Cuốn sách khai thác góc nhìn lý thuyết trò chơi trong lĩnh vực tài chính và các quyết định có tính chiến lược.",
         views: 0, purchases: 0
     }

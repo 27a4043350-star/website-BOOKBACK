@@ -68,55 +68,64 @@ function displayBooks(list) {
     const booksToShow = filteredBooks.slice(start, end);
 
     bookList.innerHTML = "";
-
     booksToShow.forEach(function(book) {
 
-        
-bookList.innerHTML += `
+    bookList.innerHTML += `
 
-    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
 
-        <div class="book-card">
+            <!-- Khung chứa toàn bộ thẻ sách -->
+            <div class="book-card">
 
-            <a href="book-detail.html?id=${book.id}" class="book-image-wrapper">
+                <!-- Khung ảnh sách cố định -->
+                <a href="book-detail.html?id=${book.id}"
+                   class="book-image-wrapper">
 
-                <img src="${book.image}"
-                     alt="${book.title}"
-                     width="100%">
+                    <img src="../${book.image}"
+                         alt="${book.title}">
 
-                <span class="book-condition">
-                    ${book.condition}% mới
-                </span>
+                    <span class="book-condition">
+                        ${book.condition}% mới
+                    </span>
 
-            </a>
+                </a>
 
-            <h3>${book.title}</h3>
+                <!-- Phần nội dung sách -->
+                <div class="book-card-content">
 
-            <div class="book-price">
-                <span class="old-price">
-                    ${formatPrice(book.oldPrice)}
-                </span>
+                    <!-- Tên sách -->
+                    <h3>${book.title}</h3>
 
-                <span class="new-price">
-                    ${formatPrice(book.price)}
-                </span>
+                    <!-- Giá sách -->
+                    <div class="book-price">
+
+                        <span class="old-price">
+                            ${formatPrice(book.oldPrice)}
+                        </span>
+
+                        <span class="new-price">
+                            ${formatPrice(book.price)}
+                        </span>
+
+                    </div>
+
+                    <!-- Nút xem chi tiết -->
+                    <a href="book-detail.html?id=${book.id}"
+                       class="btn btn-primary">
+
+                        Xem chi tiết
+
+                    </a>
+
+                </div>
+
             </div>
-
-            <a href="book-detail.html?id=${book.id}"
-               class="btn btn-primary">
-
-                Xem chi tiết
-
-            </a>
 
         </div>
 
-    </div>
+    `;
 
-`;
-
-
-    });
+});
 
     // Hiện thông báo nếu không có sách
     if (filteredBooks.length === 0) {

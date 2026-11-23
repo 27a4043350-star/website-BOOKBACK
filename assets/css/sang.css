@@ -336,20 +336,23 @@
 
 /* Khung ảnh sách */
 .book-image-wrapper {
-    height: 250px;
     width: 100%;
+    height: 280px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: var(--card);
 }
 
-/* Ảnh nằm gọn trong khung */
+/* Ảnh sách */
 .book-image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* Phần nội dung sách */
@@ -403,13 +406,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
-
-/* Ảnh sách */
-.related-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
 
 /* Phần nội dung sách */

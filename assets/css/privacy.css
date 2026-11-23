@@ -12,6 +12,16 @@
   box-shadow: var(--shadow-sm);
 }
 
+.policy-page .policy-inner a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.policy-page .policy-inner a:hover {
+    text-decoration: underline;
+}
+
 .policy-page h1 {
   margin-bottom: 8px;
 }

@@ -46,8 +46,6 @@ function formatPrice(price) {
 
 
 // HIỂN THỊ DANH SÁCH SÁCH
-
-// HIỂN THỊ DANH SÁCH SÁCH
 function displayBooks(list) {
 
     filteredBooks = list;

@@ -219,125 +219,94 @@ function renderPagination(totalPages) {
 
 function filterBooks() {
 
-    // Lấy giá trị người dùng nhập
-
+    // Lấy từ khóa tìm kiếm
     const keyword = searchInput.value.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
-
+    
+    // Lấy các tiêu chí lọc
     const selectedType = categoryFilter.value;
-
     const selectedPrice = priceFilter.value;
-
     const selectedCondition = conditionFilter.value;
 
-
-    // Lọc từ danh sách sách ban đầu
-
+    // Luôn lọc từ danh sách sách gốc
     let result = bookData.filter(function(book) {
 
-
-        // 1. Lọc theo tên sách
-
+        // Lọc theo tên sách
         const bookTitle = book.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
-        const matchName = bookTitle.includes(keyword);
 
-        // 2. Lọc theo khoa
+        const matchName =
+            keyword === "" || bookTitle.includes(keyword);
+
+        // Lọc theo khoa
         const matchGroup =
-        selectedGroup === "all" ||
-        book.group === selectedGroup;
+            selectedGroup === "all" ||
+            book.group === selectedGroup;
 
-
-        // 3. Lọc theo thể loại
-
+        // Lọc theo thể loại
         const matchType =
             selectedType === "" ||
             book.type === selectedType;
 
-
-        // 4. Lọc theo giá tiền
-
+        // Lọc theo giá
         let matchPrice = true;
 
         if (selectedPrice === "under-50000") {
-
             matchPrice = book.price < 50000;
 
         } else if (selectedPrice === "50000-100000") {
-
             matchPrice =
                 book.price >= 50000 && book.price <= 100000;
 
         } else if (selectedPrice === "100000-200000") {
-
             matchPrice =
                 book.price > 100000 && book.price <= 200000;
 
         } else if (selectedPrice === "over-200000") {
-
             matchPrice = book.price > 200000;
-
         }
 
-
-        // 5. Lọc theo độ mới
-
+        // Lọc theo độ mới
         let matchCondition = true;
 
         if (selectedCondition === "90-100") {
-
             matchCondition =
                 book.condition >= 90 && book.condition <= 100;
 
         } else if (selectedCondition === "70-89") {
-
             matchCondition =
                 book.condition >= 70 && book.condition <= 89;
 
         } else if (selectedCondition === "under-70") {
-
             matchCondition = book.condition < 70;
-
         }
 
-
-        // Một cuốn sách phải thỏa mãn tất cả điều kiện
-
+        // Kết hợp các điều kiện lọc
         return matchName &&
                matchGroup &&
                matchType &&
                matchPrice &&
                matchCondition;
-
     });
 
-
-    // 6. SẮP XẾP SÁCH
-
+    // Sắp xếp sách
     if (sortOrder.value === "price-asc") {
 
         result.sort(function(a, b) {
-
             return a.price - b.price;
-
         });
 
     } else if (sortOrder.value === "price-desc") {
 
         result.sort(function(a, b) {
-
             return b.price - a.price;
-
         });
-
     }
 
+    // Chuyển về trang đầu tiên của kết quả lọc
+    currentPage = 1;
 
-// Khi lọc hoặc tìm kiếm, quay về trang đầu tiên
-
-currentPage = 1;
-
-displayBooks(result);
+    // Hiển thị kết quả
+    displayBooks(result);
 }
-
 
 // CLICK DANH MỤC BÊN TRÁI
 

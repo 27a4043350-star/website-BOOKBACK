@@ -125,12 +125,12 @@
   right: max(24px, env(safe-area-inset-right));
   bottom: max(24px, env(safe-area-inset-bottom));
   z-index: 1100;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
   min-height: 58px;
-  padding: 0 20px;
+  padding: 0;
   border: 0;
   border-radius: 999px;
   background: var(--bookback-chat-forest);
@@ -138,7 +138,6 @@
   color: #fff;
   cursor: pointer;
   font: inherit;
-  font-weight: 700;
   transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
@@ -157,8 +156,8 @@
 }
 
 .bookback-chatbot-launcher-icon {
-  width: 25px;
-  height: 25px;
+  width: 29px;
+  height: 29px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -493,19 +492,6 @@
   .bookback-chatbot-launcher {
     right: max(16px, env(safe-area-inset-right));
     bottom: max(16px, env(safe-area-inset-bottom));
-    width: 58px;
-    min-height: 58px;
-    padding: 0;
-  }
-
-  .bookback-chatbot-launcher-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
   }
 
   .bookback-chatbot-panel {

@@ -5,7 +5,7 @@
   const siteRoot = new URL("../../", script.src);
   const pageUrl = (path) => new URL(path, siteRoot).href;
   const config = {
-    // Các liên kết mạng xã hội chính thức đang được dùng trong footer website.
+    // Các liên kết MXH (FB + IG)
     facebookUrl: "https://www.facebook.com/share/1A5s3pSn68/?mibextid=wwXIfr",
     instagramUrl: "https://www.instagram.com/bookback.hvnh?xtok=MW96bnNyeTF0a3M5ZQ%3D%3D&utm_source=qr",
   };
@@ -68,7 +68,6 @@
     </section>
     <button class="bookback-chatbot-launcher" type="button" aria-label="Mở chat với BOOKBACK" aria-controls="bookback-chatbot-panel" aria-expanded="false">
       <svg class="bookback-chatbot-launcher-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6a7.5 7.5 0 1 1 17-3.5Z"/><path d="M8 11h8M8 14h5"/></svg>
-      <span class="bookback-chatbot-launcher-label">Chat với BOOKBACK</span>
     </button>
   `;
   document.body.append(widget);

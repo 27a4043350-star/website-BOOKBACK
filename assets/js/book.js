@@ -79,7 +79,7 @@ function displayBooks(list) {
                 <a href="book-detail.html?id=${book.id}"
                    class="book-image-wrapper">
 
-                    <img src="../${book.image}"
+                    <img src="${book.image}"
                          alt="${book.title}">
 
                     <span class="book-condition">

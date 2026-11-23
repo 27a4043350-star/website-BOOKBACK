@@ -176,38 +176,58 @@ relatedBooks.innerHTML = `
 const relatedTrack = document.getElementById("related-track");
 
 related.forEach(function(book) {
+
     relatedTrack.innerHTML += `
+
         <div class="related-item">
 
+            <!-- Khung chứa toàn bộ thẻ sách -->
             <div class="book-card">
 
-                <a href="book-detail.html?id=${book.id}">
-                    <img src="${book.image}"
-                         alt="${book.title}"
-                         width="100%">
-                </a>
-
-                <h3>${book.title}</h3>
-
-                <div class="book-price">
-                    <span class="old-price">
-                        ${formatPrice(book.oldPrice)}
-                    </span>
-
-                    <span class="new-price">
-                        ${formatPrice(book.price)}
-                    </span>
-                </div>
-
+                <!-- Khung ảnh sách -->
                 <a href="book-detail.html?id=${book.id}"
-                   class="btn btn-primary">
-                    Xem chi tiết
+                   class="related-image-wrapper">
+
+                    <img src="${book.image}"
+                         alt="${book.title}">
+
                 </a>
+
+                <!-- Phần nội dung sách -->
+                <div class="related-book-content">
+
+                    <!-- Tên sách -->
+                    <h3>${book.title}</h3>
+
+                    <!-- Giá sách -->
+                    <div class="book-price">
+
+                        <span class="old-price">
+                            ${formatPrice(book.oldPrice)}
+                        </span>
+
+                        <span class="new-price">
+                            ${formatPrice(book.price)}
+                        </span>
+
+                    </div>
+
+                    <!-- Nút xem chi tiết -->
+                    <a href="book-detail.html?id=${book.id}"
+                       class="btn btn-primary">
+
+                        Xem chi tiết
+
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
+
     `;
+
 });
 
 // NÚT CUỘN TRÁI VÀ PHẢI

@@ -382,6 +382,38 @@ conditionFilter.addEventListener("change", filterBooks);
 sortOrder.addEventListener("change", filterBooks);
 
 
+// NÚT QUAY VỀ TOÀN BỘ SÁCH
+
+const resetAllBooks = document.getElementById("reset-all-books");
+
+resetAllBooks.addEventListener("click", function() {
+
+    // Xóa từ khóa tìm kiếm
+    searchInput.value = "";
+
+    // Đặt lại các bộ lọc
+    categoryFilter.value = "";
+    priceFilter.value = "";
+    conditionFilter.value = "";
+    sortOrder.value = "";
+
+    // Đặt lại danh mục khoa
+    selectedGroup = "all";
+
+    // Quay về trang đầu tiên
+    currentPage = 1;
+
+    // Hiển thị toàn bộ sách
+    displayBooks(bookData);
+
+    // Cuộn về khu vực danh sách sách
+    bookList.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+});
+
 // HIỂN THỊ TẤT CẢ SÁCH KHI MỞ TRANG
 
 displayBooks(bookData);

@@ -325,7 +325,7 @@
     background: #e8eee7;
 }
 
-/* ================= KHUNG MỖI CUỐN SÁCH ================= */
+/* ================= KHUNG MỖI CUỐN SÁCH Ở DANH SÁCH SÁCH================= */
 
 /* Khung ngoài của sách */
 .book-card {
@@ -377,6 +377,65 @@
 .book-card-content .btn {
     margin-top: auto;
     align-self: flex-start;
+}
+
+/* ================= KHUNG MỖI CUỐN SÁCH Ở SÁCH LIÊN QUAN ================= */
+
+/* Mỗi cuốn sách trong thanh trượt */
+.related-item {
+    display: flex;
+    height: 100%;
+}
+
+/* Khung toàn bộ sách */
+.related-item .book-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Khung ảnh sách */
+.related-image-wrapper {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Ảnh sách */
+.related-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Phần nội dung sách */
+.related-book-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Khung tên sách */
+.related-book-content h3 {
+    height: 120px;
+    overflow: hidden;
+}
+
+/* Khung giá */
+.related-book-content .book-price {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nút xem chi tiết */
+.related-book-content .btn {
+    margin-top: auto;
 }
 
 

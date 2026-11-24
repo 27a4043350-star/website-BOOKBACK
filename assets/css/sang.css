@@ -199,3 +199,240 @@
         width: 100%;
     }
 }
+
+
+/* Khung ảnh sách */
+.book-image-wrapper {
+    display: block;
+    position: relative;
+}
+
+/* Nhãn độ mới trên ảnh */
+.book-condition {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #ff6b35;
+    color: white;
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Hai mức giá */
+.book-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+/* Giá cũ */
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+/* Giá mới */
+.new-price {
+    color: #e53935;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+
+/* KHUNG SẢN PHẨM LIÊN QUAN */
+.related-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 10px 40px;
+}
+
+/* KHUNG CHỨA 3 SẢN PHẨM */
+.related-track {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    box-sizing: border-box;
+}
+
+.related-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* MỖI CUỐN CHIẾM ĐÚNG 1/3 KHUNG */
+.related-item {
+    flex: 0 0 33.333333%;
+    width: 33.333333%;
+    min-width: 0;
+    max-width: 33.333333%;
+    padding: 10px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+
+/* KHÔNG ĐỂ THẺ SÁCH TRÀN RA NGOÀI */
+.related-item .book-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.related-item img {
+    max-width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+/* MŨI TÊN */
+.related-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #333;
+    font-size: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.related-prev {
+    left: 0;
+}
+
+.related-next {
+    right: 0;
+}
+
+.related-arrow:hover {
+    background: #e8eee7;
+}
+
+/* ================= KHUNG MỖI CUỐN SÁCH Ở DANH SÁCH SÁCH================= */
+
+/* Khung ngoài của sách */
+.book-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Khung ảnh sách */
+.book-image-wrapper {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--card);
+}
+
+/* Ảnh sách */
+.book-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Phần nội dung sách */
+.book-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Tên sách */
+.book-card-content h3 {
+    height: 150px;
+    overflow: hidden;
+}
+
+/* Khung giá */
+.book-card-content .book-price {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nút xem chi tiết */
+.book-card-content .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* ================= KHUNG MỖI CUỐN SÁCH Ở SÁCH LIÊN QUAN ================= */
+
+/* Mỗi cuốn sách trong thanh trượt */
+.related-item {
+    display: flex;
+    height: 100%;
+}
+
+/* Khung toàn bộ sách */
+.related-item .book-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Khung ảnh sách */
+.related-image-wrapper {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Phần nội dung sách */
+.related-book-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Khung tên sách */
+.related-book-content h3 {
+    height: 120px;
+    overflow: hidden;
+}
+
+/* Khung giá */
+.related-book-content .book-price {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nút xem chi tiết */
+.related-book-content .btn {
+    margin-top: auto;
+}
+
+
+

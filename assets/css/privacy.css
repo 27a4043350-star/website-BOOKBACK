@@ -1,0 +1,94 @@
+
+.policy-page {
+  padding: 40px 0 64px;
+}
+
+.policy-page .policy-inner {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.policy-page .policy-inner a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.policy-page .policy-inner a:hover {
+    text-decoration: underline;
+}
+
+.policy-page h1 {
+  margin-bottom: 8px;
+}
+
+.policy-page .policy-updated {
+    text-align: right;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+
+.policy-page h2 {
+  font-size: 1.25rem;
+  color: var(--forest);
+  margin: 32px 0 12px;
+}
+
+.policy-page p {
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+  line-height: 1.75;
+}
+
+.policy-page strong {
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .policy-page .policy-inner {
+    padding: 24px 18px;
+  }
+}
+/* chấm tròn đầu dòng */
+.policy-page ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 20px;
+    margin: 12px 0 20px;
+}
+
+.policy-page li {
+    padding-left: 0;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+/* Cần hỗ trợ thêm? */
+.policy-support {
+    background-color: #FFFCF6;
+    border-radius: 20px;
+    padding: 30px 20px;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+.policy-support p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.policy-support a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.policy-support a:hover {
+    text-decoration: underline;
+}

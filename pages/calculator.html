@@ -74,11 +74,14 @@
         </div>
         <div>
             <label for="phiShip">Phí ship (nếu có)</label>
-            <input type="number" id="phiShip" name="phiShip" min="0" step="1" placeholder="Ví dụ: 20000" value="0">
+            <input type="number" id="phiShip" name="phiShip" min="0" step="1" placeholder="Ví dụ: 20000" value="">
             <span>VNĐ</span>
             <p>Để trống hoặc nhập 0 nếu không phát sinh phí vận chuyển, nếu nhập thì phải lớn hơn hoặc bằng 0.</p>
         </div>
-        <button type="submit">Tính giá trị</button>
+        <div class="form-actions">
+            <button type="reset" class="reset-button">Xóa thông tin</button>
+            <button type="submit">Tính giá trị</button>
+        </div>
     </form>
     <h2 class="result-heading">KẾT QUẢ</h2>
     <section class="result" aria-label="Kết quả tính giá" aria-live="polite">
@@ -126,8 +129,8 @@
 
         <!-- Mạng xã hội -->
         <div class="footer-social">
-            <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">fb</a>
-            <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">ig</a>
+            <a href="https://www.facebook.com/share/1A5s3pSn68/?mibextid=wwXIfr" class="social-btn" aria-label="Facebook" title="Facebook">fb</a>
+            <a href="https://www.instagram.com/bookback.hvnh?xtok=MW96bnNyeTF0a3M5ZQ%3D%3D&utm_source=qr" class="social-btn" aria-label="Instagram" title="Instagram">ig</a>
         </div>
         </div>
         
@@ -245,7 +248,15 @@
                     `Giá mới <span>${formatVND(giaMoi)}</span> × độ mới <span>${doMoi}%</span> × hệ số ${HE_SO_THI_TRUONG} = <span>${formatVND(giaTheoDoMoi)}</span><br>`
                     + `Cộng phí ship <span>${formatVND(phiShip)}</span> → Giá ước tính <span>${formatVND(giaUocTinh)}</span>`;
             });
+
+            form.addEventListener('reset', () => {
+                giaUocTinhEl.innerHTML = '<span>— chưa có dữ liệu —</span>';
+                tietKiemEl.textContent = '—';
+                breakdownEl.textContent = 'Nhập thông tin phía trên rồi bấm "Tính giá trị" để xem chi tiết cách tính.';
+                giaMoiInput.focus();
+            });
         })();
     </script>
+    <script src="../assets/js/chatbot.js" defer></script>
 </body>
 </html>

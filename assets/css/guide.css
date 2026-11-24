@@ -1,0 +1,96 @@
+.guide-page {
+    padding: 40px 0 64px;
+}
+
+/* Khung nội dung chính */
+.guide-page .guide-inner {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Tiêu đề chính */
+.guide-page h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* Các tiêu đề mục */
+.guide-page h2 {
+    font-size: 1.25rem;
+    color: var(--forest);
+    margin: 32px 0 12px;
+}
+
+/* Nội dung đoạn văn */
+.guide-page p {
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+    line-height: 1.75;
+}
+
+/* Chữ in đậm */
+.guide-page strong {
+    color: var(--ink);
+}
+
+/* Danh sách gạch đầu dòng */
+.guide-page ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 20px;
+    margin: 12px 0 20px;
+}
+
+.guide-page li {
+    padding-left: 0;
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+}
+
+/* Đường dẫn trong nội dung */
+.guide-page .guide-inner a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.guide-page .guide-inner a:hover {
+    text-decoration: underline;
+}
+
+/* Khung hỗ trợ riêng */
+.guide-support {
+    background-color: #FFFCF6;
+    border-radius: 20px;
+    padding: 30px 20px;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+.guide-support p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.guide-support a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.guide-support a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .guide-page .guide-inner {
+        padding: 24px 18px;
+    }
+}

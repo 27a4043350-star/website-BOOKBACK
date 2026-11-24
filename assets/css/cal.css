@@ -204,6 +204,72 @@ h1 {
 .calculator-form > button[type="submit"]:active { transform: translateY(1px); }
 button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
+/* Nút hành động */
+.form-actions {
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    gap: 12px;
+    margin-top: 4px;
+    margin-bottom: 0 !important;
+}
+.calculator-form > .form-actions > button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font: 700 15px var(--sans);
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease,
+                border-color .15s ease, background .15s ease, filter .15s ease;
+}
+.calculator-form > .form-actions > .reset-button {
+    color: var(--forest);
+    background: rgba(255, 255, 255, .82);
+    border: 1.5px solid var(--line);
+    box-shadow: 0 6px 16px -12px rgba(31, 61, 47, .45);
+}
+.calculator-form > .form-actions > .reset-button::before {
+    content: "↺";
+    margin-right: 8px;
+    font-size: 20px;
+    line-height: 1;
+}
+.calculator-form > .form-actions > .reset-button:hover {
+    background: var(--gold-soft);
+    border-color: var(--gold);
+    box-shadow: 0 10px 18px -14px rgba(109, 86, 39, .55);
+    transform: translateY(-1px);
+}
+.calculator-form > .form-actions > button[type="submit"] {
+    color: #fff;
+    background: linear-gradient(180deg, var(--forest-2), var(--forest));
+    border: 1.5px solid var(--forest);
+    box-shadow: 0 10px 22px -12px rgba(31, 61, 47, .85);
+}
+.calculator-form > .form-actions > button[type="submit"]::after {
+    content: "→";
+    margin-left: 9px;
+    font-size: 18px;
+    transition: transform .15s ease;
+}
+.calculator-form > .form-actions > button[type="submit"]:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 14px 26px -13px rgba(31, 61, 47, .9);
+    transform: translateY(-1px);
+}
+.calculator-form > .form-actions > button[type="submit"]:hover::after {
+    transform: translateX(3px);
+}
+.calculator-form > .form-actions > button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
 /* KẾT QUẢ */
 .result-heading {
     display: flex;
@@ -303,6 +369,13 @@ button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
     .result { padding: 22px 18px 18px; }
     .result-caption { padding-right: 0; margin-top: 26px; }
     .result-savings { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .form-actions {
+        grid-template-columns: 1fr;
+    }
+    .calculator-form > .form-actions > button {
+        width: 100%;
+        min-height: 52px;
+    }
 }
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }

@@ -1,7 +1,7 @@
 /* tải 2 font Google: Fraunces (tiêu đề sang) + DM Sans (chữ thường dễ đọc) */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
-/* khai báo biến */
+/* khai báo biến màu sáng */
 :root {
    /* Màu nền giấy cũ */
     --paper: #f7efdf;   /* màu nền chính của toàn trang */
@@ -65,6 +65,66 @@
     /* Layout */
     --container-max: 1140px;   /* chiều rộng tối đa của khung nội dung chính, giúp nd không bị quá rộng trên màn hình lớn */
     --header-height: 72px;   /* chiều cao header, tính toán padding-top cho nd bên dưới, tránh bị header đè lên */
+}
+
+/* khai báo biến màu tối */
+:root[data-theme="dark"] {
+
+    /* Nền trang */
+    --paper: #1C2620;
+    --paper-dark: #222F27;
+
+    /* Nền card và khung nội dung */
+    --card: #29382F;
+    --white: #243229;
+
+    /* Màu chữ */
+    --ink: #EAE5D8;
+    --ink-soft: #D5D2C7;
+    --muted: #B0B3A8;
+    --muted-light: #92998F;
+
+    /* Màu logo */
+    --logo-color: #D2AB64;
+
+    /* Viền */
+    --line: #3C4B40;
+    --line-strong: #526354;
+
+    /* Màu nhận diện BOOKBACK */
+    --forest: #263F32;
+    --forest-2: #496650;
+    --forest-soft: #35483A;
+    --forest-hover: #1E3328;
+
+    /* Màu vàng đồng */
+    --gold: #C69B4B;
+    --gold-soft: #493D29;
+    --gold-dark: #D9B56F;
+
+    /* Trạng thái */
+    --success: #83B995;
+    --danger: #E17F78;
+    --hot: #E88978;
+
+    /* Đổ bóng */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Hiệu ứng chuyển đổi giữa hai giao diện: chuển từ từ từ sáng sang tối, màu sắc không bị thay đổi đột ngột */
+body,
+.site-header,
+.header-main,
+.product-card,
+.promo-banners {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 /* reset: xóa style mặc định của trình duyệt */
@@ -220,6 +280,55 @@ h4 { font-size: 1.15rem; }
   gap: 16px;
 }
 
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    color: var(--gold);
+
+    cursor: pointer;
+    border-radius: 50%;
+
+    transition: all 0.25s ease;
+}
+
+/* Hiệu ứng bóng đèn */
+.theme-toggle .bulb-icon {
+    transition: all 0.25s ease;
+    filter: drop-shadow(0 0 4px rgba(198, 155, 75, 0.45));
+}
+
+/* Khi di chuột */
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.12);
+}
+
+/* Khi đang ở chế độ tối: bóng đèn tắt */
+:root[data-theme="dark"] .theme-toggle {
+    color: #a0a59e;
+}
+
+:root[data-theme="dark"] .theme-toggle .bulb-icon {
+    filter: none;
+    opacity: 0.7;
+}
+
+/* Hiệu ứng focus cho bàn phím */
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
 .cart-count {
   display: inline-flex;
   align-items: center;
@@ -258,7 +367,7 @@ h4 { font-size: 1.15rem; }
   font-family: var(--serif);
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--forest);
+  color: var(--logo-color, var(--gold));
   letter-spacing: -0.02em;
 }
 
@@ -597,7 +706,7 @@ h4 { font-size: 1.15rem; }
   font-weight: 600;
 }
 
-/* ========== RESPONSIVE ========== */
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   .footer-main {
     grid-template-columns: 1.3fr 1fr 1fr 1fr;
@@ -634,4 +743,48 @@ h4 { font-size: 1.15rem; }
   .footer-title::after {
     width: 24px;
   }
+}
+
+/* Thanh tiện ích */
+.top-bar {
+    background-color: #263F32;
+    color: #F5F0E5;
+}
+
+/* Chữ và liên kết thanh tiện ích */
+.top-bar .top-left a,
+.top-bar .top-right a {
+    color: #F5F0E5;
+}
+
+.top-bar .top-left a:hover,
+.top-bar .top-right a:hover {
+    color: #D9B56F;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #263F32;
+    color: #F5F0E5;
+}
+
+/* Chữ thông tin footer */
+.site-footer .footer-contact,
+.site-footer .footer-contact a,
+.site-footer .footer-links a {
+    color: #E8E4D9;
+}
+
+/* Giữ màu chữ phần bản quyền */
+.site-footer .footer-bottom p {
+    color: #C5BFB0;
+}
+
+.site-footer .footer-bottom strong {
+    color: #F5F0E5;
+}
+
+/* Giữ logo footer màu vàng */
+.site-footer .footer-logo-text {
+    color: #C69B4B;
 }

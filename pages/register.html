@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body class="auth-page">
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-left">
+                    <a href="login.html">Đăng nhập</a>
+                    <span class="sep">|</span>
+                    <a href="register.html">Đăng ký</a>
+                </div>
+                <div class="top-right">
+                    <a href="books.html" class="top-search"
+                       aria-label="Tìm kiếm">🔍</a>
+                    <button
+                        type="button"
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Chuyển đổi giao diện sáng tối"
+                        aria-pressed="false"
+                        title="Chuyển đổi giao diện"
+                    >
+                        <svg class="bulb-icon"
+                             viewBox="0 0 24 24"
+                             width="22"
+                             height="22"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="M9 18h6"/>
+                            <path d="M10 22h4"/>
+                            <path d="M8.5 14.5a7 7 0 1 1 7 0c-.8.6-1.2 1.4-1.3 2.5h-4.4c-.1-1.1-.5-1.9-1.3-2.5Z"/>
+                        </svg>
+                    </button>
+                    <a href="cart.html" class="top-cart">
+                        Giỏ hàng
+                        <span class="cart-count">0</span> sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container header-inner">
+                <a href="../index.html" class="logo-block">
+                    <span class="logo-text">BOOKBACK</span>
+                    <span class="logo-slogan">
+                        Sách cũ – Quay trở lại với tri thức
+                    </span>
+                </a>
+                <nav class="nav" aria-label="Menu chính">
+                    <a href="../index.html" class="nav-link active">Trang chủ</a>
+                    <a href="../../pages/about.html" class="nav-link">Giới thiệu</a>
+                    <a href="../../pages/books.html" class="nav-link">Danh mục sách</a>
+                    <a href="../../pages/calculator.html" class="nav-link">Công cụ tính</a>
+                    <a href="../../pages/contact.html" class="nav-link">Thu mua sách</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="auth-main auth-register">
+
+        <!-- FORM ĐĂNG KÝ -->
+        <section class="auth-panel">
+            <div class="auth-content">
+                <div class="auth-heading">
+                    <h1>Chào mừng bạn!</h1>
+                    <p>Tạo tài khoản để bắt đầu hành trình khám phá tri thức.</p>
+                </div>
+                <!-- Form đăng ký -->
+                <form id="registerForm">
+                    <div class="auth-field">
+                        <label for="registerName">Họ và tên</label>
+                        <input
+                            type="text"
+                            id="registerName"
+                            name="name"
+                            placeholder="Nhập họ và tên của bạn"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+                    <!-- Email -->
+                    <div class="auth-field">
+                        <label for="registerEmail">Email</label>
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            name="email"
+                            placeholder="Nhập email của bạn"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                    <!-- Mật khẩu -->
+                    <div class="auth-field">
+                        <label for="registerPassword">Mật khẩu</label>
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            name="password"
+                            placeholder="Tạo mật khẩu"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
+                    <!-- Xác nhận mật khẩu -->
+                    <div class="auth-field">
+                        <label for="confirmPassword">
+                            Xác nhận mật khẩu
+                        </label>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Nhập lại mật khẩu"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
+                    <!-- Nút đăng ký -->
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                    >
+                        Đăng ký
+                    </button>
+                    <!-- Chuyển sang đăng nhập -->
+                    <p class="auth-switch">
+                        Đã có tài khoản?
+                        <a href="login.html">
+                            Đăng nhập ngay
+                        </a>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- HÌNH ẢNH -->
+        <section class="auth-image">
+            <img
+                src="https://wordsrated.com/wp-content/uploads/2022/02/Number-of-Books-Published-Per-Year.jpg"
+                alt="Không gian sách tại BOOKBACK"
+            >
+        </section>
+    </main>
+</body>
+</html>

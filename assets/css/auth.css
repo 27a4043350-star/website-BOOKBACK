@@ -253,9 +253,6 @@
     .auth-content {
         max-width: 380px;
     }
-    .auth-image-overlay h2 {
-        font-size: 1.5rem;
-    }
 }
 @media (max-height: 650px) and (min-width: 701px) {
     .auth-panel {
@@ -306,4 +303,109 @@
         height: 260px;
         flex-shrink: 0;
     }
+}
+
+
+/* Thu gọn khu vực form đăng ký */
+.auth-register .auth-panel {
+    padding: 12px 40px;
+    overflow: hidden;
+}
+
+.auth-register .auth-content {
+    max-width: 420px;
+}
+
+/* Tiêu đề */
+.auth-register .auth-heading {
+    margin-bottom: 18px;
+}
+
+.auth-register .auth-heading h1 {
+    font-size: 1.7rem;
+    margin-bottom: 6px;
+}
+
+.auth-register .auth-heading p {
+    font-size: 0.85rem;
+}
+
+/* Các ô nhập liệu */
+.auth-register .auth-field {
+    margin-bottom: 12px;
+}
+
+.auth-register .auth-field label {
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.auth-register .auth-field input {
+    height: 40px;
+    font-size: 0.85rem;
+}
+
+/* Nút đăng ký */
+.auth-register .auth-submit {
+    height: 42px;
+    margin-top: 2px;
+}
+
+/* Liên kết đăng nhập */
+.auth-register .auth-switch {
+    margin-top: 17px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Hình ảnh */
+.auth-register .auth-image img {
+    object-fit: cover;
+    object-position: center;
+    transition: none;
+}
+
+/* Màn hình laptop có chiều cao thấp */
+@media (max-height: 700px) and (min-width: 701px) {
+
+    .auth-register .auth-panel {
+        padding: 8px 30px;
+    }
+
+    .auth-register .auth-logo {
+        font-size: 1.8rem;
+    }
+
+    .auth-register .auth-slogan {
+        margin-bottom: 10px;
+    }
+
+    .auth-register .auth-heading {
+        margin-bottom: 10px;
+    }
+
+    .auth-register .auth-heading h1 {
+        font-size: 1.45rem;
+    }
+
+    .auth-register .auth-heading p {
+        font-size: 0.8rem;
+    }
+
+    .auth-register .auth-field {
+        margin-bottom: 8px;
+    }
+
+    .auth-register .auth-field input {
+        height: 36px;
+    }
+
+    .auth-register .auth-submit {
+        height: 38px;
+    }
+
+    .auth-register .auth-switch {
+        margin-top: 12px;
+    }
+
 }

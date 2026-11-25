@@ -49,6 +49,7 @@
 }
 
 .book-heading h1 {
+    color: var(--forest);
     font-size: 48px;
     font-weight: 800;
     margin-bottom: 15px;
@@ -64,6 +65,9 @@
 .book-heading {
     text-align: center;
     padding: 40px 20px;
+    background-color: var(--paper-dark);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 36px;
 }
 
 .book-heading h1 {
@@ -375,7 +379,8 @@
 
 /* Tên sách */
 .book-card-content h3 {
-    height: 150px;
+    font-size: 18px;
+    height: 50px;
     overflow: hidden;
 }
 

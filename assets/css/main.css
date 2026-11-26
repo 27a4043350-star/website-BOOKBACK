@@ -789,3 +789,107 @@ h4 { font-size: 1.15rem; }
     color: #C69B4B;
 }
 
+<!-- SÁCH NỔI BẬT -->
+.home-book-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Thẻ sách */
+.home-book-grid .book-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-book-grid .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Ảnh bìa */
+.home-book-grid .book-image-wrapper {
+    height: 260px;
+    width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+/* Tag giảm giá */
+.home-book-grid .book-discount {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 2;
+    padding: 5px 9px;
+    background: #f15b3e;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Tag tình trạng sách */
+.home-book-grid .book-condition {
+    left: auto;
+    right: 8px;
+}
+
+/* Nội dung thẻ */
+.home-book-grid .book-card-content {
+    padding: 14px;
+}
+
+/* Tên sách */
+.home-book-grid .book-card-content h3 {
+    height: 52px;
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+/* Giá sách */
+.home-book-grid .book-card-content .book-price {
+    min-height: 55px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Nút xem chi tiết */
+.home-book-grid .book-card-content .btn {
+    margin-top: auto;
+    align-self: stretch;
+    text-align: center;
+}
+
+/* Máy tính bảng */
+@media (max-width: 992px) {
+    .home-book-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Điện thoại */
+@media (max-width: 576px) {
+    .home-book-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .home-book-grid .book-image-wrapper {
+        height: 210px;
+    }
+
+    .home-book-grid .book-card-content {
+        padding: 10px;
+    }
+}

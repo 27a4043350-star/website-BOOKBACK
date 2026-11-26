@@ -789,7 +789,7 @@ h4 { font-size: 1.15rem; }
     color: #C69B4B;
 }
 
-<!-- SÁCH NỔI BẬT -->
+
 .home-book-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));

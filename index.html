@@ -68,7 +68,7 @@
         </div>
     </div>
     </header>
-    <main>
+<main>
 <!-- BANNER CHÍNH -->
     <section class="banner-slider" aria-label="Banner quảng bá">
         <div class="slides">
@@ -92,7 +92,6 @@
         <button class="dot" data-index="2" aria-label="Banner 3"></button>
         </div>
     </section>
-
 <!-- BANNER PHỤ – 3 ẢNH -->
     <section class="promo-banners">
         <div class="container">
@@ -109,7 +108,7 @@
         </div>
         </div>
     </section>
-    
+
 <!-- SÁCH NỔI BẬT -->
     <section class="section home-featured">
         <div class="container">
@@ -124,29 +123,106 @@
         </div>
     </section>
 <!-- SÁCH BÁN CHẠY -->
-<section class="section home-best-sellers">
+    <section class="section home-best-sellers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sách bán chạy</h2>
+            </div>
+            <div class="home-book-grid" id="homeBestSellerBooks">
+            </div>
+        </div>
+    </section>
+
+<!-- ĐÁNH GIÁ VÀ PHẢN HỒI KHÁCH HÀNG -->
+<section class="section home-reviews">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Sách bán chạy</h2>
+            <h2 class="section-title">Đánh giá và phản hồi từ khách hàng</h2>
+            <p class="section-desc">
+                Những chia sẻ về trải nghiệm mua sách tại BOOKBACK.
+            </p>
         </div>
-        <div class="home-book-grid" id="homeBestSellerBooks">
+        <div class="reviews-box">
+            <div class="review-slider" id="reviewSlider">
+                <!-- Đánh giá 1 -->
+                <article class="review-slide active">
+                    <div class="review-avatar">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLZuRUMZfbqD9T98WWpGskqCUQ7VYIwyhd7lXvjBhmw&s=10"
+                            alt="Ảnh đại diện Minh Anh"
+                        >
+                    </div>
+                    <div class="review-stars" aria-label="5 sao">
+                        ★★★★★
+                    </div>
+                    <p class="review-content">
+                        Mình khá bất ngờ vì sách cũ nhưng chất lượng vẫn rất tốt. Giá cả hợp lý, thông tin tình trạng sách rõ ràng nên mình dễ dàng lựa chọn được cuốn sách phù hợp. Chắc chắn sẽ tiếp tục ủng hộ BOOKBACK!
+                    </p>
+                    <h3 class="review-name">Minh Anh</h3>
+                    <p class="review-role">Người mua sách</p>
+                </article>
+
+                <!-- Đánh giá 2 -->
+                <article class="review-slide">
+                    <div class="review-avatar">
+                        <img
+                            src="https://chothuestudio.com/wp-content/uploads/2024/07/Ban-sao-cua-HNMT9903-533x800.jpg"
+                            alt="Ảnh đại diện Hoàng Nam"
+                        >
+                    </div>
+                    <div class="review-stars" aria-label="5 sao">
+                        ★★★★★
+                    </div>
+                    <p class="review-content">
+                        BOOKBACK có nhiều đầu sách hay với mức giá khá tiết kiệm. Mình thích cách website trình bày thông tin sách rõ ràng, dễ tìm kiếm và đặt mua. Trải nghiệm mua hàng khá thuận tiện!
+                    </p>
+                    <h3 class="review-name">Hoàng Nam</h3>
+                    <p class="review-role">Người mua sách</p>
+                </article>
+
+                <!-- Đánh giá 3 -->
+                <article class="review-slide">
+                    <div class="review-avatar">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1DCJm5SIIf-dhhzkJVE-ymkvsd7kWFOxrfYlm36pSQ&s"
+                            alt="Ảnh đại diện Thu Hà"
+                        >
+                    </div>
+                    <div class="review-stars" aria-label="5 sao">
+                        ★★★★★
+                    </div>
+                    <p class="review-content">
+                        Mình rất thích ý tưởng mua bán sách cũ của BOOKBACK. Không chỉ tiết kiệm chi phí mà còn góp phần kéo dài vòng đời của những cuốn sách. Mong website sẽ ngày càng có thêm nhiều đầu sách thú vị!
+                    </p>
+                    <h3 class="review-name">Trần Linh</h3>
+                    <p class="review-role">Người mua sách</p>
+                </article>
+            </div>
+
+            <!-- Các dấu chấm chuyển đánh giá -->
+            <div class="review-dots">
+                <button class="review-dot active"
+                        type="button"
+                        data-slide="0"
+                        aria-label="Xem đánh giá 1">
+                </button>
+                <button class="review-dot"
+                        type="button"
+                        data-slide="1"
+                        aria-label="Xem đánh giá 2">
+                </button>
+                <button class="review-dot"
+                        type="button"
+                        data-slide="2"
+                        aria-label="Xem đánh giá 3">
+                </button>
+            </div>
         </div>
     </div>
 </section>
 
-
-
-
-
-
-
-    <section>
-        <h2>BẠN CÓ SÁCH KHÔNG CÒN SỬ DỤNG?</h2>
-        <p>Hãy đăng bán sách của bạn trên BOOKBACK để tìm ra chủ nhân mới của nó.</p>
-        <a href="pages/contact.html">Liên hệ thu mua</a>
-    </section>
     
-    </main>
+</main>
 
 
 
@@ -243,5 +319,6 @@
     <script src="assets/js/book-data.js" defer></script>
     <script src="assets/js/home-featured.js" defer></script>
     <script src="assets/js/home-bestseller.js" defer></script>
+    <script src="assets/js/home-reviews.js" defer></script>
 </body>
 </html>

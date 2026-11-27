@@ -789,7 +789,6 @@ h4 { font-size: 1.15rem; }
     color: #C69B4B;
 }
 
-
 .home-book-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -891,5 +890,147 @@ h4 { font-size: 1.15rem; }
 
     .home-book-grid .book-card-content {
         padding: 10px;
+    }
+}
+
+
+/* ĐÁNH GIÁ VÀ PHẢN HỒI KHÁCH HÀNG */
+.home-reviews {
+    padding: 48px 0;
+}
+
+/* Khung nền */
+.home-reviews .reviews-box {
+    background: #F1EBD9;
+    border: 1px solid #E5DCC7;
+    border-radius: var(--radius-lg);
+    padding: 36px 50px;
+}
+
+/* Khung slider */
+.home-reviews .review-slider {
+    position: relative;
+    min-height: 270px;
+}
+
+/* Từng đánh giá */
+.home-reviews .review-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+    animation: reviewFade 0.45s ease;
+}
+
+.home-reviews .review-slide.active {
+    display: flex;
+}
+
+/* Hiệu ứng chuyển */
+@keyframes reviewFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ảnh đại diện tạm thời */
+.home-reviews .review-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: #DCE7D8;
+    color: var(--forest);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Sao đánh giá */
+.home-reviews .review-stars {
+    color: #C69B4B;
+    font-size: 21px;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+}
+
+/* Nội dung đánh giá */
+.home-reviews .review-content {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0 0 18px;
+}
+
+/* Tên khách hàng */
+.home-reviews .review-name {
+    color: var(--forest);
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+/* Vai trò khách hàng */
+.home-reviews .review-role {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Các dấu chấm */
+.home-reviews .review-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+/* Nút chấm */
+.home-reviews .review-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #C9C3B5;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.home-reviews .review-dot.active {
+    background: var(--forest);
+    transform: scale(1.25);
+}
+
+/* Hiệu ứng khi di chuột */
+.home-reviews .review-dot:hover {
+    background: var(--gold);
+}
+
+/* Điện thoại */
+@media (max-width: 576px) {
+    .home-reviews .reviews-box {
+        padding: 28px 18px;
+    }
+
+    .home-reviews .review-slider {
+        min-height: 320px;
+    }
+
+    .home-reviews .review-content {
+        font-size: 14px;
     }
 }

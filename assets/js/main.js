@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Vị trí banner đang hiển thị
     let currentIndex = 0;
     // Thời gian tự động chuyển banner: 10 giây
-    const slideInterval = 10000;
+    const slideInterval = 3000;
 
     // Biến quản lý bộ đếm thời gian
     let autoSlideTimer;

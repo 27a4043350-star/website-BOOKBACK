@@ -625,3 +625,11 @@
         font-size: 15px;
     }
 }
+
+#homeBestSellerBooks .book-condition {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: auto;
+    z-index: 2;
+}

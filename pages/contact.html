@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ & Thu mua - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/contact.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <div class="top-left">
+            <a href="#">Đăng nhập</a>
+            <span class="sep">|</span>
+            <a href="#">Đăng ký</a>
+          </div>
+          <div class="top-right">
+            <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+            <a href="cart.html" class="top-cart">
+              Giỏ hàng <span class="cart-count">0</span> sản phẩm
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header-main">
+        <div class="container header-inner">
+          <a href="../index.html" class="logo-block">
+            <span class="logo-text">BOOKBACK</span>
+            <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+          </a>
+          <nav class="nav" aria-label="Menu chính">
+            <a href="../index.html" class="nav-link">Trang chủ</a>
+            <a href="about.html" class="nav-link">Giới thiệu</a>
+            <a href="books.html" class="nav-link">Danh mục sách</a>
+            <a href="calculator.html" class="nav-link">Công cụ tính</a>
+            <a href="contact.html" class="nav-link active">Thu mua sách</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="contact-main">
+      <section class="contact-layout" aria-label="Liên hệ và thu mua sách">
+        <div class="contact-panel">
+          <section class="contact-details" aria-labelledby="contact-title">
+            <h1 id="contact-title">Thông tin liên hệ</h1>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <a href="tel:0969990579">0969990579</a>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <a href="mailto:27a4043350@hvnh.edu.vn"
+                  >27a4043350@hvnh.edu.vn</a
+                >
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">⌖</span>
+                <span>12 Chùa Bộc, Đống Đa, Hà Nội</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="request-section" aria-labelledby="request-title">
+            <h2 id="request-title">Bạn cần hỗ trợ thu mua?</h2>
+            <p class="request-intro">
+              Gửi thông tin sách và BOOKBACK sẽ liên hệ tư vấn cho bạn.
+            </p>
+            <form class="request-form">
+              <div class="field">
+                <label for="name">Họ và tên</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Nhập họ tên của bạn"
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="field">
+                <label for="phone">Số điện thoại</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="0987654321"
+                  inputmode="numeric"
+                  pattern="0[0-9]{9}"
+                  minlength="10"
+                  maxlength="10"
+                  title="Số điện thoại phải gồm 10 chữ số và bắt đầu bằng số 0."
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="email-local">Email</label>
+                <div class="email-input">
+                  <input
+                    id="email-local"
+                    type="text"
+                    data-gmail-local
+                    placeholder="ten.email"
+                    autocomplete="email"
+                    pattern="[^@\s]+"
+                    title="Chỉ nhập phần tên email trước @gmail.com."
+                  />
+                  <span aria-hidden="true">@gmail.com</span>
+                </div>
+                <input type="hidden" name="email" data-gmail-address />
+              </div>
+
+              <div class="field">
+                <label for="purpose">Bạn cần hỗ trợ về</label>
+                <select id="purpose">
+                  <option>Mua sách cũ</option>
+                  <option>Hỏi giá sách</option>
+                  <option>Liên hệ hợp tác</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Thông tin sách</label>
+                <textarea
+                  id="message"
+                  placeholder="Tên sách, tình trạng và số lượng bạn muốn bán..."
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Gửi yêu cầu</button>
+            </form>
+          </section>
+        </div>
+
+        <section class="map-panel" aria-label="Bản đồ Học viện Ngân hàng">
+          <iframe
+            src="https://www.google.com/maps?q=Banking+Academy,+12+Chua+Boc,+Hanoi&output=embed"
+            title="Bản đồ Học viện Ngân hàng"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </section>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+    <script src="../assets/js/footer.js"></script>
+    <script src="../assets/js/gmail-email.js" defer></script>
+    <script src="../assets/js/chatbot.js" defer></script>
+  </body>
+</html>

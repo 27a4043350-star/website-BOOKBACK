@@ -1,0 +1,91 @@
+<!-- POP-UP ƯU ĐÃI TRANG CHỦ -->
+<div
+  class="popup-backdrop"
+  id="popupBackdrop"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Ưu đãi độc quyền BOOKBACK"
+>
+  <div class="promo-modal">
+    <button
+      type="button"
+      class="promo-close-btn"
+      id="closePopupBtn"
+      aria-label="Đóng ưu đãi"
+    >
+      &times;
+    </button>
+
+    <p class="promo-script">Chào mừng bạn đến với</p>
+    <h2 class="promo-brand">BOOKBACK</h2>
+    <div class="promo-pill">ƯU ĐÃI SINH VIÊN HVNH – MUA SÁCH LÀ LỜI!</div>
+
+    <div class="promo-cards">
+      <div class="promo-deal">
+        <div class="deal-tag">⚡ BẠN MỚI</div>
+        <div class="deal-sub">Giảm ngay</div>
+        <div class="deal-value">15%</div>
+        <span class="deal-code">Mã: LANDAU15</span>
+      </div>
+
+      <div class="promo-deal">
+        <div class="deal-tag">🎁 TRI ÂN 20/11</div>
+        <div class="deal-sub">Ưu đãi đặc biệt</div>
+        <div class="deal-value">20%</div>
+        <span class="deal-code">Mã: TRIAN2011</span>
+      </div>
+    </div>
+
+    <div class="promo-perks">
+      <div class="perk-item">
+        <span class="perk-icon">⚡</span>
+        <span class="perk-text">FLASH SALE<br />Giảm 20K</span>
+      </div>
+      <div class="perk-item">
+        <span class="perk-icon">%</span>
+        <span class="perk-text">GIẢM TỚI 20%<br />Đơn giáo trình</span>
+      </div>
+      <div class="perk-item">
+        <span class="perk-icon">🎁</span>
+        <span class="perk-text">FREESHIP<br />Tại 12 Chùa Bộc</span>
+      </div>
+      <div class="perk-item">
+        <span class="perk-icon">✓</span>
+        <span class="perk-text">SÁCH CHỌN LỌC<br />Độ mới &gt;70%</span>
+      </div>
+    </div>
+
+    <a href="pages/promotion.html" class="promo-cta">
+      KHÁM PHÁ ƯU ĐÃI NGAY &rsaquo;
+    </a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const backdrop = document.getElementById("popupBackdrop");
+    const closeBtn = document.getElementById("closePopupBtn");
+    if (!backdrop || !closeBtn) return;
+
+    // Chỉ hiện 1 lần mỗi phiên truy cập (nếu muốn lần nào F5 cũng hiện thì xóa 4 dòng if/setItem này)
+    if (sessionStorage.getItem("bookback_promo_seen") === "1") {
+      backdrop.classList.add("is-hidden");
+      return;
+    }
+
+    function closePromoPopup() {
+      backdrop.classList.add("is-hidden");
+      sessionStorage.setItem("bookback_promo_seen", "1");
+    }
+
+    closeBtn.addEventListener("click", closePromoPopup);
+    backdrop.addEventListener("click", (e) => {
+      if (e.target === backdrop) closePromoPopup();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !backdrop.classList.contains("is-hidden")) {
+        closePromoPopup();
+      }
+    });
+  });
+</script>

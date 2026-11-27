@@ -1,0 +1,251 @@
+/* ===== BUYBACK PAGE ===== */
+.contact-main {
+  width: 100%;
+  max-width: 1180px;
+  margin: 32px auto 48px;
+  padding: 0 20px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.contact-panel,
+.map-panel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-panel {
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.contact-details h1,
+.request-section h2 {
+  margin-bottom: 20px;
+  color: var(--ink);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  text-align: center;
+}
+
+.contact-list {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  color: var(--muted);
+}
+
+.contact-list a,
+.contact-list li > span:last-child {
+  overflow-wrap: anywhere;
+  color: var(--muted);
+}
+
+.contact-list a:hover {
+  color: var(--forest);
+}
+
+.contact-icon {
+  display: grid;
+  flex: 0 0 22px;
+  place-items: center;
+  color: var(--gold-dark);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.request-section {
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.request-section h2 {
+  margin-bottom: 6px;
+}
+
+.request-intro {
+  margin-bottom: 18px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.request-form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 5px;
+}
+
+.field label {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea,
+.email-input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fbfaf7;
+  color: var(--ink);
+  font: inherit;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px 13px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted-light);
+}
+
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.email-input {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 13px;
+  color: var(--muted);
+}
+
+.email-input input {
+  min-width: 0;
+  padding-right: 0;
+  padding-left: 0;
+  border: 0;
+  background: transparent;
+}
+
+.email-input input:focus {
+  outline: 0;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.email-input:focus-within {
+  outline: 2px solid rgba(38, 63, 50, 0.16);
+  outline-offset: 1px;
+  border-color: var(--forest-2);
+}
+
+.submit-btn {
+  justify-self: start;
+  margin-top: 4px;
+  padding: 11px 22px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--forest);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  background: var(--forest-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.submit-btn:focus-visible {
+  outline: 3px solid rgba(198, 155, 75, 0.55);
+  outline-offset: 3px;
+}
+
+.map-panel {
+  position: relative;
+  min-height: 680px;
+  background: var(--paper-dark);
+}
+
+.map-panel iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .map-panel {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-main {
+    margin: 20px auto 32px;
+    padding: 0 14px;
+  }
+
+  .contact-layout {
+    gap: 16px;
+  }
+
+  .contact-panel {
+    padding: 22px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-details h1,
+  .request-section h2 {
+    margin-bottom: 16px;
+  }
+
+  .contact-list {
+    gap: 13px;
+    margin-bottom: 24px;
+  }
+
+  .request-section {
+    padding-top: 22px;
+  }
+
+  .request-form {
+    gap: 10px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .map-panel {
+    min-height: 320px;
+    border-radius: var(--radius-lg);
+  }
+}

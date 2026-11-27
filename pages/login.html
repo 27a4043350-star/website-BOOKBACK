@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body class="auth-page">
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-left">
+                    <a href="login.html">Đăng nhập</a>
+                    <span class="sep">|</span>
+                    <a href="register.html">Đăng ký</a>
+                </div>
+                <div class="top-right">
+                    <a href="books.html" class="top-search"
+                       aria-label="Tìm kiếm">🔍</a>
+                    <button
+                        type="button"
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Chuyển đổi giao diện sáng tối"
+                        aria-pressed="false"
+                        title="Chuyển đổi giao diện"
+                    >
+                        <svg class="bulb-icon"
+                             viewBox="0 0 24 24"
+                             width="22"
+                             height="22"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="M9 18h6"/>
+                            <path d="M10 22h4"/>
+                            <path d="M8.5 14.5a7 7 0 1 1 7 0c-.8.6-1.2 1.4-1.3 2.5h-4.4c-.1-1.1-.5-1.9-1.3-2.5Z"/>
+                        </svg>
+                    </button>
+                    <a href="cart.html" class="top-cart">
+                        Giỏ hàng
+                        <span class="cart-count">0</span> sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container header-inner">
+                <a href="../index.html" class="logo-block">
+                    <span class="logo-text">BOOKBACK</span>
+                    <span class="logo-slogan">
+                        Sách cũ – Quay trở lại với tri thức
+                    </span>
+                </a>
+                <nav class="nav" aria-label="Menu chính">
+                    <a href="../index.html" class="nav-link active">Trang chủ</a>
+                    <a href="../../pages/about.html" class="nav-link">Giới thiệu</a>
+                    <a href="../../pages/books.html" class="nav-link">Danh mục sách</a>
+                    <a href="../../pages/calculator.html" class="nav-link">Công cụ tính</a>
+                    <a href="../../pages/contact.html" class="nav-link">Thu mua sách</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <section class="auth-panel">
+            <div class="auth-content">
+                <div class="auth-heading">
+                    <h1>Chào mừng trở lại!</h1>
+                    <p>Đăng nhập để tiếp tục khám phá thế giới sách tại BOOKBACK.</p>
+                </div>
+                <form id="loginForm">
+                    <div class="auth-field">
+                        <label for="loginEmail">Email</label>
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="Nhập email của bạn"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                    <div class="auth-field">
+                        <label for="loginPassword">Mật khẩu</label>
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Nhập mật khẩu"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+                    <!-- Nút đăng nhập -->
+                    <button type="submit" class="auth-submit">Đăng nhập</button>
+                    <!-- Quên mật khẩu và đăng ký -->
+                    <div class="auth-form-links">
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                        <div class="auth-switch">Chưa có tài khoản?<a href="register.html">Đăng ký ngay</a></div>
+                    </div>
+                </form>
+                <a href="../index.html" class="auth-back">
+                    ← Quay lại trang chủ
+                </a>
+            </div>
+        </section>
+
+        <!-- BÊN PHẢI -->
+        <section class="auth-image">
+            <img
+                src="https://img1.kienthucvui.vn/uploads/2022/01/02/hinh-anh-meo-doc-sach-cute_095240061.jpg"
+                alt="Không gian sách tại BOOKBACK"
+            >
+        </section>
+    </main>
+</body>
+</html>

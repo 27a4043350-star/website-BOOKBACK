@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán - BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/checkout.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <!-- Thanh tiện ích trên cùng -->
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <div class="top-left">
+            <a href="login.html">Đăng nhập</a>
+            <span class="sep">|</span>
+            <a href="register.html">Đăng ký</a>
+          </div>
+          <div class="top-right">
+            <a href="books.html" class="top-search" aria-label="Tìm kiếm">🔍</a>
+            <button
+              type="button"
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Chuyển đổi giao diện sáng tối"
+              aria-pressed="false"
+              title="Chuyển đổi giao diện"
+            >
+              <svg
+                class="bulb-icon"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+                <path
+                  d="M8.5 14.5a7 7 0 1 1 7 0c-.8.6-1.2 1.4-1.3 2.5h-4.4c-.1-1.1-.5-1.9-1.3-2.5Z"
+                />
+              </svg>
+            </button>
+            <a href="cart.html" class="top-cart">
+              Giỏ hàng <span class="cart-count">0</span> sản phẩm
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEADER CHÍNH -->
+      <div class="header-main">
+        <div class="container header-inner">
+          <a href="../index.html" class="logo-block">
+            <span class="logo-text">BOOKBACK</span>
+            <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+          </a>
+
+          <nav class="nav" aria-label="Menu chính">
+            <a href="../index.html" class="nav-link">Trang chủ</a>
+            <a href="about.html" class="nav-link">Giới thiệu</a>
+            <a href="books.html" class="nav-link">Danh mục sách</a>
+            <a href="calculator.html" class="nav-link">Công cụ tính</a>
+            <a href="contact.html" class="nav-link">Thu mua sách</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-top">
+        <h2>Thanh toán</h2>
+        <p>Vui lòng điền thông tin để hoàn tất đơn hàng.</p>
+      </div>
+
+      <div class="checkout-layout">
+        <section class="form-panel">
+          <h3 class="section-title">Thông tin giao hàng</h3>
+
+          <form id="checkout-form">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Họ và tên</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Nhập họ tên"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="phone">Số điện thoại</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="0987654321"
+                  inputmode="numeric"
+                  pattern="0[0-9]{9}"
+                  minlength="10"
+                  maxlength="10"
+                  title="Số điện thoại phải gồm 10 chữ số và bắt đầu bằng số 0."
+                  required
+                />
+              </div>
+
+              <div class="field full">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="ten.email@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="city">Tỉnh / Thành phố</label>
+                <select id="city" name="city" required>
+                  <option value="Hà Nội">Hà Nội</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="district">Quận / Huyện</label>
+                <select id="district" name="district" required>
+                  <option value="" disabled selected>Chọn quận</option>
+                  <option value="Thanh Xuân">Thanh Xuân</option>
+                  <option value="Hoàn Kiếm">Hoàn Kiếm</option>
+                  <option value="Ba Đình">Ba Đình</option>
+                  <option value="Đống Đa">Đống Đa</option>
+                  <option value="Cầu Giấy">Cầu Giấy</option>
+                  <option value="Hai Bà Trưng">Hai Bà Trưng</option>
+                  <option value="Nam Từ Liêm">Nam Từ Liêm</option>
+                  <option value="Bắc Từ Liêm">Bắc Từ Liêm</option>
+                  <option value="Hà Đông">Hà Đông</option>
+                  <option value="Hoàng Mai">Hoàng Mai</option>
+                  <option value="Long Biên">Long Biên</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="address">Địa chỉ nhận hàng</label>
+                <textarea
+                  id="address"
+                  name="address"
+                  rows="3"
+                  placeholder="Số nhà, tên đường, phường/xã..."
+                  required
+                ></textarea>
+              </div>
+              <div class="field full">
+                <label for="order-note">Ghi chú đơn hàng</label>
+                <textarea
+                  id="order-note"
+                  name="orderNote"
+                  placeholder="Ghi chú về thời gian nhận hàng hoặc lưu ý cho BOOKBACK..."
+                ></textarea>
+              </div>
+            </div>
+
+            <h3 class="section-title section-title-spaced">
+              Vận chuyển & thanh toán
+            </h3>
+            <p class="subsection-title">Đơn vị vận chuyển</p>
+            <label class="shipping-option">
+              <input
+                type="radio"
+                name="shipping"
+                value="standard"
+                checked
+                disabled
+              />
+              <span>
+                <strong>Giao hàng tiêu chuẩn</strong>
+                <small>Phí vận chuyển được tính trong tóm tắt đơn hàng.</small>
+              </span>
+            </label>
+
+            <p class="subsection-title">Phương thức thanh toán</p>
+            <div class="payment-methods">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="cod" checked />
+                <span>
+                  <strong>Thanh toán khi nhận hàng (COD)</strong>
+                  <small>Thanh toán trực tiếp khi nhận sách.</small>
+                </span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="bank-transfer" />
+                <span>
+                  <strong>Chuyển khoản ngân hàng</strong>
+                  <small>Quét VietQR để chuyển khoản qua ACB.</small>
+                </span>
+              </label>
+              <section
+                class="bank-transfer-details"
+                data-bank-transfer
+                hidden
+                aria-live="polite"
+              >
+                <h4>Thông tin chuyển khoản</h4>
+                <div class="bank-transfer-content">
+                  <img
+                    class="bank-transfer-qr"
+                    src="../assets/images/checkout/acb-payment-qr.jpg"
+                    alt="Mã VietQR chuyển khoản đến tài khoản ACB của Đặng Duy Quang"
+                  />
+                  <div class="bank-transfer-info">
+                    <p>Ngân hàng <strong>ACB</strong></p>
+                    <p>Chủ tài khoản <strong>ĐẶNG DUY QUANG</strong></p>
+                    <p>Số tài khoản <strong>17374441</strong></p>
+                    <p>Số tiền <strong data-transfer-amount>0đ</strong></p>
+                    <p>
+                      Nội dung chuyển khoản
+                      <strong data-transfer-reference></strong>
+                    </p>
+                  </div>
+                </div>
+                <p class="bank-transfer-note">
+                  Quét QR, kiểm tra đúng tên người nhận, rồi nhập số tiền và nội
+                  dung chuyển khoản ở trên. Đơn chuyển khoản chỉ ở trạng thái
+                  chờ xác nhận; website chưa tự kiểm tra được giao dịch.
+                </p>
+              </section>
+            </div>
+          </form>
+        </section>
+
+        <aside class="summary-panel">
+          <h3>Đơn hàng (<span data-order-count>0</span> sản phẩm)</h3>
+
+          <div class="order-list">
+            <p class="cart-empty">Giỏ hàng đang trống.</p>
+          </div>
+
+          <div class="summary-row">
+            <span>Tạm tính</span>
+            <strong data-cart-subtotal>0đ</strong>
+          </div>
+          <div class="summary-row">
+            <span>Phí vận chuyển</span>
+            <strong data-cart-shipping>0đ</strong>
+          </div>
+          <div class="summary-row">
+            <span>Giảm giá</span>
+            <strong data-cart-discount>-0đ</strong>
+          </div>
+          <div class="summary-row total">
+            <span>Tổng thanh toán</span>
+            <strong data-cart-total>0đ</strong>
+          </div>
+
+          <button class="checkout-btn" type="submit" form="checkout-form">
+            Xác nhận đặt hàng
+          </button>
+          <section
+            class="order-result"
+            data-checkout-status
+            role="status"
+            aria-live="polite"
+            hidden
+          >
+            <h4 data-order-result-title></h4>
+            <p data-order-result-message></p>
+            <p>Mã đơn hàng <strong data-order-result-id></strong></p>
+            <p>Tổng thanh toán <strong data-order-result-total></strong></p>
+            <a href="books.html">Tiếp tục mua sách</a>
+          </section>
+
+          <div class="note">
+            Đơn hàng được lưu trên trình duyệt này; BOOKBACK chưa nhận được đơn
+            vì website chưa kết nối máy chủ. Không dùng chức năng đặt hàng trên
+            thiết bị công cộng.
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div id="orderSuccessModal" class="order-modal-overlay">
+      <div class="order-modal-box">
+        <div class="order-modal-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm0 11c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+            />
+          </svg>
+        </div>
+
+        <h2 class="order-modal-title">Đặt Hàng Thành Công!</h2>
+
+        <p class="order-modal-desc">
+          Cảm ơn bạn đã lựa chọn mua sắm tại BOOKBACK.<br />
+          Mã đơn hàng của bạn là
+          <span id="modalOrderCode" data-order-result-id class="order-highlight"
+            >BB-000000</span
+          >
+          với tổng thanh toán là
+          <span
+            id="modalOrderTotal"
+            data-order-result-total
+            class="order-highlight"
+            >0đ</span
+          >.<br />
+          Tiệm đang chuẩn bị gửi đơn tốc hành đến bạn!
+        </p>
+
+        <a
+          href="../index.html"
+          id="continueShoppingBtn"
+          class="order-modal-btn"
+        >
+          Tiếp tục mua sắm &rarr;
+        </a>
+      </div>
+    </div>
+
+    <script src="../assets/js/gmail-email.js" defer></script>
+    <script src="../assets/js/book-data.js" defer></script>
+    <script src="../assets/js/cart-store.js" defer></script>
+    <script src="../assets/js/checkout.js" defer></script>
+    <script src="../assets/js/chatbot.js" defer></script>
+  </body>
+</html>

@@ -1,342 +1,456 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKBACK</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/sang.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/sang.css" />
 
-</head>
-<body id="top">
+    <style>
+      /* ==================== POPUP ƯU ĐÃI ==================== */
+      .popup-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        padding: 16px;
+        opacity: 1;
+        visibility: visible;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .popup-backdrop.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .promo-modal {
+        background: #ffffff;
+        border-radius: 20px;
+        max-width: 540px;
+        width: 100%;
+        padding: 32px 28px 28px;
+        position: relative;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        animation: popupIn 0.35s ease;
+      }
+
+      @keyframes popupIn {
+        from {
+          transform: scale(0.92) translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .promo-close-btn {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        background: #f1f1f1;
+        border: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        font-size: 22px;
+        line-height: 1;
+        color: #555;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+      .promo-close-btn:hover {
+        background: #e63946;
+        color: white;
+      }
+
+      .promo-script {
+        margin: 0;
+        font-size: 14px;
+        color: #777;
+      }
+
+      .promo-brand {
+        margin: 6px 0 14px;
+        font-size: 32px;
+        font-weight: 800;
+        color: #111;
+        letter-spacing: -0.5px;
+      }
+
+      .promo-pill {
+        display: inline-block;
+        background: linear-gradient(90deg, #e63946, #ff4757);
+        color: white;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 7px 18px;
+        border-radius: 50px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+      }
+
+      .promo-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+
+      .promo-deal {
+        background: #fff5f5;
+        border: 2px solid #ffccd5;
+        border-radius: 14px;
+        padding: 16px 12px;
+        transition: transform 0.2s;
+      }
+      .promo-deal:hover {
+        transform: translateY(-3px);
+      }
+
+      .deal-tag {
+        font-size: 13px;
+        font-weight: 700;
+        color: #e63946;
+        margin-bottom: 4px;
+      }
+
+      .deal-sub {
+        font-size: 12px;
+        color: #888;
+      }
+
+      .deal-value {
+        font-size: 32px;
+        font-weight: 800;
+        color: #e63946;
+        line-height: 1.1;
+        margin: 6px 0;
+      }
+
+      .deal-code {
+        display: inline-block;
+        background: white;
+        border: 1.5px dashed #e63946;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 8px;
+        color: #e63946;
+      }
+
+      .promo-perks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 16px;
+        margin-bottom: 26px;
+        text-align: left;
+      }
+
+      .perk-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+        color: #444;
+        line-height: 1.35;
+      }
+
+      .perk-icon {
+        font-size: 18px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .promo-cta {
+        display: block;
+        background: #111;
+        color: white !important;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 15px;
+        border-radius: 12px;
+        transition: all 0.25s;
+        letter-spacing: 0.3px;
+      }
+      .promo-cta:hover {
+        background: #e63946;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(230, 57, 70, 0.35);
+      }
+
+      @media (max-width: 520px) {
+        .promo-cards,
+        .promo-perks {
+          grid-template-columns: 1fr;
+        }
+        .promo-modal {
+          padding: 26px 18px 22px;
+        }
+        .promo-brand {
+          font-size: 26px;
+        }
+        .deal-value {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
     <header class="site-header">
-    <!-- Thanh tiện ích trên cùng -->
-    <div class="top-bar">
+      <!-- Thanh tiện ích trên cùng -->
+      <div class="top-bar">
         <div class="container top-bar-inner">
-        <div class="top-left">
+          <div class="top-left">
             <a href="pages/login.html">Đăng nhập</a>
             <span class="sep">|</span>
             <a href="pages/register.html">Đăng ký</a>
-        </div>
-        <div class="top-right">
+          </div>
+          <div class="top-right">
             <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
-            <!-- Nút chuyển sáng tối -->
             <button
-                type="button"
-                class="theme-toggle"
-                id="themeToggle"
-                aria-label="Chuyển sang chế độ tối"
-                aria-pressed="false"
-                title="Chuyển đổi giao diện sáng tối"
+              type="button"
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Chuyển sang chế độ tối"
+              aria-pressed="false"
+              title="Chuyển đổi giao diện sáng tối"
             >
-                <svg class="bulb-icon" viewBox="0 0 24 24"
-                    width="22" height="22"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path d="M9 18h6"/>
-                    <path d="M10 22h4"/>
-                    <path d="M8.5 14.5a7 7 0 1 1 7 0c-.8.6-1.2 1.4-1.3 2.5h-4.4c-.1-1.1-.5-1.9-1.3-2.5Z"/>
-                </svg>
+              <svg
+                class="bulb-icon"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+                <path
+                  d="M8.5 14.5a7 7 0 1 1 7 0c-.8.6-1.2 1.4-1.3 2.5h-4.4c-.1-1.1-.5-1.9-1.3-2.5Z"
+                />
+              </svg>
             </button>
             <a href="pages/cart.html" class="top-cart">
-            Giỏ hàng <span class="cart-count">0</span> sản phẩm
+              Giỏ hàng <span class="cart-count">0</span> sản phẩm
             </a>
+          </div>
         </div>
-        </div>
-    </div>
+      </div>
 
-    <!-- HEADER CHÍNH -->
-    <div class="header-main">
+      <!-- HEADER CHÍNH -->
+      <div class="header-main">
         <div class="container header-inner">
-        <a href="index.html" class="logo-block">
+          <a href="index.html" class="logo-block">
             <span class="logo-text">BOOKBACK</span>
             <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
-        </a>
+          </a>
 
-        <nav class="nav" aria-label="Menu chính">
+          <nav class="nav" aria-label="Menu chính">
             <a href="index.html" class="nav-link active">Trang chủ</a>
             <a href="pages/about.html" class="nav-link">Giới thiệu</a>
             <a href="pages/books.html" class="nav-link">Danh mục sách</a>
             <a href="pages/calculator.html" class="nav-link">Công cụ tính</a>
             <a href="pages/contact.html" class="nav-link">Thu mua sách</a>
-        </nav>
+          </nav>
         </div>
-    </div>
+      </div>
     </header>
-<main>
-<!-- BANNER CHÍNH -->
-    <section class="banner-slider" aria-label="Banner quảng bá">
+
+    <main>
+      <!-- BANNER CHÍNH -->
+      <section class="banner-slider" aria-label="Banner quảng bá">
         <div class="slides">
-        <div class="slide active">
-            <img src="assets/images/banner chính.jpg" alt="Banner 1 - Welcome to BOOKBACK Shop">
-        </div>
-        <div class="slide">
-            <img src="assets/images/banner 2.png" alt="Banner 2 - Mỗi cuốn sách là 1 hành trình">
-        </div>
-        <div class="slide">
-            <img src="assets/images/bve-mtrg.png" alt="Banner 3 - Bảo vệ môi trường">
-        </div>
+          <div class="slide active">
+            <img
+              src="assets/images/banner chính.jpg"
+              alt="Banner 1 - Welcome to BOOKBACK Shop"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="assets/images/banner 2.png"
+              alt="Banner 2 - Mỗi cuốn sách là 1 hành trình"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="assets/images/bve-mtrg.png"
+              alt="Banner 3 - Bảo vệ môi trường"
+            />
+          </div>
         </div>
 
         <button class="slider-btn prev" aria-label="Banner trước">‹</button>
         <button class="slider-btn next" aria-label="Banner sau">›</button>
 
         <div class="slider-dots">
-        <button class="dot active" data-index="0" aria-label="Banner 1"></button>
-        <button class="dot" data-index="1" aria-label="Banner 2"></button>
-        <button class="dot" data-index="2" aria-label="Banner 3"></button>
+          <button
+            class="dot active"
+            data-index="0"
+            aria-label="Banner 1"
+          ></button>
+          <button class="dot" data-index="1" aria-label="Banner 2"></button>
+          <button class="dot" data-index="2" aria-label="Banner 3"></button>
         </div>
-    </section>
-<!-- BANNER PHỤ – 3 ẢNH -->
-    <section class="promo-banners">
-        <div class="container">
-        <div class="promo-banners-grid">
-            <a href="pages/books.html" class="promo-banner">
-            <img src="assets/images/Welcome.png" alt="Tưng bừng khai trương">
-            </a>
-            <a href="pages/books.html" class="promo-banner">
-            <img src="assets/images/Sách đồng giá 19k.png" alt="Sách đồng giá 19k">
-            </a>
-            <a href="pages/books.html" class="promo-banner">
-            <img src="assets/images/Combo 99k.png" alt="Chỉ với 99k - Combo sách lý luận chính trị">
-            </a>
-        </div>
-        </div>
-    </section>
+      </section>
 
-<!-- SÁCH NỔI BẬT -->
-    <section class="section home-featured">
+      <!-- BANNER PHỤ – 3 ẢNH -->
+      <section class="promo-banners">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sách nổi bật</h2>
-                <p class="section-desc">
-                    Khám phá những cuốn sách đáng chú ý tại BOOKBACK.
-                </p>
-            </div>
-            <div class="home-book-grid" id="homeFeaturedBooks">
-            </div>
+          <div class="promo-banners-grid">
+            <a href="pages/books.html" class="promo-banner">
+              <img
+                src="assets/images/Welcome.png"
+                alt="Tưng bừng khai trương"
+              />
+            </a>
+            <a href="pages/books.html" class="promo-banner">
+              <img
+                src="assets/images/Sách đồng giá 19k.png"
+                alt="Sách đồng giá 19k"
+              />
+            </a>
+            <a href="pages/books.html" class="promo-banner">
+              <img
+                src="assets/images/Combo 99k.png"
+                alt="Chỉ với 99k - Combo sách lý luận chính trị"
+              />
+            </a>
+          </div>
         </div>
-    </section>
-<!-- SÁCH BÁN CHẠY -->
-    <section class="section home-best-sellers">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sách bán chạy</h2>
-            </div>
-            <div class="home-book-grid" id="homeBestSellerBooks">
-            </div>
-        </div>
-    </section>
+      </section>
 
-<!-- ĐÁNH GIÁ VÀ PHẢN HỒI KHÁCH HÀNG -->
-<section class="section home-reviews">
-    <div class="container">
-        <div class="section-header">
+      <!-- SÁCH NỔI BẬT -->
+      <section class="section home-featured">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Sách nổi bật</h2>
+            <p class="section-desc">
+              Khám phá những cuốn sách đáng chú ý tại BOOKBACK.
+            </p>
+          </div>
+          <div class="home-book-grid" id="homeFeaturedBooks"></div>
+        </div>
+      </section>
+
+      <!-- SÁCH BÁN CHẠY -->
+      <section class="section home-best-sellers">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Sách bán chạy</h2>
+          </div>
+          <div class="home-book-grid" id="homeBestSellerBooks"></div>
+        </div>
+      </section>
+
+      <!-- ĐÁNH GIÁ VÀ PHẢN HỒI KHÁCH HÀNG -->
+      <section class="section home-reviews">
+        <div class="container">
+          <div class="section-header">
             <h2 class="section-title">Đánh giá và phản hồi từ khách hàng</h2>
             <p class="section-desc">
-                Những chia sẻ về trải nghiệm mua sách tại BOOKBACK.
+              Những chia sẻ về trải nghiệm mua sách tại BOOKBACK.
             </p>
-        </div>
-        <div class="reviews-box">
+          </div>
+          <div class="reviews-box">
             <div class="review-slider" id="reviewSlider">
-                <!-- Đánh giá 1 -->
-                <article class="review-slide active">
-                    <div class="review-avatar">
-                        <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLZuRUMZfbqD9T98WWpGskqCUQ7VYIwyhd7lXvjBhmw&s=10"
-                            alt="Ảnh đại diện Minh Anh"
-                        >
-                    </div>
-                    <div class="review-stars" aria-label="5 sao">
-                        ★★★★★
-                    </div>
-                    <p class="review-content">
-                        Mình khá bất ngờ vì sách cũ nhưng chất lượng vẫn rất tốt. Giá cả hợp lý, thông tin tình trạng sách rõ ràng nên mình dễ dàng lựa chọn được cuốn sách phù hợp. Chắc chắn sẽ tiếp tục ủng hộ BOOKBACK!
-                    </p>
-                    <h3 class="review-name">Minh Anh</h3>
-                    <p class="review-role">Người mua sách</p>
-                </article>
+              <article class="review-slide active">
+                <div class="review-avatar">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLZuRUMZfbqD9T98WWpGskqCUQ7VYIwyhd7lXvjBhmw&s=10"
+                    alt="Ảnh đại diện Minh Anh"
+                  />
+                </div>
+                <div class="review-stars" aria-label="5 sao">★★★★★</div>
+                <p class="review-content">
+                  Mình khá bất ngờ vì sách cũ nhưng chất lượng vẫn rất tốt. Giá
+                  cả hợp lý, thông tin tình trạng sách rõ ràng nên mình dễ dàng
+                  lựa chọn được cuốn sách phù hợp. Chắc chắn sẽ tiếp tục ủng hộ
+                  BOOKBACK!
+                </p>
+                <h3 class="review-name">Minh Anh</h3>
+                <p class="review-role">Người mua sách</p>
+              </article>
 
-                <!-- Đánh giá 2 -->
-                <article class="review-slide">
-                    <div class="review-avatar">
-                        <img
-                            src="https://chothuestudio.com/wp-content/uploads/2024/07/Ban-sao-cua-HNMT9903-533x800.jpg"
-                            alt="Ảnh đại diện Hoàng Nam"
-                        >
-                    </div>
-                    <div class="review-stars" aria-label="5 sao">
-                        ★★★★★
-                    </div>
-                    <p class="review-content">
-                        BOOKBACK có nhiều đầu sách hay với mức giá khá tiết kiệm. Mình thích cách website trình bày thông tin sách rõ ràng, dễ tìm kiếm và đặt mua. Trải nghiệm mua hàng khá thuận tiện!
-                    </p>
-                    <h3 class="review-name">Hoàng Nam</h3>
-                    <p class="review-role">Người mua sách</p>
-                </article>
+              <article class="review-slide">
+                <div class="review-avatar">
+                  <img
+                    src="https://chothuestudio.com/wp-content/uploads/2024/07/Ban-sao-cua-HNMT9903-533x800.jpg"
+                    alt="Ảnh đại diện Hoàng Nam"
+                  />
+                </div>
+                <div class="review-stars" aria-label="5 sao">★★★★★</div>
+                <p class="review-content">
+                  BOOKBACK có nhiều đầu sách hay với mức giá khá tiết kiệm. Mình
+                  thích cách website trình bày thông tin sách rõ ràng, dễ tìm
+                  kiếm và đặt mua. Trải nghiệm mua hàng khá thuận tiện!
+                </p>
+                <h3 class="review-name">Hoàng Nam</h3>
+                <p class="review-role">Người mua sách</p>
+              </article>
 
-                <!-- Đánh giá 3 -->
-                <article class="review-slide">
-                    <div class="review-avatar">
-                        <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1DCJm5SIIf-dhhzkJVE-ymkvsd7kWFOxrfYlm36pSQ&s"
-                            alt="Ảnh đại diện Thu Hà"
-                        >
-                    </div>
-                    <div class="review-stars" aria-label="5 sao">
-                        ★★★★★
-                    </div>
-                    <p class="review-content">
-                        Mình rất thích ý tưởng mua bán sách cũ của BOOKBACK. Không chỉ tiết kiệm chi phí mà còn góp phần kéo dài vòng đời của những cuốn sách. Mong website sẽ ngày càng có thêm nhiều đầu sách thú vị!
-                    </p>
-                    <h3 class="review-name">Trần Linh</h3>
-                    <p class="review-role">Người mua sách</p>
-                </article>
+              <article class="review-slide">
+                <div class="review-avatar">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1DCJm5SIIf-dhhzkJVE-ymkvsd7kWFOxrfYlm36pSQ&s"
+                    alt="Ảnh đại diện Thu Hà"
+                  />
+                </div>
+                <div class="review-stars" aria-label="5 sao">★★★★★</div>
+                <p class="review-content">
+                  Mình rất thích ý tưởng mua bán sách cũ của BOOKBACK. Không chỉ
+                  tiết kiệm chi phí mà còn góp phần kéo dài vòng đời của những
+                  cuốn sách. Mong website sẽ ngày càng có thêm nhiều đầu sách
+                  thú vị!
+                </p>
+                <h3 class="review-name">Trần Linh</h3>
+                <p class="review-role">Người mua sách</p>
+              </article>
             </div>
 
-            <!-- Các dấu chấm chuyển đánh giá -->
             <div class="review-dots">
-                <button class="review-dot active"
-                        type="button"
-                        data-slide="0"
-                        aria-label="Xem đánh giá 1">
-                </button>
-                <button class="review-dot"
-                        type="button"
-                        data-slide="1"
-                        aria-label="Xem đánh giá 2">
-                </button>
-                <button class="review-dot"
-                        type="button"
-                        data-slide="2"
-                        aria-label="Xem đánh giá 3">
-                </button>
+              <button
+                class="review-dot active"
+                type="button"
+                data-slide="0"
+                aria-label="Xem đánh giá 1"
+              ></button>
+              <button
+                class="review-dot"
+                type="button"
+                data-slide="1"
+                aria-label="Xem đánh giá 2"
+              ></button>
+              <button
+                class="review-dot"
+                type="button"
+                data-slide="2"
+                aria-label="Xem đánh giá 3"
+              ></button>
             </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- TIN TỨC ĐÁNG CHÚ Ý -->
-<section class="section home-news">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">
-                Tin tức đáng chú ý
-            </h2>
-            <p class="section-desc">
-                Cập nhật những câu chuyện thú vị về sách và văn hóa đọc.
-            </p>
-        </div>
-        <div class="news-grid">
-            <!-- Tin tức 1 -->
-            <article class="news-card">
-                <a href="pages/Tin-Tuc/van-hoa-doc.html"
-                   class="news-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80"
-                        alt="Những cuốn sách dành cho việc đọc mỗi ngày">
-                </a>
-
-                <div class="news-content">
-                    <span class="news-category">
-                        Văn hóa đọc
-                    </span>
-                    <h3>
-                        Đọc sách mỗi ngày – Nuôi dưỡng tri thức, mở rộng tư duy
-                    </h3>
-                    <p>
-                        Đọc sách không chỉ giúp chúng ta tiếp thu
-                        kiến thức mà còn nuôi dưỡng khả năng tư duy,
-                        sáng tạo và khám phá thế giới.
-                    </p>
-
-                    <a href="../../pages/Tin-Tuc/van-hoa-doc.html"
-                       class="news-link">
-                        Đọc thêm
-                        <span>→</span>
-                    </a>
-
-                </div>
-            </article>
-
-            <!-- Tin tức 2 -->
-            <article class="news-card">
-
-                <a href="pages/Tin-Tuc/sach-cu.html"
-                   class="news-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80"
-                        alt="Không gian với những cuốn sách cũ">
-                </a>
-
-                <div class="news-content">
-
-                    <span class="news-category">
-                        Sách cũ – Giá trị mới
-                    </span>
-
-                    <h3>
-                        Sách cũ, giá trị mới – Khi tri thức
-                        được trao đi
-                    </h3>
-
-                    <p>
-                        Một cuốn sách đã qua sử dụng vẫn có thể
-                        tiếp tục mang đến kiến thức và cảm hứng
-                        cho nhiều độc giả khác.
-                    </p>
-
-                    <a href="pages/Tin-Tuc/sach-cu.html"
-                       class="news-link">
-                        Đọc thêm
-                        <span>→</span>
-                    </a>
-
-                </div>
-            </article>
-
-            <!-- Tin tức 3 -->
-            <article class="news-card">
-
-                <a href="pages/Tin-Tuc/song-xanh.html"
-                   class="news-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80"
-                        alt="Đọc sách và lối sống xanh">
-                </a>
-
-                <div class="news-content">
-
-                    <span class="news-category">
-                        Sống xanh
-                    </span>
-
-                    <h3>
-                        Mua sách cũ – Lựa chọn nhỏ cho
-                        lối sống bền vững
-                    </h3>
-
-                    <p>
-                        Lựa chọn sách đã qua sử dụng là cách
-                        thiết thực để kéo dài vòng đời sản phẩm
-                        và hạn chế lãng phí tài nguyên.
-                    </p>
-
-                    <a href="pages/Tin-Tuc/song-xanh.html"
-                       class="news-link">
-                        Đọc thêm
-                        <span>→</span>
-                    </a>
-
-                </div>
-            </article>
-
         </div>
     </div>
 </section>
@@ -346,99 +460,223 @@
 
 
 
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="container footer-main">
-        <!-- Cột Thông tin liên hệ -->
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-main">
         <div class="footer-col footer-brand">
-        <a href="index.html" class="footer-logo">
+          <a href="index.html" class="footer-logo">
             <span class="footer-logo-text">BOOKBACK</span>
-        </a>
-        <p class="footer-slogan">Sách cũ – Quay trở lại với tri thức</p>
+          </a>
+          <p class="footer-slogan">Sách cũ – Quay trở lại với tri thức</p>
 
-        <ul class="footer-contact">
+          <ul class="footer-contact">
             <li>
-            <span class="footer-icon" aria-hidden="true">📍</span>
-            <span>12 Chùa Bộc, Đống Đa, Hà Nội</span>
+              <span class="footer-icon" aria-hidden="true">📍</span>
+              <span>12 Chùa Bộc, Đống Đa, Hà Nội</span>
             </li>
             <li>
-            <span class="footer-icon" aria-hidden="true">📞</span>
-            <div>
+              <span class="footer-icon" aria-hidden="true">📞</span>
+              <div>
                 <a href="tel:0969990579">0969990579</a>
-            </div>
+              </div>
             </li>
             <li>
-            <span class="footer-icon" aria-hidden="true">@</span>
-            <a href="mailto:27a4043350@hvnh.edu.vn">27a4043350@hvnh.edu.vn</a>
+              <span class="footer-icon" aria-hidden="true">@</span>
+              <a href="mailto:27a4043350@hvnh.edu.vn">27a4043350@hvnh.edu.vn</a>
             </li>
-            <li><a href = "#top">Quay về đầu trang</a></li>
-        </ul>
+            <li><a href="#top">Quay về đầu trang</a></li>
+          </ul>
 
-        <!-- Mạng xã hội -->
-        <div class="footer-social">
-            <a href="https://www.facebook.com/share/1A5s3pSn68/?mibextid=wwXIfr" class="social-btn" aria-label="Facebook" title="Facebook">fb</a>
-            <a href="https://www.instagram.com/bookback.hvnh?xtok=MW96bnNyeTF0a3M5ZQ%3D%3D&utm_source=qr" class="social-btn" aria-label="Instagram" title="Instagram">ig</a>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/share/1A5s3pSn68/?mibextid=wwXIfr"
+              class="social-btn"
+              aria-label="Facebook"
+              title="Facebook"
+              >fb</a
+            >
+            <a
+              href="https://www.instagram.com/bookback.hvnh?xtok=MW96bnNyeTF0a3M5ZQ%3D%3D&utm_source=qr"
+              class="social-btn"
+              aria-label="Instagram"
+              title="Instagram"
+              >ig</a
+            >
+          </div>
         </div>
-        </div>
-        
-        <!-- Cột Tiện ích người dùng -->
+
         <div class="footer-col">
-        <h4 class="footer-title">Tiện ích</h4>
-        <ul class="footer-links">
+          <h4 class="footer-title">Tiện ích</h4>
+          <ul class="footer-links">
             <li><a href="#">Tìm kiếm nhanh</a></li>
             <li><a href="#">Đăng nhập / Đăng ký</a></li>
             <li><a href="pages/cart.html">Giỏ hàng của bạn</a></li>
             <li><a href="pages/calculator.html">Công cụ tính giá sách</a></li>
-        </ul>
+          </ul>
         </div>
 
-        <!-- Cột Menu điều hướng phụ -->
         <div class="footer-col">
-        <h4 class="footer-title">Menu</h4>
-        <ul class="footer-links">
+          <h4 class="footer-title">Menu</h4>
+          <ul class="footer-links">
             <li><a href="index.html">Trang chủ</a></li>
             <li><a href="pages/about.html">Giới thiệu</a></li>
             <li><a href="pages/books.html">Danh mục sách</a></li>
             <li><a href="pages/contact.html">Liên hệ</a></li>
             <li><a href="pages/contact.html">Thu mua sách</a></li>
-        </ul>
+          </ul>
         </div>
 
-        <!-- Cột Chính sách -->
         <div class="footer-col">
-        <h4 class="footer-title">Chính sách</h4>
-        <ul class="footer-links">
-            <li><a href="pages/Chinh-sach/chinh-sach-bao-mat.html">Chính sách bảo mật dữ liệu</a></li>
-            <li><a href="pages/Chinh-sach/chinh-sach-thanh-toan.html">Chính sách bảo mật thanh toán</a></li>
-            <li><a href="pages/Chinh-sach/chinh-sach-doi-tra.html">Chính sách đổi trả sản phẩm</a></li>
-            <li><a href="pages/Chinh-sach/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li>
+          <h4 class="footer-title">Chính sách</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="pages/Chinh-sach/chinh-sach-bao-mat.html"
+                >Chính sách bảo mật dữ liệu</a
+              >
+            </li>
+            <li>
+              <a href="pages/Chinh-sach/chinh-sach-thanh-toan.html"
+                >Chính sách bảo mật thanh toán</a
+              >
+            </li>
+            <li>
+              <a href="pages/Chinh-sach/chinh-sach-doi-tra.html"
+                >Chính sách đổi trả sản phẩm</a
+              >
+            </li>
+            <li>
+              <a href="pages/Chinh-sach/chinh-sach-giao-hang.html"
+                >Chính sách giao hàng</a
+              >
+            </li>
+          </ul>
         </div>
 
-        <!-- Cột Hướng dẫn -->
         <div class="footer-col">
-        <h4 class="footer-title">Hướng dẫn</h4>
-        <ul class="footer-links">
-            <li><a href="pages/Huong-dan/huong-dan-mua-hang.html">Hướng dẫn mua hàng</a></li>
-            <li><a href="pages/Huong-dan/huong-dan-thanh-toan.html">Hướng dẫn thanh toán</a></li>
-            <li><a href="pages/Huong-dan/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li>
+          <h4 class="footer-title">Hướng dẫn</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="pages/Huong-dan/huong-dan-mua-hang.html"
+                >Hướng dẫn mua hàng</a
+              >
+            </li>
+            <li>
+              <a href="pages/Huong-dan/huong-dan-thanh-toan.html"
+                >Hướng dẫn thanh toán</a
+              >
+            </li>
+            <li>
+              <a href="pages/Huong-dan/dieu-khoan-dich-vu.html"
+                >Điều khoản dịch vụ</a
+              >
+            </li>
             <li><a href="pages/contact.html">Gửi yêu cầu hỗ trợ</a></li>
-        </ul>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            2026 <strong>BOOKBACK</strong> – Nhóm 7 TKWEB. Website mua bán sách
+            cũ dành cho sinh viên Học viện Ngân hàng.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== POP-UP ƯU ĐÃI ==================== -->
+    <div
+      class="popup-backdrop"
+      id="popupBackdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Ưu đãi độc quyền BOOKBACK"
+    >
+      <div class="promo-modal">
+        <button
+          type="button"
+          class="promo-close-btn"
+          id="closePopupBtn"
+          aria-label="Đóng ưu đãi"
+        >
+          &times;
+        </button>
+
+        <p class="promo-script">Chào mừng bạn đến với</p>
+        <h2 class="promo-brand">BOOKBACK</h2>
+        <div class="promo-pill">ƯU ĐÃI SINH VIÊN HVNH – MUA SÁCH LÀ LỜI!</div>
+
+        <div class="promo-cards">
+          <div class="promo-deal">
+            <div class="deal-tag">⚡ BẠN MỚI</div>
+            <div class="deal-sub">Giảm ngay</div>
+            <div class="deal-value">15%</div>
+            <span class="deal-code">Mã: LANDAU15</span>
+          </div>
+
+          <div class="promo-deal">
+            <div class="deal-tag">🎁 TRI ÂN 20/11</div>
+            <div class="deal-sub">Ưu đãi đặc biệt</div>
+            <div class="deal-value">20%</div>
+            <span class="deal-code">Mã: TRIAN2011</span>
+          </div>
         </div>
 
-    </div>
-    <!-- Thanh bản quyền -->
-    <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
-        <p>2026 <strong>BOOKBACK</strong> – Nhóm 7 TKWEB. Website mua bán sách cũ dành cho sinh viên Học viện Ngân hàng.</p>
+        <div class="promo-perks">
+          <div class="perk-item">
+            <span class="perk-icon">⚡</span>
+            <span class="perk-text">FLASH SALE<br />Giảm 20K</span>
+          </div>
+          <div class="perk-item">
+            <span class="perk-icon">%</span>
+            <span class="perk-text">GIẢM TỚI 20%<br />Đơn giáo trình</span>
+          </div>
+          <div class="perk-item">
+            <span class="perk-icon">🎁</span>
+            <span class="perk-text">FREESHIP<br />Tại 12 Chùa Bộc</span>
+          </div>
+          <div class="perk-item">
+            <span class="perk-icon">✓</span>
+            <span class="perk-text">SÁCH CHỌN LỌC<br />Độ mới &gt;70%</span>
+          </div>
         </div>
+
+        <a href="pages/promotion.html" class="promo-cta">
+          KHÁM PHÁ ƯU ĐÃI NGAY ›
+        </a>
+      </div>
     </div>
-</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const backdrop = document.getElementById("popupBackdrop");
+        const closeBtn = document.getElementById("closePopupBtn");
+        if (!backdrop || !closeBtn) return;
+
+        // Hiện popup mỗi lần vào trang chủ
+        function closePromoPopup() {
+          backdrop.classList.add("is-hidden");
+        }
+
+        closeBtn.addEventListener("click", closePromoPopup);
+        backdrop.addEventListener("click", (e) => {
+          if (e.target === backdrop) closePromoPopup();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && !backdrop.classList.contains("is-hidden")) {
+            closePromoPopup();
+          }
+        });
+      });
+    </script>
+
     <script src="assets/js/chatbot.js" defer></script>
-    <script src="/assets/js/theme.js" defer></script>
-    <script src="/assets/js/main.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
     <script src="assets/js/book-data.js" defer></script>
     <script src="assets/js/home-featured.js" defer></script>
     <script src="assets/js/home-bestseller.js" defer></script>
     <script src="assets/js/home-reviews.js" defer></script>
-</body>
+  </body>
 </html>

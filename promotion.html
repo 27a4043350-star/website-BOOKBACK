@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khuyến mãi – BOOKBACK</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        /* =========================================================
+           CSS TRANG KHUYẾN MÃI - BOOKBACK
+           ========================================================= */
+        .promo-page {
+            flex: 1;
+            background-color: var(--paper);
+            padding-bottom: 64px;
+        }
+
+        /* 1. TIÊU ĐỀ TRANG CĂN GIỮA */
+        .promo-hero {
+            padding: 44px 0 34px;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(198, 155, 75, 0.14), transparent 65%),
+                var(--paper-dark);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .promo-main-title {
+            font-size: clamp(2.1rem, 4.5vw, 2.9rem);
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--forest);
+            margin: 0 auto 10px;
+            text-align: center;
+        }
+
+        :root[data-theme="dark"] .promo-main-title {
+            color: var(--ink);
+        }
+
+        .promo-main-desc {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* TIÊU ĐỀ MỖI MỤC */
+        .promo-section {
+            padding-top: 42px;
+        }
+
+        .promo-section-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .section-badge-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background-color: var(--forest);
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .promo-section-head h2 {
+            font-family: var(--sans);
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            font-weight: 700;
+            color: var(--ink);
+            margin: 0;
+        }
+
+        /* =========================================================
+           2. MÃ GIẢM GIÁ ĐỘC QUYỀN (3 CỘT NGANG RÕ RÀNG)
+           ========================================================= */
+        .voucher-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .voucher-card {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--white);
+            border: 1px solid var(--line-strong);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .voucher-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .voucher-art {
+            position: relative;
+            width: 100%;
+            height: 172px;
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .voucher-art::before,
+        .voucher-art::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .voucher-art::before {
+            width: 110px;
+            height: 110px;
+            top: -35px;
+            left: -30px;
+            background: rgba(198, 155, 75, 0.16);
+        }
+
+        .voucher-art::after {
+            width: 90px;
+            height: 90px;
+            bottom: -30px;
+            right: -20px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .voucher-art.theme-forest {
+            background: linear-gradient(135deg, #263f32 0%, #385948 100%);
+            color: #fffdf8;
+        }
+
+        .voucher-art.theme-gold {
+            background: linear-gradient(135deg, #f3e7cb 0%, #e5d1a3 100%);
+            color: #263f32;
+        }
+
+        .voucher-art.theme-sage {
+            background: linear-gradient(135deg, #2f4f3e 0%, #1e3328 100%);
+            color: #fffdf8;
+        }
+
+        .art-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 4px;
+        }
+
+        .voucher-art.theme-forest .art-eyebrow,
+        .voucher-art.theme-sage .art-eyebrow {
+            color: #e6c986;
+        }
+
+        .art-headline {
+            font-family: var(--serif);
+            font-size: 1.55rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: 0.02em;
+            margin-bottom: 4px;
+        }
+
+        .art-sub {
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0.92;
+            margin-bottom: 10px;
+        }
+
+        .art-code-pill {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            background-color: var(--gold);
+            color: #1e3328;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .voucher-art.theme-gold .art-code-pill {
+            background-color: var(--forest);
+            color: #fffdf8;
+        }
+
+        .voucher-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 18px 20px 20px;
+        }
+
+        .voucher-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .voucher-title-row h3 {
+            font-family: var(--sans);
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 0;
+        }
+
+        .status-badge {
+            flex-shrink: 0;
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 4px 11px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .status-badge.active {
+            background-color: var(--forest-soft);
+            color: var(--success);
+        }
+
+        .status-badge.expired {
+            background-color: var(--paper-dark);
+            color: var(--muted);
+        }
+
+        .voucher-time {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gold-dark);
+            margin-bottom: 8px;
+        }
+
+        .voucher-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .voucher-code-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 7px 8px 7px 14px;
+            background-color: var(--paper);
+            border: 1.5px dashed var(--forest-2);
+            border-radius: 10px;
+        }
+
+        .voucher-code {
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            color: var(--forest);
+        }
+
+        :root[data-theme="dark"] .voucher-code {
+            color: var(--gold);
+        }
+
+        .btn-copy-code {
+            padding: 7px 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--forest);
+            color: #fffdf8;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .btn-copy-code:hover:not(:disabled) {
+            background-color: var(--forest-hover);
+        }
+
+        .btn-copy-code:active:not(:disabled) {
+            transform: scale(0.97);
+        }
+
+        .btn-copy-code.is-copied {
+            background-color: var(--gold-dark);
+            color: #fffdf8;
+        }
+
+        .voucher-card.is-expired .voucher-art {
+            filter: grayscale(100%);
+            opacity: 0.78;
+        }
+
+        .voucher-card.is-expired .voucher-time {
+            color: var(--muted);
+        }
+
+        .voucher-card.is-expired .voucher-code-box {
+            border-color: var(--line-strong);
+            background-color: var(--paper-dark);
+        }
+
+        .voucher-card.is-expired .voucher-code {
+            color: var(--muted-light);
+        }
+
+        .btn-copy-code:disabled {
+            background-color: var(--line-strong);
+            color: var(--muted);
+            cursor: not-allowed;
+        }
+
+        /* =========================================================
+           3. SẢN PHẨM ĐANG KHUYẾN MÃI (4 CỘT NGANG TỪ TRANG BOOKS)
+           ========================================================= */
+        .promo-product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .promo-product-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--white);
+            border: 1px solid var(--line-strong);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .promo-product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 2;
+            background-color: var(--forest);
+            color: #fffdf8;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 4px 11px;
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .condition-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 2;
+            background-color: var(--gold-soft);
+            color: var(--forest);
+            border: 1px solid var(--gold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 999px;
+        }
+
+        .promo-product-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 220px;
+            padding: 16px;
+            background-color: var(--card);
+            border-bottom: 1px solid var(--line);
+            overflow: hidden;
+        }
+
+        .promo-product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .promo-product-card:hover .promo-product-img img {
+            transform: scale(1.05);
+        }
+
+        .promo-product-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 16px;
+        }
+
+        .product-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 6px;
+        }
+
+        .product-name {
+            font-family: var(--sans);
+            font-size: 0.96rem;
+            font-weight: 700;
+            line-height: 1.4;
+            min-height: 2.8em;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-name a {
+            color: var(--ink);
+        }
+
+        .product-name a:hover {
+            color: var(--forest);
+        }
+
+        :root[data-theme="dark"] .product-name a:hover {
+            color: var(--gold);
+        }
+
+        .product-price-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-top: auto;
+            margin-bottom: 14px;
+        }
+
+        .price-sale {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: var(--forest);
+        }
+
+        :root[data-theme="dark"] .price-sale {
+            color: var(--gold);
+        }
+
+        .price-old {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-decoration: line-through;
+        }
+
+        .btn-view-detail {
+            display: block;
+            width: 100%;
+            padding: 10px 14px;
+            text-align: center;
+            background-color: var(--forest);
+            color: #fffdf8;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-view-detail:hover {
+            background-color: var(--forest-hover);
+            color: var(--gold);
+        }
+
+        /* TOAST THÔNG BÁO KHI BẤM COPY MÃ */
+        .copy-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background-color: var(--forest);
+            color: #fffdf8;
+            border: 1px solid var(--gold);
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .voucher-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .promo-product-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .promo-product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+            .promo-product-img {
+                height: 175px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .voucher-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <!-- HEADER (Đồng bộ 100% với trang chủ & các trang con) -->
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-left">
+                    <a href="login.html">Đăng nhập</a>
+                    <span class="sep">|</span>
+                    <a href="register.html">Đăng ký</a>
+                </div>
+                <div class="top-right">
+                    <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+                    <button
+                        type="button"
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Chuyển sang chế độ tối"
+                        aria-pressed="false"
+                        title="Chuyển đổi giao diện sáng tối"
+                    >
+                        <svg class="bulb-icon" viewBox="0 0 24 24"
+                            width="22" height="22"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M9 18h6"/>
+                            <path d="M10 22h4"/>
+                            <path d="M8.5 14.5a7 7 0 1 1 7 0c-.8.6-1.2 1.4-1.3 2.5h-4.4c-.1-1.1-.5-1.9-1.3-2.5Z"/>
+                        </svg>
+                    </button>
+                    <a href="cart.html" class="top-cart">
+                        Giỏ hàng <span class="cart-count">0</span> sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container header-inner">
+                <a href="../index.html" class="logo-block">
+                    <span class="logo-text">BOOKBACK</span>
+                    <span class="logo-slogan">Sách cũ – Quay trở lại với tri thức</span>
+                </a>
+
+                <nav class="nav" aria-label="Menu chính">
+                    <a href="../index.html" class="nav-link">Trang chủ</a>
+                    <a href="about.html" class="nav-link">Giới thiệu</a>
+                    <a href="books.html" class="nav-link">Danh mục sách</a>
+                    <a href="promotions.html" class="nav-link active" aria-current="page">Khuyến mãi</a>
+                    <a href="calculator.html" class="nav-link">Công cụ tính</a>
+                    <a href="contact.html" class="nav-link">Thu mua sách</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- PHẦN THÂN TRANG KHUYẾN MÃI -->
+    <main class="promo-page">
+        <!-- 1. TIÊU ĐỀ TRANG CĂN GIỮA -->
+        <section class="promo-hero">
+            <div class="container">
+                <h1 class="promo-main-title">KHUYẾN MÃI</h1>
+                <p class="promo-main-desc">
+                    Ưu đãi độc quyền, mã giảm giá giáo trình và các đầu sách cũ đang được trợ giá đặc biệt tại BOOKBACK
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. MÃ GIẢM GIÁ ĐỘC QUYỀN (3 CỘT NGANG) -->
+        <section class="promo-section">
+            <div class="container">
+                <div class="promo-section-head">
+                    <span class="section-badge-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
+                        </svg>
+                    </span>
+                    <h2>Mã Giảm Giá Độc Quyền</h2>
+                </div>
+
+                <div class="voucher-grid">
+                    <!-- Voucher 1 -->
+                    <article class="voucher-card">
+                        <div class="voucher-art theme-gold">
+                            <span class="art-eyebrow">QUÀ CHÀO MỪNG BẠN MỚI</span>
+                            <div class="art-headline">VOUCHER 15%</div>
+                            <span class="art-sub">Giảm 15% tổng đơn giáo trình đầu tiên</span>
+                            <span class="art-code-pill">NHẬP MÃ: LANDAU15</span>
+                        </div>
+                        <div class="voucher-body">
+                            <div class="voucher-title-row">
+                                <h3>Ghé Thăm Lần Đầu</h3>
+                                <span class="status-badge active">Đang diễn ra</span>
+                            </div>
+                            <p class="voucher-time">Không giới hạn</p>
+                            <p class="voucher-desc">Giảm 15% cho toàn bộ giáo trình và tài liệu khi đặt đơn đầu tiên tại BOOKBACK.</p>
+                            <div class="voucher-code-box">
+                                <span class="voucher-code">LANDAU15</span>
+                                <button type="button" class="btn-copy-code" data-code="LANDAU15">Copy mã</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Voucher 2: Voucher riêng ngày 20/11 -->
+                    <article class="voucher-card">
+                        <div class="voucher-art theme-forest">
+                            <span class="art-eyebrow">TRI ÂN NGÀY NHÀ GIÁO VIỆT NAM</span>
+                            <div class="art-headline">ƯU ĐÃI 20/11</div>
+                            <span class="art-sub">Giảm 20% tối đa 30K cho đơn từ 100K</span>
+                            <span class="art-code-pill">NHẬP MÃ: TRIAN2011</span>
+                        </div>
+                        <div class="voucher-body">
+                            <div class="voucher-title-row">
+                                <h3>Tri Ân Nhà Giáo 20/11</h3>
+                                <span class="status-badge active">Đang diễn ra</span>
+                            </div>
+                            <p class="voucher-time">Duy nhất dịp 20/11</p>
+                            <p class="voucher-desc">Ưu đãi đặc biệt tri ân thầy cô và sinh viên Học viện Ngân hàng nhân ngày 20/11.</p>
+                            <div class="voucher-code-box">
+                                <span class="voucher-code">TRIAN2011</span>
+                                <button type="button" class="btn-copy-code" data-code="TRIAN2011">Copy mã</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Voucher 3: Đã kết thúc -->
+                    <article class="voucher-card is-expired">
+                        <div class="voucher-art theme-sage">
+                            <span class="art-eyebrow">BACK TO CAMPUS · HVNH</span>
+                            <div class="art-headline">CHÀO TÂN SV 25%</div>
+                            <span class="art-sub">Trọn bộ giáo trình Đại cương kỳ 1</span>
+                            <span class="art-code-pill">NHẬP MÃ: TANSINHVIEN25</span>
+                        </div>
+                        <div class="voucher-body">
+                            <div class="voucher-title-row">
+                                <h3>Chào Tân Sinh Viên</h3>
+                                <span class="status-badge expired">Đã kết thúc</span>
+                            </div>
+                            <p class="voucher-time">01/09 - 30/09 hằng năm</p>
+                            <p class="voucher-desc">Giảm 25% trọn bộ sách đại cương dành cho tân sinh viên khóa mới nhập học.</p>
+                            <div class="voucher-code-box">
+                                <span class="voucher-code">TANSINHVIEN25</span>
+                                <button type="button" class="btn-copy-code" disabled>Hết hạn</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Voucher 4: Đã kết thúc -->
+                    <article class="voucher-card is-expired">
+                        <div class="voucher-art theme-gold">
+                            <span class="art-eyebrow">TIẾP SỨC MÙA THI CUỐI KỲ</span>
+                            <div class="art-headline">TUẦN LỄ ÔN THI</div>
+                            <span class="art-sub">Giảm 15K cho combo từ 3 cuốn sách</span>
+                            <span class="art-code-pill">NHẬP MÃ: ONTHI15K</span>
+                        </div>
+                        <div class="voucher-body">
+                            <div class="voucher-title-row">
+                                <h3>Tuần Lễ Vàng Ôn Thi</h3>
+                                <span class="status-badge expired">Đã kết thúc</span>
+                            </div>
+                            <p class="voucher-time">Mùng 1 - 15 tháng 6 hằng năm</p>
+                            <p class="voucher-desc">Giảm ngay 15.000đ khi mua combo giáo trình chuyên ngành và đề cương ôn tập.</p>
+                            <div class="voucher-code-box">
+                                <span class="voucher-code">ONTHI15K</span>
+                                <button type="button" class="btn-copy-code" disabled>Hết hạn</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Voucher 5 -->
+                    <article class="voucher-card">
+                        <div class="voucher-art theme-sage">
+                            <span class="art-eyebrow">SĂN DEAL KHUNG GIỜ VÀNG</span>
+                            <div class="art-headline">FLASH SALE 20K</div>
+                            <span class="art-sub">Giảm 20K cho đơn hàng từ 120K</span>
+                            <span class="art-code-pill">NHẬP MÃ: FLASHSALE20</span>
+                        </div>
+                        <div class="voucher-body">
+                            <div class="voucher-title-row">
+                                <h3>Flash Sale Giờ Vàng</h3>
+                                <span class="status-badge active">Đang diễn ra</span>
+                            </div>
+                            <p class="voucher-time">20:00 - 22:00 hằng ngày</p>
+                            <p class="voucher-desc">Giảm trực tiếp 20.000đ cho đơn từ 120K & freeship khi nhận tại 12 Chùa Bộc.</p>
+                            <div class="voucher-code-box">
+                                <span class="voucher-code">FLASHSALE20</span>
+                                <button type="button" class="btn-copy-code" data-code="FLASHSALE20">Copy mã</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SẢN PHẨM ĐANG KHUYẾN MÃI (TỰ ĐỘNG LẤY SÁCH TỪ book-data.js) -->
+        <section class="promo-section">
+            <div class="container">
+                <div class="promo-section-head">
+                    <span class="section-badge-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                        </svg>
+                    </span>
+                    <h2>Sản phẩm đang khuyến mãi</h2>
+                </div>
+
+                <!-- Grid 4 cột ngang được render tự động từ book-data.js -->
+                <div class="promo-product-grid" id="promo-product-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Thông báo nổi khi sao chép mã thành công -->
+    <div class="copy-toast" id="copyToast" role="status" aria-live="polite"></div>
+
+    <!-- FOOTER (Đồng bộ 100% với trang chủ) -->
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <div class="footer-col footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <span class="footer-logo-text">BOOKBACK</span>
+                </a>
+                <p class="footer-slogan">Sách cũ – Quay trở lại với tri thức</p>
+
+                <ul class="footer-contact">
+                    <li>
+                        <span class="footer-icon" aria-hidden="true">📍</span>
+                        <span>12 Chùa Bộc, Đống Đa, Hà Nội</span>
+                    </li>
+                    <li>
+                        <span class="footer-icon" aria-hidden="true">📞</span>
+                        <div>
+                            <a href="tel:0969990579">0969990579</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="footer-icon" aria-hidden="true">@</span>
+                        <a href="mailto:27a4043350@hvnh.edu.vn">27a4043350@hvnh.edu.vn</a>
+                    </li>
+                    <li><a href="#top">Quay về đầu trang</a></li>
+                </ul>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1A5s3pSn68/?mibextid=wwXIfr" class="social-btn" aria-label="Facebook" title="Facebook">fb</a>
+                    <a href="https://www.instagram.com/bookback.hvnh?xtok=MW96bnNyeTF0a3M5ZQ%3D%3D&utm_source=qr" class="social-btn" aria-label="Instagram" title="Instagram">ig</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-title">Tiện ích</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Tìm kiếm nhanh</a></li>
+                    <li><a href="login.html">Đăng nhập / Đăng ký</a></li>
+                    <li><a href="cart.html">Giỏ hàng của bạn</a></li>
+                    <li><a href="calculator.html">Công cụ tính giá sách</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Menu</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="books.html">Danh mục sách</a></li>
+                    <li><a href="promotions.html">Khuyến mãi</a></li>
+                    <li><a href="contact.html">Thu mua sách</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Chính sách</h4>
+                <ul class="footer-links">
+                    <li><a href="Chinh-sach/chinh-sach-bao-mat.html">Chính sách bảo mật dữ liệu</a></li>
+                    <li><a href="Chinh-sach/chinh-sach-thanh-toan.html">Chính sách bảo mật thanh toán</a></li>
+                    <li><a href="Chinh-sach/chinh-sach-doi-tra.html">Chính sách đổi trả sản phẩm</a></li>
+                    <li><a href="Chinh-sach/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Hướng dẫn</h4>
+                <ul class="footer-links">
+                    <li><a href="Huong-dan/huong-dan-mua-hang.html">Hướng dẫn mua hàng</a></li>
+                    <li><a href="Huong-dan/huong-dan-thanh-toan.html">Hướng dẫn thanh toán</a></li>
+                    <li><a href="Huong-dan/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li>
+                    <li><a href="contact.html">Gửi yêu cầu hỗ trợ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>2026 <strong>BOOKBACK</strong> – Nhóm 7 TKWEB. Website mua bán sách cũ dành cho sinh viên Học viện Ngân hàng.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Nhúng book-data.js của trang books.html để lấy danh sách sách thật -->
+    <script src="../assets/js/book-data.js" defer></script>
+    <script src="../assets/js/chatbot.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            /* 1. XỬ LÝ NÚT COPY MÃ VOUCHER */
+            const copyButtons = document.querySelectorAll('.btn-copy-code[data-code]');
+            const toast = document.getElementById('copyToast');
+            let toastTimer = null;
+
+            function showToast(message) {
+                if (!toast) return;
+                toast.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2500);
+            }
+
+            copyButtons.forEach((btn) => {
+                btn.addEventListener('click', async () => {
+                    const code = btn.getAttribute('data-code');
+                    if (!code) return;
+
+                    try {
+                        await navigator.clipboard.writeText(code);
+                    } catch {
+                        const tempInput = document.createElement('input');
+                        tempInput.value = code;
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                    }
+
+                    localStorage.setItem('bookback_saved_voucher', code);
+
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Đã copy ✓';
+                    btn.classList.add('is-copied');
+                    showToast(`Đã sao chép mã "${code}" – Dán tại bước thanh toán nhé!`);
+
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.classList.remove('is-copied');
+                    }, 2000);
+                });
+            });
+
+            /* 2. LẤY SÁCH ĐANG KHUYẾN MÃI TỪ book-data.js */
+            const productGrid = document.getElementById('promo-product-grid');
+            if (!productGrid) return;
+
+            function formatVND(amount) {
+                const num = Number(amount) || 0;
+                return num.toLocaleString('vi-VN') + 'đ';
+            }
+
+            function getSourceBooks() {
+                if (typeof books !== 'undefined' && Array.isArray(books)) return books;
+                if (typeof bookData !== 'undefined' && Array.isArray(bookData)) return bookData;
+                if (typeof BOOKS !== 'undefined' && Array.isArray(BOOKS)) return BOOKS;
+                if (typeof products !== 'undefined' && Array.isArray(products)) return products;
+                if (typeof listBooks !== 'undefined' && Array.isArray(listBooks)) return listBooks;
+                return [];
+            }
+
+            const rawBooks = getSourceBooks();
+
+            // Lọc các sách có giá khuyến mãi (giá gốc > giá bán), nếu không có thì lấy 8 cuốn đầu tiên
+            let promoBooks = rawBooks.filter((b) => {
+                const sale = Number(b.price ?? b.salePrice ?? 0);
+                const old = Number(b.oldPrice ?? b.originalPrice ?? b.marketPrice ?? 0);
+                return old > sale && sale > 0;
+            });
+
+            if (promoBooks.length === 0) {
+                promoBooks = rawBooks.slice(0, 8);
+            } else {
+                promoBooks = promoBooks.slice(0, 8);
+            }
+
+            if (promoBooks.length > 0) {
+                productGrid.innerHTML = promoBooks.map((book) => {
+                    const id = book.id ?? '';
+                    const title = book.title ?? book.name ?? 'Giáo trình BOOKBACK';
+                    const group = book.group ?? book.category ?? book.faculty ?? 'GIÁO TRÌNH HVNH';
+                    const salePrice = Number(book.price ?? book.salePrice ?? 50000);
+                    const oldPrice = Number(book.oldPrice ?? book.originalPrice ?? Math.round(salePrice * 1.3));
+                    const percent = oldPrice > salePrice
+                        ? Math.round(((oldPrice - salePrice) / oldPrice) * 100)
+                        : 25;
+
+                    // Chuẩn hóa đường dẫn ảnh khi đứng từ thư mục pages/
+                    let imgSrc = book.image ?? book.img ?? book.cover ?? '../assets/images/MKT-can-ban.jpg';
+                    if (imgSrc && !imgSrc.startsWith('http') && !imgSrc.startsWith('../') && !imgSrc.startsWith('/')) {
+                        imgSrc = '../' + imgSrc.replace(/^\.?\//, '');
+                    }
+
+                    const detailUrl = id !== ''
+                        ? `book-detail.html?id=${encodeURIComponent(id)}`
+                        : 'book-detail.html';
+
+                    const conditionBadge = book.condition
+                        ? `<span class="condition-tag">${book.condition}% mới</span>`
+                        : '';
+
+                    return `
+                        <article class="promo-product-card">
+                            <span class="discount-badge">-${percent}%</span>
+                            ${conditionBadge}
+                            <a href="${detailUrl}" class="promo-product-img">
+                                <img src="${imgSrc}" alt="${title}" loading="lazy">
+                            </a>
+                            <div class="promo-product-info">
+                                <span class="product-category">KHOA ${String(group).toUpperCase()}</span>
+                                <h3 class="product-name">
+                                    <a href="${detailUrl}">${title}</a>
+                                </h3>
+                                <div class="product-price-wrap">
+                                    <span class="price-sale">${formatVND(salePrice)}</span>
+                                    <span class="price-old">${formatVND(oldPrice)}</span>
+                                </div>
+                                <a href="${detailUrl}" class="btn-view-detail">Xem chi tiết</a>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+            }
+        });
+    </script>
+</body>
+</html>

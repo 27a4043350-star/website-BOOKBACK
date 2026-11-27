@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thanh toán - BOOKBACK</title>
-    <link rel="stylesheet" href="../assets/css/checkout.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/checkout.css" />
   </head>
 
   <body>
@@ -14,12 +14,38 @@
       <div class="top-bar">
         <div class="container top-bar-inner">
           <div class="top-left">
-            <a href="#">Đăng nhập</a>
+            <a href="login.html">Đăng nhập</a>
             <span class="sep">|</span>
-            <a href="#">Đăng ký</a>
+            <a href="register.html">Đăng ký</a>
           </div>
           <div class="top-right">
-            <a href="#" class="top-search" aria-label="Tìm kiếm">🔍</a>
+            <a href="books.html" class="top-search" aria-label="Tìm kiếm">🔍</a>
+            <button
+              type="button"
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Chuyển đổi giao diện sáng tối"
+              aria-pressed="false"
+              title="Chuyển đổi giao diện"
+            >
+              <svg
+                class="bulb-icon"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+                <path
+                  d="M8.5 14.5a7 7 0 1 1 7 0c-.8.6-1.2 1.4-1.3 2.5h-4.4c-.1-1.1-.5-1.9-1.3-2.5Z"
+                />
+              </svg>
+            </button>
             <a href="cart.html" class="top-cart">
               Giỏ hàng <span class="cart-count">0</span> sản phẩm
             </a>
@@ -259,9 +285,9 @@
         </aside>
       </div>
     </main>
+
     <div id="orderSuccessModal" class="order-modal-overlay">
       <div class="order-modal-box">
-        <!-- Icon túi sách màu hồng -->
         <div class="order-modal-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
             <path
@@ -288,7 +314,6 @@
           Tiệm đang chuẩn bị gửi đơn tốc hành đến bạn!
         </p>
 
-        <!-- Nút bấm quay về trang chủ (../index.html) -->
         <a
           href="../index.html"
           id="continueShoppingBtn"
@@ -298,11 +323,11 @@
         </a>
       </div>
     </div>
+
     <script src="../assets/js/gmail-email.js" defer></script>
-    about
+    <script src="../assets/js/book-data.js" defer></script>
     <script src="../assets/js/cart-store.js" defer></script>
     <script src="../assets/js/checkout.js" defer></script>
     <script src="../assets/js/chatbot.js" defer></script>
-     main
   </body>
 </html>

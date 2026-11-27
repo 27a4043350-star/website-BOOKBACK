@@ -65,6 +65,7 @@
             <a href="../index.html" class="nav-link">Trang chủ</a>
             <a href="about.html" class="nav-link">Giới thiệu</a>
             <a href="books.html" class="nav-link">Danh mục sách</a>
+            <a href="promotion.html" class="nav-link">Khuyến mãi</a>
             <a href="calculator.html" class="nav-link">Công cụ tính</a>
             <a href="contact.html" class="nav-link">Thu mua sách</a>
           </nav>
@@ -243,6 +244,58 @@
             <p class="cart-empty">Giỏ hàng đang trống.</p>
           </div>
 
+          <!-- KHUNG MÃ GIẢM GIÁ KHẢ DỤNG BÊN PHẢI -->
+          <div class="checkout-voucher-box">
+            <div class="voucher-box-header">
+              <span>Mã giảm giá khả dụng</span>
+            </div>
+
+            <div class="voucher-manual-row">
+              <input
+                type="text"
+                id="voucher-code-input"
+                class="voucher-code-input"
+                placeholder="Nhập mã (VD: LANDAU15)"
+                autocomplete="off"
+              />
+              <button
+                type="button"
+                id="apply-manual-voucher-btn"
+                class="btn-apply-manual"
+              >
+                Áp dụng
+              </button>
+            </div>
+            <p class="voucher-feedback" id="voucher-feedback" hidden></p>
+
+            <div class="available-vouchers" id="available-vouchers"></div>
+          </div>
+
+          <!-- THẺ HIỂN THỊ MÃ ĐÃ CHỌN -->
+          <div class="selected-voucher-card" id="selected-voucher-card" hidden>
+            <div class="selected-voucher-left">
+              <div class="selected-voucher-info">
+                <div class="selected-voucher-code">
+                  Mã đang áp dụng:
+                  <strong id="selected-voucher-code-text"></strong>
+                </div>
+                <div
+                  class="selected-voucher-desc"
+                  id="selected-voucher-desc-text"
+                ></div>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-remove-voucher"
+              id="remove-voucher-btn"
+              title="Bỏ chọn mã giảm giá"
+              aria-label="Bỏ chọn mã giảm giá"
+            >
+              &times;
+            </button>
+          </div>
+
           <div class="summary-row">
             <span>Tạm tính</span>
             <strong data-cart-subtotal>0đ</strong>
@@ -251,9 +304,9 @@
             <span>Phí vận chuyển</span>
             <strong data-cart-shipping>0đ</strong>
           </div>
-          <div class="summary-row">
-            <span>Giảm giá</span>
-            <strong data-cart-discount>-0đ</strong>
+          <div class="summary-row discount-row">
+            <span data-discount-label>Giảm giá</span>
+            <strong data-cart-discount>0đ</strong>
           </div>
           <div class="summary-row total">
             <span>Tổng thanh toán</span>

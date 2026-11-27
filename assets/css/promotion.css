@@ -1,0 +1,381 @@
+/* ===== PROMOTION PAGE ===== */
+body,
+main {
+  padding-top: 0 !important;
+}
+
+body {
+  background: linear-gradient(180deg, #f7f3ec 0%, #f2ead9 100%);
+  color: var(--ink, #1d2b24);
+  line-height: 1.65;
+}
+
+.promo-hero {
+  padding: 44px 0 24px;
+  text-align: center;
+}
+
+.promo-main-title {
+  color: #1d4d3b;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.promo-main-desc {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #55625a;
+  font-size: 0.98rem;
+}
+
+.promo-section {
+  padding: 20px 0 44px;
+}
+
+.promo-section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.section-badge-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #1d4d3b;
+  color: #fffdf8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-section-head h2 {
+  color: #1d4d3b;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.voucher-card {
+  background: #fffdf8;
+  border: 1px solid #eadfc6;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 22px rgba(29, 77, 59, 0.06);
+}
+
+.voucher-card.is-expired {
+  opacity: 0.72;
+}
+
+.voucher-art {
+  padding: 20px 18px;
+  color: #fffdf8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.voucher-art.theme-forest {
+  background: linear-gradient(135deg, #1d4d3b 0%, #2d6650 100%);
+}
+
+.voucher-art.theme-gold {
+  background: linear-gradient(135deg, #8e6725 0%, #b88936 100%);
+}
+
+.voucher-art.theme-sage {
+  background: linear-gradient(135deg, #4b6b5c 0%, #6d8f7e 100%);
+}
+
+.art-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.art-headline {
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.art-sub {
+  font-size: 0.84rem;
+  opacity: 0.92;
+}
+
+.art-code-pill {
+  align-self: center;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.18);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.voucher-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.voucher-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.voucher-title-row h3 {
+  font-size: 1.05rem;
+  color: #1d4d3b;
+  margin: 0;
+}
+
+.status-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-badge.active {
+  background: #e6f2ec;
+  color: #1d4d3b;
+}
+
+.status-badge.expired {
+  background: #eee9de;
+  color: #6d685e;
+}
+
+.voucher-time {
+  font-size: 0.82rem;
+  color: #777;
+  margin: 0 0 8px;
+}
+
+.voucher-desc {
+  font-size: 0.88rem;
+  color: #4b5550;
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.voucher-code-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f5f1e6;
+  border: 1px dashed #1d4d3b;
+  border-radius: 10px;
+  padding: 8px 10px 8px 12px;
+}
+
+.voucher-code {
+  font-weight: 800;
+  color: #1d4d3b;
+  letter-spacing: 0.03em;
+}
+
+.btn-copy-code {
+  border: none;
+  border-radius: 8px;
+  background: #1d4d3b;
+  color: #fffdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.btn-copy-code:hover:not(:disabled) {
+  background: #2b5a48;
+}
+
+.btn-copy-code.is-copied {
+  background: #b88936;
+}
+
+.btn-copy-code:disabled {
+  background: #d8d1c2;
+  color: #7a756a;
+  cursor: not-allowed;
+}
+
+.promo-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.promo-product-card {
+  position: relative;
+  background: #fffdf8;
+  border: 1px solid #eadfc6;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 18px rgba(29, 77, 59, 0.05);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  background: #1d4d3b;
+  color: #fffdf8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.condition-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: rgba(255, 253, 248, 0.92);
+  color: #1d4d3b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.promo-product-img {
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #f3ede0;
+}
+
+.promo-product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-product-info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #6b7870;
+  margin-bottom: 4px;
+}
+
+.product-name {
+  font-size: 0.96rem;
+  margin: 0 0 8px;
+  flex: 1;
+}
+
+.product-name a {
+  color: #1f2d25;
+  text-decoration: none;
+}
+
+.product-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.price-sale {
+  color: #1d4d3b;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.price-old {
+  color: #888;
+  font-size: 0.84rem;
+  text-decoration: line-through;
+}
+
+.btn-view-detail {
+  display: block;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #f3ead4;
+  color: #1d4d3b;
+  font-weight: 700;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.btn-view-detail:hover {
+  background: #e6d8b7;
+}
+
+.copy-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1d4d3b;
+  color: #fffdf8;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  z-index: 9999;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 960px) {
+  .voucher-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .promo-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .voucher-grid,
+  .promo-product-grid {
+    grid-template-columns: 1fr;
+  }
+}
